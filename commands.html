@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
     <meta charset="utf-8">
     <title>GW2Bot - A Discord Bot</title>
@@ -10,38 +10,56 @@
 
 <body>
     <header>
-        <h1>GW2BOT - A Guild Wars 2 Bot for Discord</h1>
+        <h1>GW2Bot - A Guild Wars 2 Bot for Discord</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="commands.html">Commands</a></li>
+            <li><a class="navbar" href="index.html">Home</a></li>
+            <li><a class="active navbar" href="commands.html">Commands</a></li>
         </ul>
-        <main>
-            <h2>Current feature list!</h2>
-            <p>Persistent storage of API keys</p>
-            <p>Search your account for items GW2Efficiency-style</p>
-            <P>Automatic game update notifications</P>
-            <h3>Character stuff:</h3>
-            <P>Character info</P>
-            <p>Gearcheck</P>
-            <P>Character list (self explanatory)</P>
-            <h3>Daily things:</h3>
-            <P>Daily Pact Supply Network</P>
-            <P>Daily pve/pvp/wvw/fractals</P>
-            <P>Describe a skill</P>
-            <h3>PvP stuff:</h3>
-            <P>Stats</P>
-            <P>General profession stats</P>
-            <P>Specific profession stats!</P>
-            <h3>Other:</h3>
-            <P>Check how many Legendary Insights you have</P>
-            <P>Check which bosses you haven't killed in the current week</P>
-            <p>Wallet commands</p>
-            <P>Current TP transaction status - selling/buying - courtesy of n1tr0-5urf3r</P>
-            <p>Guild commands - courtesy of n1tr0-5urf3r</p>
-            <P>Account info</P>
-            <P>WvW info</P>
-            <P>Wiki search</P>
-            <P>And more...</P>
-        </main>
+    </nav>
+    <main>
+        <h2>The prefix is $</h2>
+        <div class="row">
+            <div class="column">
+                <dl>
+                    <dt><strong>account</strong></dt>
+                    <dd>Information about your account</dd>
+                    <dt><strong>bosses</strong></dt>
+                    <dd>Lists all the bosses you killed this week</dd>
+                    <dt><strong>changelog</strong></dt>
+                    <dd>List of recent changes to the bot</dd>
+                    <dt><strong>character</strong></dt>
+                    <dd>Character related commands</dd>
+                    <dt><strong>daily</strong></dt>
+                    <dd>Commands showing daily things</dd>
+                    <dt><strong>et</strong></dt>
+                    <dd>The event timer. Shows upcoming world bosses.</dd>
+                    <dt><strong>guild</strong></dt>
+                    <dd>Guild related commands.</dd>
+                    <dt><strong>gw2wiki</strong></dt>
+                    <dd>Search the guild wars 2 wiki</dd>
+                </dl>
+            </div>
+            <div class="column">
+                <dl>
+                    <dt> key</dt>
+                    <dd>Commands related to API keys</dd>
+                    <dt>li</dt>
+                    <dd>Shows how many Legendary Insights you have</dd>
+                    <dt>pvp</dt>
+                    <dd>PvP related commands.</dd>
+                    <dt>search</dt>
+                    <dd>Find items on your account!</dd>
+                    <dt> skillinfo</dt>
+                    <dd>Information about a given skill</dd>
+                    <dt>tp</dt>
+                    <dd>Commands related to tradingpost</dd>
+                    <dt> wallet</dt>
+                    <dd>Wallet related commands.</dd>
+                    <dt>wvw</dt>
+                    <dd>Commands related to wvw</dd>
+                </dl>
+            </div>
+        </div>
+    </main>
