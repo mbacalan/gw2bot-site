@@ -1,6 +1,8 @@
 html {
     font-family: 'ABeeZee', sans-serif;
     background-color: white;
+    margin: auto;
+    padding: 10px 10px;
 }
 
 main.home {
@@ -9,13 +11,9 @@ main.home {
     padding: 0 20px 20px 20px;
 }
 
-h1.header {
-    width: 1997px;
-    height: 150.5px; 
-    background-image: url("../images/header.png");
-    background-size: 50%;
-    background-repeat: no-repeat;
-    text-align: end;
+img.header {
+    width: 100%;
+    height: 50%; 
 }
 
 /* NAVBAR */
@@ -26,7 +24,7 @@ ul {
     margin: 0;
     padding: 8px;
     overflow: hidden; /*this makes the list to be a fullwidth navbar*/
-    background-color: black;
+    background-color: #463A3A;
 }
 
 a.navbar {
@@ -81,11 +79,12 @@ dd {
     color: white;
     padding: 10px 25px;
     display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
     vertical-align: middle;
     font-size: 32px;
     border: 1px solid black;
     text-decoration: none;
+}
+
+.invite:hover {
+
 }
