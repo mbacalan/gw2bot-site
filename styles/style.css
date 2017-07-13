@@ -16,25 +16,23 @@ h1.header {
     background-size: 50%;
     background-repeat: no-repeat;
     text-align: end;
-
-
 }
 
 /* NAVBAR */
 
 ul {
-  text-align: center;
-  list-style-type: none; /*this is to remove the dots in list items*/
-  margin: 0;
-  padding: 8px;
-  overflow: hidden; /*this makes the list to be a fullwidth navbar*/
-  background-color: black;
+    text-align: center;
+    list-style-type: none; /*this is to remove the dots in list items*/
+    margin: 0;
+    padding: 8px;
+    overflow: hidden; /*this makes the list to be a fullwidth navbar*/
+    background-color: black;
 }
 
 a.navbar {
-  color: white;
-  padding: 25px 25px;
-  text-decoration: none;
+    color: white;
+    padding: 25px 25px;
+    text-decoration: none;
 }
 
 li {
@@ -79,16 +77,15 @@ dd {
 }
 
 .invite {
-background-color: red;
-color: white;
-padding: 10px 25px;
-display: inline-block;
-margin-bottom: 0;
-font-weight: normal;
-text-align: center;
-vertical-align: middle;
-font-size: 32px;
-border: 1px solid black;
-text-decoration: none;
-
+    background-color: #C32319;
+    color: white;
+    padding: 10px 25px;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 32px;
+    border: 1px solid black;
+    text-decoration: none;
 }
