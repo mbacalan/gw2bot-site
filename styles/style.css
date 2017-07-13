@@ -1,8 +1,27 @@
 html {
     font-family: 'ABeeZee', sans-serif;
-    background-color: whitesmoke;
+    background-color: white;
 }
+
+main.home {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+}
+
+h1.header {
+    width: 1997px;
+    height: 150.5px; 
+    background-image: url("../images/header.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    text-align: end;
+
+
+}
+
 /* NAVBAR */
+
 ul {
   text-align: center;
   list-style-type: none; /*this is to remove the dots in list items*/
@@ -19,19 +38,18 @@ a.navbar {
 }
 
 li {
-  display: inline;
+    display: inline;
 }
 
 li a:hover {
-  background-color: gray;
+    background-color: gray;
 }
 
 li a.active {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 /* CONTENT */
-
 
 h1, h2, h3 {
     text-align: center;
@@ -61,9 +79,16 @@ dd {
 }
 
 .invite {
+    background-color: red;
+    color: white;
+    padding: 10px 25px;
+display: inline-block;
+margin-bottom: 0;
+font-weight: normal;
 text-align: center;
+vertical-align: middle;
 font-size: 32px;
-padding-top: 40px;
-    text-align: center;
-    text-decoration: none;
+border: 1px solid black;
+text-decoration: none;
+
 }
