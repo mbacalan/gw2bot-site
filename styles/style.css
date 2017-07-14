@@ -2,27 +2,24 @@ html {
     font-family: 'ABeeZee', sans-serif;
     background-color: white;
     margin: auto;
-    padding: 10px 10px;
+    text-align: center;
 }
 
-main.home {
-    width: 900px;
+main.home, main.faq {
+    width: 960px;
     margin: 0 auto;
-    padding: 0 20px 20px 20px;
 }
 
 img.header {
     width: 100%;
     height: 50%; 
 }
-
 /* NAVBAR */
 
 ul {
-    text-align: center;
     list-style-type: none; /*this is to remove the dots in list items*/
     margin: 0;
-    padding: 8px;
+    padding: 6px;
     overflow: hidden; /*this makes the list to be a fullwidth navbar*/
     background-color: #463A3A;
 }
@@ -31,6 +28,7 @@ a.navbar {
     color: white;
     padding: 25px 25px;
     text-decoration: none;
+    transition: background-color 0.5s;
 }
 
 li {
@@ -47,23 +45,21 @@ li a.active {
 }
 /* CONTENT */
 
-h1, h2, h3 {
-    text-align: center;
-}
-
-p {
-    text-align: center;
-}
-
 .maininfo {
-    padding-top: 40px;
+    font-size: 28px;
 }
 
-dl {
-    text-align: center;
+
+dt {
+    padding-left: 150px;
+    padding-bottom: 2px;
+    text-align: left;
 }
 dd {
     padding-bottom: 10px;
+    padding-left: 150px;
+    text-align: left;
+    font-style: italic;
 }
 .row {
     clear:both
@@ -74,7 +70,12 @@ dd {
     float: left;
 }
 
-.invite {
+p.invite {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+a.invite {
     background-color: #C32319;
     color: white;
     padding: 10px 25px;
@@ -83,8 +84,9 @@ dd {
     font-size: 32px;
     border: 1px solid black;
     text-decoration: none;
+    transition: background-color 0.5s;
 }
 
-.invite:hover {
-
+a.invite:hover {
+    background-color: red;
 }
