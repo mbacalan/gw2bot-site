@@ -7,7 +7,7 @@ html {
     text-align: center;
 }
 
-main.home, main.faq {
+main.home, main.faq, main.commands {
     width: 960px;
     margin: 0 auto;
 }
@@ -51,16 +51,14 @@ li a.active {
     font-size: 28px;
 }
 
-
 dt {
-    padding-left: 150px;
+    padding-left: 10px;
     padding-bottom: 2px;
-    text-align: left;
+
 }
 dd {
+
     padding-bottom: 10px;
-    padding-left: 150px;
-    text-align: left;
     font-style: italic;
 }
 .row {
