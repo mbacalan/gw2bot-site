@@ -16,9 +16,9 @@ img.header {
     width: 100%;
     height: 50%; 
 }
-/* NAVBAR */
+/* NAVIGATON BAR */
 
-ul {
+ul.navbar {
     list-style-type: none; /*this is to remove the dots in list items*/
     margin: 0;
     padding: 6px;
@@ -33,15 +33,15 @@ a.navbar {
     transition: background-color 0.5s;
 }
 
-li {
+li.navbar {
     display: inline;
 }
 
-li a:hover {
+li.navbar a:hover {
     background-color: gray;
 }
 
-li a.active {
+li.navbar a.active {
     background-color: white;
     color: black;
 }
@@ -49,25 +49,6 @@ li a.active {
 
 .maininfo {
     font-size: 28px;
-}
-
-dt {
-    padding-left: 10px;
-    padding-bottom: 2px;
-
-}
-dd {
-
-    padding-bottom: 10px;
-    font-style: italic;
-}
-.row {
-    clear:both
-}
-
-.column {
-    width: 50%;
-    float: left;
 }
 
 p.invite {
@@ -89,4 +70,59 @@ a.invite {
 
 a.invite:hover {
     background-color: red;
+}
+/* COMMANDS */
+.row {
+    clear:both;
+}
+
+.column {
+    width: 50%;
+    float: left;
+}
+
+dt {
+    padding-left: 10px;
+    padding-bottom: 2px;
+
+}
+dd {
+
+    padding-bottom: 10px;
+    font-style: italic;
+}
+
+li.desc {
+    list-style-type: none;
+}
+
+details {
+    background-color: #463A3A;
+    color: white;
+    outline: none;
+}
+
+details[open] summary{
+    background: transparent;
+    background-color: #C32319;
+    color: black;
+}
+
+summary{
+    background-color: whitesmoke;
+    color: black;
+    padding: 5px;
+    transition: background-color 0.5s;
+}
+
+summary:hover {
+    background-color: #C32319;
+}
+
+details summary::-moz-details-marker { /* Hide the default marker for CHROME. */ 
+    display: none;
+}
+
+details > summary:first-of-type { /*Hide the default marker for FIREFOX */
+    list-style-type: none;
 }
