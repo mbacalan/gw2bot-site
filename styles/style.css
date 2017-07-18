@@ -21,7 +21,7 @@ body {
 main.home, main.faq, main.commands {
     width: 960px;
     margin: 0 auto;
-    padding-bottom: 60px; /* Height of footer */
+    padding-bottom: 55px; /* Height of footer */
 }
 
 img.header {
