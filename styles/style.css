@@ -84,6 +84,11 @@ a.invite:hover {
     background-color: red;
 }
 /* COMMANDS */
+.com-exp {
+    font-size: 12px;
+    margin: -15px;
+}
+
 .column {
     width: 50%;
     float: left;
@@ -119,8 +124,9 @@ details[open] summary{
 }
 
 summary{
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     color: black;
+    cursor: pointer;
     transition: background-color 0.5s;
 }
 
