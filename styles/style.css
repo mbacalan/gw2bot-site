@@ -139,7 +139,7 @@ details > summary:first-of-type { /*Hide the default marker for FIREFOX */
 /* FOOTER */
 
 footer {
-    height: 60px;
+    height: 55px;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -149,11 +149,14 @@ footer {
 
 footer p {
     text-align: right;
-    font-size: 10px;
+    font-size: 10.5px;
     color: white;
+    line-height: 2;
+    display: inline-block;
+    margin: -5px;
+    margin-top: 3px;
 }
 
 footer a {
-    text-decoration: none;
     color: white;
 }
