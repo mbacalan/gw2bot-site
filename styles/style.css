@@ -1,15 +1,27 @@
-
 html {
     font-family: 'ABeeZee', sans-serif;
     background-color: white;
-    height: 101%;
-    margin: auto;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
 main.home, main.faq, main.commands {
     width: 960px;
     margin: 0 auto;
+    padding-bottom: 70px; /* Height of footer */
 }
 
 img.header {
@@ -72,22 +84,20 @@ a.invite:hover {
     background-color: red;
 }
 /* COMMANDS */
-.row {
-    clear:both;
-}
-
 .column {
     width: 50%;
     float: left;
 }
 
+.row {
+    clear:both;
+}
+
 dt {
     padding-left: 10px;
     padding-bottom: 2px;
-
 }
 dd {
-
     padding-bottom: 10px;
     font-style: italic;
 }
@@ -124,4 +134,26 @@ details summary::-moz-details-marker { /* Hide the default marker for CHROME. */
 
 details > summary:first-of-type { /*Hide the default marker for FIREFOX */
     list-style-type: none;
+}
+
+/* FOOTER */
+
+footer {
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #D4D4D4;
+}
+
+p.footer {
+    text-align: right;
+    font-size: 10px;
+    color: white;
+}
+
+a.footer {
+    text-decoration: none;
+    color: white;
 }
