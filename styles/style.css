@@ -18,23 +18,30 @@ body {
     position: relative;
 }
 
-main.home, main.faq, main.commands {
+main.home,
+main.faq,
+main.commands {
     width: 960px;
     margin: 0 auto;
-    padding-bottom: 55px; /* Height of footer */
+    padding-bottom: 55px;
+    /* Height of footer */
 }
 
 img.header {
     width: 100%;
-    height: 50%; 
+    height: 50%;
 }
+
+
 /* NAVIGATON BAR */
 
 nav ul {
-    list-style-type: none; /*this is to remove the dots in list items*/
+    list-style-type: none;
+    /*this is to remove the dots in list items*/
     margin: 0;
     padding: 6px;
-    overflow: hidden; /*this makes the list to be a fullwidth navbar*/
+    overflow: hidden;
+    /*this makes the list to be a fullwidth navbar*/
     background-color: #463A3A;
 }
 
@@ -57,6 +64,8 @@ nav li a.active {
     background-color: white;
     color: black;
 }
+
+
 /* CONTENT */
 
 .maininfo {
@@ -83,7 +92,10 @@ a.invite {
 a.invite:hover {
     background-color: red;
 }
+
+
 /* COMMANDS */
+
 .com-exp {
     font-size: 12px;
     margin: -15px;
@@ -95,13 +107,14 @@ a.invite:hover {
 }
 
 .row {
-    clear:both;
+    clear: both;
 }
 
 dt {
     padding-left: 10px;
     padding-bottom: 2px;
 }
+
 dd {
     padding-bottom: 10px;
     font-style: italic;
@@ -117,13 +130,13 @@ details {
     outline: none;
 }
 
-details[open] summary{
+details[open] summary {
     background: transparent;
     background-color: #C32319;
     color: black;
 }
 
-summary{
+summary {
     background-color: ghostwhite;
     color: black;
     cursor: pointer;
@@ -134,13 +147,16 @@ summary:hover {
     background-color: #C32319;
 }
 
-details summary::-moz-details-marker { /* Hide the default marker for CHROME. */ 
+details summary::-moz-details-marker {
+    /* Hide the default marker for CHROME. */
     display: none;
 }
 
-details > summary:first-of-type { /*Hide the default marker for FIREFOX */
+details>summary:first-of-type {
+    /*Hide the default marker for FIREFOX */
     list-style-type: none;
 }
+
 
 /* FOOTER */
 
