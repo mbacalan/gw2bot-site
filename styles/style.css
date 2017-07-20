@@ -9,6 +9,7 @@ html {
 
 body {
   height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -72,12 +73,20 @@ nav li a.active {
   font-size: 28px;
 }
 
-p.invite {
-  padding-top: 10px;
-  padding-bottom: 15px;
+.demo {
+  width: 75%;
+  height: 75%;
+  float: left;
+  padding-bottom: 25px;
 }
 
-a.invite {
+p.invite {
+  padding-top: 250px;
+  padding-bottom: 15px;
+  float: right;
+}
+
+p.invite a {
   background-color: #C32319;
   color: white;
   padding: 10px 25px;
@@ -89,8 +98,12 @@ a.invite {
   transition: background-color 0.5s;
 }
 
-a.invite:hover {
+p.invite a:hover {
   background-color: red;
+}
+
+p.end {
+  padding-bottom: 25px;
 }
 
 
@@ -160,12 +173,11 @@ summary > dt::after {
 /* FOOTER */
 
 footer {
-  height: 55px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #463A3A;
+    clear: both;
+    position: relative;
+    height: 3em;
+    margin-top: -3em;
+    background-color: #463A3A;
 }
 
 footer p {
