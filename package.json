@@ -1,0 +1,13 @@
+{
+  "name": "stuff",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  }
+}
