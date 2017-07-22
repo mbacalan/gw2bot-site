@@ -68,11 +68,11 @@ nav li a.active {
 
 /* CONTENT */
 
-.maininfo {
+main.home > p {
   font-size: 28px;
 }
 
-.demo {
+main.home > img {
   width: 75%;
   height: 75%;
   float: left;
