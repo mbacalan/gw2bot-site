@@ -91,7 +91,8 @@ main.home > img {
   width: 75%;
   height: 75%;
   float: left;
-  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-radius: 5px;
 }
 
 p.invite {
