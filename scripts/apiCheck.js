@@ -5,7 +5,7 @@ $(document).ready(function() {
         complete: function(){
             $("#loader").hide();
         },
-        success: function(data) { alert( 'API is ONLINE!' ); console.log("API online"); },
-        error: function(data) { alert( 'API is OFFLINE!' ); console.log(data); }
+        success: function() { $('#apistatus').text('API is Online!') },
+        error: function() { $('#apistatus').text('API is Offline!') }
     })
     });
