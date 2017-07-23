@@ -72,15 +72,14 @@ img#loader {
   width: 5%;
   height: 5%;
   float: right;
-  padding-top: 5px;
-  padding-right: 10px;
+  margin-top: 5px;
 }
 
 p#apistatus {
   float: right;
   font-size: 14px;
-  padding-top: 0px;
-  padding-right: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 main.home > p {
@@ -96,8 +95,8 @@ main.home > img {
 }
 
 p.invite {
-  padding-top: 210px;
-  padding-bottom: 15px;
+  margin-top: 210px;
+  margin-bottom: 15px;
   float: right;
 }
 
@@ -118,7 +117,7 @@ p.invite a:hover {
 }
 
 p.end {
-  padding-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 /* COMMANDS */
@@ -133,12 +132,12 @@ p.end {
 }
 
 dt {
-  padding-left: 10px;
-  padding-bottom: 2px;
+  margin-left: 10px;
+  margin-bottom: 2px;
 }
 
 dd {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
   font-style: italic;
 }
 
