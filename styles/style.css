@@ -68,6 +68,21 @@ nav li a.active {
 
 /* CONTENT */
 
+img#loader {
+  width: 5%;
+  height: 5%;
+  float: right;
+  padding-top: 5px;
+  padding-right: 10px;
+}
+
+p#apistatus {
+  float: right;
+  font-size: 14px;
+  padding-top: 0px;
+  padding-right: 10px;
+}
+
 main.home > p {
   font-size: 28px;
 }
@@ -80,7 +95,7 @@ main.home > img {
 }
 
 p.invite {
-  padding-top: 250px;
+  padding-top: 210px;
   padding-bottom: 15px;
   float: right;
 }
