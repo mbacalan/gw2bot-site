@@ -75,7 +75,7 @@ img#loader {
   margin-top: 12px;
   }
 
-p#apistatus {
+span#apistatus {
   float: right;
   font-size: 14px;
   margin-top: 12px;
