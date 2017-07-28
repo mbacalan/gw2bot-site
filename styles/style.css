@@ -72,7 +72,7 @@ img#loader {
   width: 5%;
   height: 5%;
   float: right;
-  margin-top: 12px;
+  margin-top: 8px;
   }
 
 span#apistatus {
@@ -80,7 +80,7 @@ span#apistatus {
   font-size: 14px;
   margin-top: 12px;
   margin-right: 10px;
-  margin-left: -17px;
+  margin-left: -15px;
 }
 
 main.home > p {
