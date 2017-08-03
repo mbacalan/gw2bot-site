@@ -24,7 +24,7 @@
   </nav>
   <main class="commands">
     <h3>The default prefix is $</h3>
-    <div class="ro">
+    <div class="row">
       <div class="column">
         <dl>
           <dt><strong>account</strong></dt>
@@ -99,23 +99,10 @@
           </details>
           <dt><strong>li</strong></dt>
           <dd>Shows how many Legendary Insights you have</dd>
-
         </dl>
       </div>
       <div class="column">
         <dl>
-          <details>
-            <summary>
-              <dt><strong>newsfeed</strong></dt>
-              <dd>For setting up automatic guildwars2.com news feed</dd>
-            </summary>
-            <li>
-              <stron>channel</stron>
-            </li>
-            <li class="desc"> Sets the channel to send the news to</li>
-            <li><strong>  toggle</strong></li>
-            <li class="desc"> Toggles posting news</li>
-          </details>
           <dt><strong>prefix</strong></dt>
           <dd>Sets bot's prefixes for this server</dd>
           <details>
@@ -139,14 +126,6 @@
             </summary>
             <li><strong> current</strong></li>
             <li class="desc"> Show current selling/buying transactions</li>
-          </details>
-          <details>
-            <summary>
-              <dt><strong>updatenotifier</strong></dt>
-              <dd>Commands related to setting up update notifier</dd>
-            </summary>
-            <li><strong>  channel</strong></li>
-            <li class="desc"> Sets the channel to send the update announcement</li>
           </details>
           <details>
             <summary>
@@ -179,6 +158,47 @@
         </dl>
       </div>
     </div>
+    <div class="row">
+      <h3> Notifiers </h3>
+      <div class="column">
+        <dl>
+          <details>
+            <summary>
+              <dt><strong>updatenotifier</strong></dt>
+              <dd>Commands related to setting up update notifier</dd>
+            </summary>
+            <li><strong>  channel</strong></li>
+            <li class="desc"> Sets the channel to send the update announcement</li>
+          </details>
+          <details>
+            <summary>
+              <dt><strong>newsfeed</strong></dt>
+              <dd>For setting up automatic guildwars2.com news feed</dd>
+            </summary>
+            <li>
+              <strong>channel</strong>
+            </li>
+            <li class="desc"> Sets the channel to send the news to</li>
+            <li><strong>  toggle</strong></li>
+            <li class="desc"> Toggles posting news</li>
+          </details>
+        </dl>
+      </div>
+      <div class="column">
+        <dl>
+          <details>
+            <summary>
+              <dt><strong>daily notifier</strong></dt>
+              <dd>Sends a list of dailies on server reset to specified channel</dd>
+            </summary>
+            <li><strong>channel</strong></li>
+            <li class="desc"> Sets the channel to send the dailies to</li>
+            <li><strong>toggle</strong></li>
+            <li class="desc">Toggles posting dailies at server reset</li>
+          </details>
+        </dl>
+      </div>
+
   </main>
   <footer>
     <p>2017 - GW2Bot created by Maselko.8142, Website created by Penemue.6827&nbsp; &nbsp;-</p>
