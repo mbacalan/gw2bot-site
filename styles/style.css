@@ -132,6 +132,10 @@ p.end {
   clear: both;
 }
 
+h3.category {
+  padding-top: 30px;
+}
+
 dt {
   margin-left: 10px;
   margin-bottom: 2px;
