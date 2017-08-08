@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="author" content="Muhammed Bacalan">
+  <meta name="description" content="GW2Bot is a powerful, Guild Wars 2 bot for Discord!">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="static/js/lib/jquery-3.2.1.min.js"><\/script>');
+  </script>
+  <script src="/static/js/apicheck.js"></script>
+  <title>GW2Bot - A Discord Bot</title>
+</head>
+
+<body>
+  <header>
+    <img class="banner" alt="Banner with GW2Bot Logo" src="/static/img/banner.png">
+  </header>
+  {% set navigation_bar = [
+    ('/', 'Home', 'Home'),
+    ('/commands', 'Commands', 'Commands'),
+    ('/faq', 'F.A.Q', 'F.A.Q')
+    ] -%}
+
+  {% set active_page = active_page|default('Home') -%}
+
+  <nav>
+    <ul>
+      {% for href, id, caption in navigation_bar %}
+      <li><a {% if id == active_page %} class="active" {% endif %} href="{{ href|e }}">{{ caption|e }}</a></li>
+      {% endfor %}
+      <li><a href={{support_link}} title="Join GW2Bot's Discord server">Support</a></li>
+    </ul>
+  </nav>
+
+  {% block body %} 
+  {% endblock %}
+
+  <footer>
+    <p>©2017 - GW2Bot created by Maselko.8142, Website created by Penemue.6827&nbsp; &nbsp;-</p>
+    <p>&nbsp; &nbsp; If you want to help with development, see <a href="https://github.com/Maselkov/GW2Bot">here for the bot </a>and
+      <a href="https://github.com/pen-mb/gw2bot ">here for the website.</a> Thanks to all contributors and to Twentysix for
+      <a href="https://github.com/Twentysix26/Red-DiscordBot">Red.</a></p>
+    <p> Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation.</p>
+  </footer>
+</body>
+
+</html>

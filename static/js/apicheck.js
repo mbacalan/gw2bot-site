@@ -6,6 +6,6 @@ $(document).ready(function() {
             $("#loader").hide();
         },
         success: function() { $('#apistatus').text('API is Online! ☑') },
-        error: function() { $('#apistatus').text('API is Offline! ☒') }
+        error: function() { $('#apistatus').text('Error reaching API ☒') }
     })
     });
