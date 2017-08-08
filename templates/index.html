@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="../static/css/style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="author" content="Muhammed Bacalan">
+  <meta name="description" content="GW2Bot is a powerful, Guild Wars 2 bot for Discord!">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="static/js/lib/jquery-3.2.1.min.js"><\/script>');
+  </script>
+  <script src="../static/js/apicheck.js"></script>
+  <title>GW2Bot - A Discord Bot</title>
+</head>
+
+<body>
+  {% include "header.html" %}
+  <nav>
+    <ul>
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="{{ url_for('commands') }}">Commands</a></li>
+      <li><a href="{{ url_for('faq') }}">F.A.Q</a></li>
+      <li><a href={{support_link}} title="Join GW2Bot's Discord server">Support</a></li>
+    </ul>
+  </nav>
+  <span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
+  <img id="loader" src="../static/img/loading.svg">
+  <main class="home">
+    <p>Bring the world of Tyria into your Discord server</p>
+    <img alt="A .gif demonstration of the bot" src="../static/img/botdemo.gif">
+    <p class="invite">
+      <a href={{invite_link}}>Invite!</a>
+    </p>
+  </main>
+  {% include "footer.html" %}
+</body>
+
+</html>
