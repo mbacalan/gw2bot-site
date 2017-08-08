@@ -1,13 +1,8 @@
 {% extends "layout.html"%} 
+
+{% set active_page = "F.A.Q" %}
+
 {% block body %}
-<nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="{{ url_for('commands') }}">Commands</a></li>
-    <li><a class="active" href="{{ url_for('faq') }}">F.A.Q</a></li>
-    <li><a href="{{support_link}}" title="Join GW2Bot's Discord server">Support</a></li>
-  </ul>
-</nav>
 <div id="wrapper">
   <!-- The wrapped is required for the footer -->
   <!-- It is only used on this page because other pages uses a different method to work with floating content -->

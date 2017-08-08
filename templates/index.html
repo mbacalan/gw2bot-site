@@ -1,13 +1,8 @@
 {% extends "layout.html"%} 
+
+{% set active_page = "Home" %}
+
 {% block body %}
-<nav>
-  <ul>
-    <li><a class="active" href="/">Home</a></li>
-    <li><a href="{{ url_for('commands') }}">Commands</a></li>
-    <li><a href="{{ url_for('faq') }}">F.A.Q</a></li>
-    <li><a href="{{support_link}}" title="Join GW2Bot's Discord server">Support</a></li>
-  </ul>
-</nav>
 <span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
 <img id="loader" src="../static/img/loading.svg">
 <main class="home">
