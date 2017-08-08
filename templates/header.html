@@ -1,3 +1,18 @@
 <header>
   <img class="banner" alt="Banner with GW2Bot Logo" src="../static/img/banner.png">
 </header>
+{% set navigation_bar = [
+  ('/', 'Home', 'Home'),
+  ('/commands', 'Commands', 'Commands'),
+  ('/faq', 'F.A.Q', 'F.A.Q')
+] -%}
+{% set active_page = active_page|default('Home') -%}
+<nav>
+  <ul>
+      {% for href, id, caption in navigation_bar %}
+    <li><a {% if id == active_page %} class="active"{% endif
+      %} href="{{ href|e }}">{{ caption|e }}</a></li>
+      {% endfor %}
+    <li><a href={{support_link}} title="Join GW2Bot's Discord server">Support</a></li>
+  </ul>
+</nav>

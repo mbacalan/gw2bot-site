@@ -14,15 +14,8 @@
   <div id="wrapper">
     <!-- The wrapped is required for the footer -->
     <!-- It is only used on this page because other pages uses a different method to work with floating content -->
-    {% include "header.html" %}
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="{{ url_for('commands') }}">Commands</a></li>
-        <li><a class="active" href="{{ url_for('faq') }}">F.A.Q</a></li>
-        <li><a href={{support_link}} title="Join GW2Bot's Discord server">Support</a></li>
-      </ul>
-    </nav>
+    {% extends "header.html" %}
+    {% set active_page = "F.A.Q" %}
     <main class="faq">
       <h3>How do I use the bot?</h3>
       <p>After the bot has been added to the server using <a href="https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=27648">this link</a>,
