@@ -1,0 +1,5 @@
+SECRET_KEY = ""
+DEBUG = True
+OAUTH2_CLIENT_ID = ""
+BOT_INVITE_LINK = "https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=27648"
+BOT_SUPPORT_SERVER_LINK = "https://discord.gg/VyQTrwP"

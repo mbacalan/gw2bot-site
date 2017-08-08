@@ -1,9 +1,11 @@
 from flask import Flask, render_template
+import config
 
 
 app = Flask(__name__)
-BOT_INVITE_LINK = "https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=27648"
-BOT_SUPPORT_SERVER_LINK = "https://discord.gg/VyQTrwP"
+app.config.from_object(config)
+BOT_INVITE_LINK = config.BOT_INVITE_LINK
+BOT_SUPPORT_SERVER_LINK = config.BOT_SUPPORT_SERVER_LINK
 
 @app.route('/')
 def home():
