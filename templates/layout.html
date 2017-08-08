@@ -19,8 +19,26 @@
   <header>
     <img class="banner" alt="Banner with GW2Bot Logo" src="../static/img/banner.png">
   </header>
-  {% block body %}
+  {% set navigation_bar = [
+    ('/', 'Home', 'Home'),
+    ('/commands', 'Commands', 'Commands'),
+    ('/faq', 'F.A.Q', 'F.A.Q')
+    ] -%}
+
+  {% set active_page = active_page|default('Home') -%}
+
+  <nav>
+    <ul>
+      {% for href, id, caption in navigation_bar %}
+      <li><a {% if id == active_page %} class="active" {% endif %} href="{{ href|e }}">{{ caption|e }}</a></li>
+      {% endfor %}
+      <li><a href={{support_link}} title="Join GW2Bot's Discord server">Support</a></li>
+    </ul>
+  </nav>
+
+  {% block body %} 
   {% endblock %}
+
   <footer>
     <p>©2017 - GW2Bot created by Maselko.8142, Website created by Penemue.6827&nbsp; &nbsp;-</p>
     <p>&nbsp; &nbsp; If you want to help with development, see <a href="https://github.com/Maselkov/GW2Bot">here for the bot </a>and
