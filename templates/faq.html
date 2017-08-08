@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <link href="../static/css/style.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
-  <meta charset="utf-8">
-  <meta name="author" content="Muhammed Bacalan">
-  <meta name="description" content="GW2Bot is a powerful, Guild Wars 2 bot for Discord!">
-  <title>GW2Bot - A Discord Bot</title>
-</head>
-
-<body>
-  <div id="wrapper">
-    <!-- The wrapped is required for the footer -->
-    <!-- It is only used on this page because other pages uses a different method to work with floating content -->
-    {% extends "header.html" %}
-    {% set active_page = "F.A.Q" %}
-    <main class="faq">
-      <h3>How do I use the bot?</h3>
-      <p>After the bot has been added to the server using <a href="https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=27648">this link</a>,
-        you can access the commands using $ prefix. Type $help for list of all commands. Server admins can change the prefix
-        to something else using $prefix.</p>
-      <h3>How do I setup game update notifications?</h3>
-      <p>First, you must have the "manage server" permission. Provided you have that, first point the bot to the channel where
-        it'll post announcements, using $updatenotifier channel. After that, enable it using $updatenotifier toggle on. Make
-        sure the bot has permissions to talk in that channel.</p>
-      <h3>Does the bot work in DMs?</h3>
-      <p class="end">Yes. API keys are cross-server too, if you're in multiple servers with the bot.</p>
-    </main>
-  </div>
-  {% include "footer.html" %}
-</body>
-
-</html>
+{% extends "layout.html"%} 
+{% block body %}
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="{{ url_for('commands') }}">Commands</a></li>
+    <li><a class="active" href="{{ url_for('faq') }}">F.A.Q</a></li>
+    <li><a href="{{support_link}}" title="Join GW2Bot's Discord server">Support</a></li>
+  </ul>
+</nav>
+<div id="wrapper">
+  <!-- The wrapped is required for the footer -->
+  <!-- It is only used on this page because other pages uses a different method to work with floating content -->
+  <main class="faq">
+    <h3>How do I use the bot?</h3>
+    <p>After the bot has been added to the server using <a href="https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=27648">this link</a>,
+      you can access the commands using $ prefix. Type $help for list of all commands. Server admins can change the prefix
+      to something else using $prefix.</p>
+    <h3>How do I setup game update notifications?</h3>
+    <p>First, you must have the "manage server" permission. Provided you have that, first point the bot to the channel where
+      it'll post announcements, using $updatenotifier channel. After that, enable it using $updatenotifier toggle on. Make
+      sure the bot has permissions to talk in that channel.</p>
+    <h3>Does the bot work in DMs?</h3>
+    <p class="end">Yes. API keys are cross-server too, if you're in multiple servers with the bot.</p>
+  </main>
+</div>
+{% endblock %}
