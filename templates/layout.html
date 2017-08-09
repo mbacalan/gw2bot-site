@@ -18,9 +18,6 @@
 <body>
   <header>
     <img class="banner" alt="Banner with GW2Bot Logo" src="/static/img/banner.png">
-    <p class="login">
-      <a href="/login">Login</a>
-    </p>
   </header>
   
   <nav>
@@ -36,15 +33,16 @@
       <li><a {% if id == active_page %} class="active" {% endif %} href="{{ href|e }}">{{ caption|e }}</a></li>
       {% endfor %}
       <li><a href={{support_link}} title="Join GW2Bot's Discord server">Support</a></li>
+      <div class="login">
+        <li><a href="/login">Login</a></li>
+      </div>
     </ul>
   </nav>
 
   {% block body %} 
   {% endblock %}
 
-  {% block footer %}
   <footer>
-  {% endblock %}
     <p>©2017 - GW2Bot created by Maselko.8142, Website created by Penemue.6827&nbsp; &nbsp;-</p>
     <p>&nbsp; &nbsp; If you want to help with development, see <a href="https://github.com/Maselkov/GW2Bot">here for the bot </a>and
       <a href="https://github.com/pen-mb/gw2bot ">here for the website.</a> Thanks to all contributors and to Twentysix for
