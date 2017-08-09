@@ -1,7 +1,7 @@
 html {
   font-family: 'ABeeZee', sans-serif;
   background-color: white;
-  height: 101%;
+  height: 100%;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -10,7 +10,6 @@ html {
 body {
   /* The height and min-height values are needed for footer.faq */
   height: 100%;
-  min-height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -25,7 +24,7 @@ main.faq,
 main.commands {
   width: 960px;
   margin: 0 auto;
-  padding-bottom: 55px;
+  padding-bottom: 60px;
   /* Height of footer */
 }
 
@@ -133,10 +132,6 @@ p.invite a:hover {
   background-color: red;
 }
 
-p.end {
-  margin-bottom: 25px;
-}
-
 /* COMMANDS */
 
 .column {
@@ -207,21 +202,10 @@ summary > dt::after {
 /* FOOTER */
 
 footer {
-  /* This method works with floating content */
-    clear: both;
-    position: relative;
-    height: 3em;
-    margin-top: -3em;
-    background-color: #463A3A;
-}
-
-footer.faq {
-  /* This method works with static content */
+/* This method works with floating content */
+  clear: both;
+  position: relative;
   height: 55px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   background-color: #463A3A;
 }
 
@@ -231,8 +215,8 @@ footer p {
   color: white;
   line-height: 2;
   display: inline-block;
-  margin: -5px;
-  margin-top: 3px;
+  margin: -1px;
+  margin-top: 7px;
 }
 
 footer a {
