@@ -45,7 +45,7 @@ def make_session(token=None, state=None, scope=None):
 @app.route('/')
 def home():
     return render_template('index.html', invite_link = BOT_INVITE_LINK, 
-                           support_lipynk = BOT_SUPPORT_SERVER_LINK)
+                           support_link = BOT_SUPPORT_SERVER_LINK)
 
 
 @app.route('/commands')
