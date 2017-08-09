@@ -1,14 +1,9 @@
-{% extends "layout.html"%} 
-
-{% set active_page = "Commands" %}
-
-{% block body %}
-<div id="wrapper">
+{% extends "layout.html"%} {% set active_page = "Commands" %} {% block body %}
 <main class="commands">
   <section class="maincom">
     <h3>The default prefix is $</h3>
     <div class="row">
-      <div class="column">
+      <div class="columnL">
         <dl>
           <dt><strong>account</strong></dt>
           <dd>Information about your account</dd>
@@ -73,16 +68,18 @@
               <dt><strong>key</strong></dt>
               <dd>Commands related to API keys</dd>
             </summary>
-            <li><strong>add</strong></li>
-            <li class="desc">Adds your key and associates it with your discord account</li>
-            <li><strong>  info</strong></li>
-            <li class="desc"> Information about your api key</li>
-            <li><strong>  remove</strong></li>
-            <li class="desc">Removes your key from the list</li>
+            <ul>
+              <li><strong>add</strong></li>
+              <li class="desc">Adds your key and associates it with your discord account</li>
+              <li><strong>  info</strong></li>
+              <li class="desc"> Information about your api key</li>
+              <li><strong>  remove</strong></li>
+              <li class="desc">Removes your key from the list</li>
+            </ul>
           </details>
         </dl>
       </div>
-      <div class="column">
+      <div class="columnR">
         <dl>
           <dt><strong>prefix</strong></dt>
           <dd>Sets bot's prefixes for this server</dd>
@@ -91,10 +88,12 @@
               <dt><strong>pvp</strong></dt>
               <dd>Commands related to PvP</dd>
             </summary>
-            <li><strong>  professions</strong></li>
-            <li class="desc"> Information about your pvp profession stats.</li>
-            <li><strong>  stats</strong></li>
-            <li class="desc"> Information about your general pvp stats</li>
+            <ul>
+              <li><strong>  professions</strong></li>
+              <li class="desc"> Information about your pvp profession stats.</li>
+              <li><strong>  stats</strong></li>
+              <li class="desc"> Information about your general pvp stats</li>
+            </ul>
           </details>
           <dt><strong>search</strong></dt>
           <dd>Find items on your account</dd>
@@ -105,36 +104,42 @@
               <dt><strong>tp</strong></dt>
               <dd>Commands related to Trading Post</dd>
             </summary>
-            <li><strong> current</strong></li>
-            <li class="desc"> Show current selling/buying transactions</li>
-            <li><strong> price</strong></li>
-            <li class="desc"> Checks price of an item</li>
+            <ul>
+              <li><strong> current</strong></li>
+              <li class="desc"> Show current selling/buying transactions</li>
+              <li><strong> price</strong></li>
+              <li class="desc"> Checks price of an item</li>
+            </ul>
           </details>
           <details>
             <summary>
               <dt><strong>wallet</strong></dt>
               <dd>Commands related to wallet</dd>
             </summary>
-            <li><strong> currencies</strong></li>
-            <li class="desc"> Returns a list of all currencies</li>
-            <li><strong>  currency</strong></li>
-            <li class="desc"> Info about a currency. See [p]wallet currencies for list</li>
-            <li><strong> maps</strong></li>
-            <li class="desc"> Shows map-specific currencies</li>
-            <li><strong>  show</strong></li>
-            <li class="desc"> Shows most important currencies in your wallet</li>
-            <li><strong>  tokens</strong></li>
-            <li class="desc"> Shows instance-specific currencies</li>
+            <ul>
+              <li><strong> currencies</strong></li>
+              <li class="desc"> Returns a list of all currencies</li>
+              <li><strong>  currency</strong></li>
+              <li class="desc"> Info about a currency. See [p]wallet currencies for list</li>
+              <li><strong> maps</strong></li>
+              <li class="desc"> Shows map-specific currencies</li>
+              <li><strong>  show</strong></li>
+              <li class="desc"> Shows most important currencies in your wallet</li>
+              <li><strong>  tokens</strong></li>
+              <li class="desc"> Shows instance-specific currencies</li>
+            </ul>
           </details>
           <details>
             <summary>
               <dt><strong>wvw</strong></dt>
               <dd>Commands related to WvW</dd>
             </summary>
-            <li><strong>   info</strong></li>
-            <li class="desc"> Info about a world. If none is provided, defaults to account's world</li>
-            <li><strong>  worlds</strong></li>
-            <li class="desc"> List all worlds</li>
+            <ul>
+              <li><strong>   info</strong></li>
+              <li class="desc"> Info about a world. If none is provided, defaults to account's world</li>
+              <li><strong>  worlds</strong></li>
+              <li class="desc"> List all worlds</li>
+            </ul>
           </details>
           <dt><strong>li</strong></dt>
           <dd>Shows how many Legendary Insights you have</dd>
@@ -147,46 +152,51 @@
   <section class="noticom">
     <div class="row">
       <h3 class="category"> Notifiers </h3>
-      <div class="column">
+      <div class="columnL">
         <dl>
           <details>
             <summary>
               <dt><strong>updatenotifier</strong></dt>
               <dd>Commands related to setting up update notifier</dd>
             </summary>
-            <li><strong>  channel</strong></li>
-            <li class="desc"> Sets the channel to send the update announcement</li>
+            <ul>
+              <li><strong>  channel</strong></li>
+              <li class="desc"> Sets the channel to send the update announcement</li>
+            </ul>
           </details>
           <details>
             <summary>
               <dt><strong>newsfeed</strong></dt>
               <dd>For setting up automatic guildwars2.com news feed</dd>
             </summary>
-            <li>
-              <strong>channel</strong>
-            </li>
-            <li class="desc"> Sets the channel to send the news to</li>
-            <li><strong>  toggle</strong></li>
-            <li class="desc"> Toggles posting news</li>
+            <ul>
+              <li>
+                <strong>channel</strong>
+              </li>
+              <li class="desc"> Sets the channel to send the news to</li>
+              <li><strong>  toggle</strong></li>
+              <li class="desc"> Toggles posting news</li>
+            </ul>
           </details>
         </dl>
       </div>
-      <div class="column">
+      <div class="columnR">
         <dl>
           <details>
             <summary>
               <dt><strong>daily notifier</strong></dt>
-              <dd>Sends a list of dailies on server reset to specified channel</dd>
+              <dd>Sends a list of dailies to specified channel</dd>
             </summary>
-            <li><strong>channel</strong></li>
-            <li class="desc"> Sets the channel to send the dailies to</li>
-            <li><strong>toggle</strong></li>
-            <li class="desc">Toggles posting dailies at server reset</li>
+            <ul>
+              <li><strong>channel</strong></li>
+              <li class="desc"> Sets the channel to send the dailies to</li>
+              <li><strong>toggle</strong></li>
+              <li class="desc">Toggles posting dailies at server reset</li>
+            </ul>
           </details>
         </dl>
       </div>
     </div>
   </section>
 </main>
-</div>
 {% endblock %}
