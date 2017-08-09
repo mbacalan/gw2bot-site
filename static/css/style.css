@@ -34,22 +34,13 @@ img.banner {
   height: 50%;
 }
 
-div.header {
-  position: relative;
-}
-
-div.login {
-  float: right;
-  position: absolute;
-  left: 1105px;
-  top: 181px;
-}
-
 p.login a {
   background-color: #99AAB5;
   color: white;
   padding: 5px 15px;
-  font-size: 18px;
+  float: right;
+  margin-bottom: -1px;
+  font-size: 16px;
   border: 1px solid black;
   text-decoration: none;
   transition: background-color 0.5s;
