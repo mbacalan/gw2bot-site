@@ -1,7 +1,8 @@
 html {
   font-family: 'ABeeZee', sans-serif;
   background-color: white;
-  height: 101%;
+  position: relative;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -9,15 +10,9 @@ html {
 
 body {
   /* The height and min-height values are needed for footer.faq */
-  height: 100%;
-  min-height: 100%;
+  margin-bottom: 50px;
   margin: 0;
   padding: 0;
-}
-
-#wrapper {
-  min-height: 100%;
-  position: relative;
 }
 
 main.home,
@@ -37,7 +32,7 @@ img.banner {
 p.login a {
   background-color: #99AAB5;
   color: white;
-  padding: 5px 15px;
+  padding: 5px 10px;
   float: right;
   margin-bottom: -1px;
   font-size: 16px;
@@ -82,13 +77,24 @@ nav li a.active {
   color: black;
 }
 
+div.login {
+  float: right;
+  background-color: #99AAB5;
+  transition: background-color 0.5s;
+}
+
+div.login li a:hover {
+  background-color: #7289DA;
+}
+
 /* CONTENT */
 
 img#loader {
-  width: 5%;
-  height: 5%;
+  width: 20px;
+  height: 20px;
   float: right;
-  margin-top: 8px;
+  margin-top: 12px;
+  margin-right: 15px;
   }
 
 span#apistatus {
@@ -107,7 +113,7 @@ main.home > img {
   width: 75%;
   height: 75%;
   float: left;
-  margin-bottom: 25px;
+  margin-bottom: 75px;
   border-radius: 5px;
 }
 
@@ -135,7 +141,8 @@ p.invite a:hover {
 
 /* COMMANDS */
 
-.column {
+.columnR,
+.columnL {
   width: 50%;
   float: left;
 }
@@ -144,18 +151,33 @@ p.invite a:hover {
   clear: both;
 }
 
+.columnR {
+  text-align: right;
+}
+
+.columnL {
+  text-align: left;
+}
+
 h3.category {
   padding-top: 30px;
 }
 
 dt {
-  margin-left: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-size: 18px;
   margin-bottom: 2px;
 }
 
 dd {
+  padding-right: 10px;
   margin-bottom: 10px;
   font-style: italic;
+}
+
+.columnL dt {
+  margin-left: 30px;
 }
 
 li.desc {
@@ -195,29 +217,26 @@ details > summary:first-of-type {
   list-style-type: none;
 }
 
-summary > dt::after {
-  /* Adds a downwards arrow to every <dt> that is a direct child of <summary> */
-  content: " ↴"
+.columnL summary > dt::after {
+  content: " ↷"
+}
+
+.columnR summary > dt::before {
+  content: "↶ "
+}
+
+.noticom {
+  margin-bottom: 250px;
 }
 
 /* FOOTER */
 
 footer {
-  /* This method works with floating content */
-    clear: both;
-    position: relative;
-    height: 3em;
-    margin-top: -3em;
-    background-color: #463A3A;
-}
-
-footer.faq {
   /* This method works with static content */
-  height: 55px;
-  width: 100%;
   position: absolute;
   bottom: 0;
-  left: 0;
+  width: 100%;
+  height: 50px;
   background-color: #463A3A;
 }
 
@@ -227,8 +246,8 @@ footer p {
   color: white;
   line-height: 2;
   display: inline-block;
-  margin: -5px;
-  margin-top: 3px;
+  margin: -1px;
+  margin-top: 4px;
 }
 
 footer a {
