@@ -15,10 +15,14 @@
 
 <body>
   <header>
-    <img class="banner" alt="Banner with GW2Bot Logo" src="/static/img/banner.png">
+    <img class="img-fluid" alt="Banner with GW2Bot Logo" src="/static/img/banner.png">
   </header>
   
-  <nav>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-md">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+    </button>
     {% set navigation_bar = [
       ('/', 'Home', 'Home'),
       ('/commands', 'Commands', 'Commands'),
@@ -26,15 +30,21 @@
       ] -%}
   
     {% set active_page = active_page|default('Home') -%}
-    <ul>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+     <ul class="navbar-nav">
       {% for href, id, caption in navigation_bar %}
-      <li><a {% if id == active_page %} class="active" {% endif %} href="{{ href|e }}">{{ caption|e }}</a></li>
+      <li class="nav-item">
+        <a class="nav-link" {% if id == active_page %} class="nav-link active" {% endif %} href="{{ href|e }}">{{ caption|e }}</a>
+      </li>
       {% endfor %}
-      <li><a href={{support_link}} title="Join GW2Bot's Discord server">Support</a></li>
-      <div class="login">
-        <li><a href="/login">Login</a></li>
-      </div>
-    </ul>
+      <li class="nav-item">
+        <a class="nav-link" href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary text-right" href="/login">Login</a>
+      </li>
+      </ul>
+    </div>
   </nav>
 
   {% block body %} 
