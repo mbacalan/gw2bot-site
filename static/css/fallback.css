@@ -1,0 +1,88 @@
+/* NAVIGATON BAR */
+
+nav ul {
+  list-style-type: none;
+  /*this is to remove the dots in list items*/
+  margin: 0;
+  padding: 6px;
+  overflow: hidden;
+  /*this makes the list to be a fullwidth navbar*/
+  background-color: #463A3A;
+}
+
+nav a {
+  color: white;
+  padding: 25px 25px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+
+nav li {
+  display: inline;
+}
+
+nav li a:hover {
+  background-color: gray;
+}
+
+nav li a.active {
+  background-color: white;
+  color: black;
+}
+
+div.login {
+  float: right;
+  background-color: #99AAB5;
+  transition: background-color 0.5s;
+}
+
+div.login li a:hover {
+  background-color: #7289DA;
+}
+
+/* ---------- */
+
+img#loader {
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top: 12px;
+  margin-right: 15px;
+  }
+
+span#apistatus {
+  float: right;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-right: 10px;
+  margin-left: -15px;
+}
+
+main.home > p {
+  font-size: 28px;
+}
+
+/* FOOTER */
+
+footer {
+  /* This method works with static content */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #463A3A;
+}
+
+footer p {
+  text-align: right;
+  font-size: 10.5px;
+  color: white;
+  line-height: 2;
+  display: inline-block;
+  margin: -1px;
+  margin-top: 4px;
+}
+
+footer a {
+  color: white;
+}
