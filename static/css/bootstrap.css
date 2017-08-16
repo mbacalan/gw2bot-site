@@ -63,6 +63,7 @@
 }
 
 html {
+  min-height: 100%;
   box-sizing: border-box;
   font-family: sans-serif;
   line-height: 1.15;
@@ -87,6 +88,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 body {
+  margin-bottom: 50px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
@@ -3250,7 +3252,7 @@ tbody.collapse.show {
       align-items: center;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.001rem 0.001rem;
 }
 
 .navbar > .container,
@@ -8183,3 +8185,26 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden !important;
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+footer {
+  /* This method works with static content */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #463A3A;
+}
+
+footer p {
+  text-align: right;
+  font-size: 10.5px;
+  color: white;
+  line-height: 2;
+  display: inline-block;
+  margin: -1px;
+  margin-top: 4px;
+}
+
+footer a {
+  color: white;
+}
