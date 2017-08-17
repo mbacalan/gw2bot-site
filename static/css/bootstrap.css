@@ -8185,6 +8185,46 @@ a.text-dark:focus, a.text-dark:hover {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+/* COMMANDS */
+
+li.desc {
+  list-style-type: none;
+}
+
+details {
+  background-color: #463A3A;
+  color: white;
+  outline: none;
+}
+
+details[open] summary {
+  background: transparent;
+  background-color: #C32319;
+  color: black;
+}
+
+summary {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+summary:hover {
+  background-color: #C32319;
+}
+
+details summary::-moz-details-marker {
+  /* Hide the default marker for CHROME. */
+  display: none;
+}
+
+details > summary:first-of-type {
+  /*Hide the default marker for FIREFOX */
+  list-style-type: none;
+}
+
+
 /* STICKY FOOTER */
 html {
   position: relative;
@@ -8217,4 +8257,3 @@ footer p {
 p.pusher {
   padding-bottom: 10px;
 }
-
