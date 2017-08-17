@@ -63,7 +63,6 @@
 }
 
 html {
-  min-height: 100%;
   box-sizing: border-box;
   font-family: sans-serif;
   line-height: 1.15;
@@ -8186,25 +8185,36 @@ a.text-dark:focus, a.text-dark:hover {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-footer {
-  /* This method works with static content */
+/* STICKY FOOTER */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 50px;
+}
+.footer {
+  text-align: center;
   position: absolute;
   bottom: 0;
   width: 100%;
+  /* Set the fixed height of the footer here */
   height: 50px;
-  background-color: #463A3A;
+  line-height: 10px; /* Vertically center the text there */
+  background-color: #343A40;
 }
 
 footer p {
-  text-align: right;
+  display: inline-block;
   font-size: 10.5px;
   color: white;
   line-height: 2;
-  display: inline-block;
   margin: -1px;
   margin-top: 4px;
 }
 
-footer a {
-  color: white;
+p.pusher {
+  padding-bottom: 10px;
 }
+
