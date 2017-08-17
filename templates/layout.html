@@ -13,54 +13,57 @@
   <title>GW2Bot - A Discord Bot</title>
 </head>
 
+{% set navigation_bar = [
+  ('/', 'Home', 'Home'),
+  ('/commands', 'Commands', 'Commands'),
+  ('/faq', 'F.A.Q', 'F.A.Q')
+  ] -%}
+
+{% set active_page = active_page|default('Home') -%}
+
 <body>
   <div class="container-fluid">
     <div class="row">
-        <img class="img-fluid" alt="Banner with GW2Bot Logo" src="/static/img/banner.png">
+      <img class="img-fluid" alt="Banner with GW2Bot Logo" src="/static/img/banner.png">
     </div>
   </div>
-  
+
   <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-md">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-    aria-expanded="false" aria-label="Toggle navigation">
+      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    {% set navigation_bar = [
-      ('/', 'Home', 'Home'),
-      ('/commands', 'Commands', 'Commands'),
-      ('/faq', 'F.A.Q', 'F.A.Q')
-      ] -%}
-  
-    {% set active_page = active_page|default('Home') -%}
     <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
-     <ul class="navbar-nav">
-      {% for href, id, caption in navigation_bar %}
-      <li{% if id == active_page %} class="nav-item active" {% endif %}>
-        <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
-      </li>
-      {% endfor %}
-      <li class="nav-item">
-        <a class="nav-link" href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-primary text-right" href="/login">Login</a>
-      </li>
+      <ul class="navbar-nav">
+        {% for href, id, caption in navigation_bar %}
+        <li{% if id == active_page %} class="nav-item active" {% endif %}>
+          <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+        </li>
+        {% endfor %}
+        <li class="nav-item">
+          <a class="nav-link" href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="/login">Login</a>
+        </li>
       </ul>
     </div>
   </nav>
+  <span class="float-right" id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
 
   {% block body %} 
   {% endblock %}
   
   <p class="pusher"></p>
 
-  <footer class="footer">
-    <p>©2017 - GW2Bot created by Maselko.8142, Website created by Penemue.6827&nbsp; &nbsp;-</p>
-    <p>&nbsp; &nbsp; If you want to help with development, see <a class="text-info" href="https://github.com/Maselkov/GW2Bot">here for the bot </a>and
-      <a class="text-info" href="https://github.com/pen-mb/gw2bot ">here for the website.</a> Thanks to all contributors and to Twentysix for
-      <a class="text-info" href="https://github.com/Twentysix26/Red-DiscordBot">Red.</a></p>
-    <p> Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation.</p>
-  </footer>
+<footer class="footer">
+  <p>©2017 - GW2Bot created by Maselko.8142, Website created by Penemue.6827&nbsp; &nbsp;-</p>
+  <p>&nbsp; &nbsp; If you want to help with development, see <a class="text-info" href="https://github.com/Maselkov/GW2Bot">here for the bot </a>and
+    <a class="text-info" href="https://github.com/pen-mb/gw2bot ">here for the website.</a> Thanks to all contributors and
+    to Twentysix for
+    <a class="text-info" href="https://github.com/Twentysix26/Red-DiscordBot">Red.</a></p>
+  <p> Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation.</p>
+</footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
