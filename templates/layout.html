@@ -43,13 +43,17 @@
         <li class="nav-item">
           <a class="nav-link" href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
         </li>
+      </ul>
+    </div>
+    <div class="navbar-right mr-2">
+      <ul class="navbar-nav"
         <li class="nav-item">
-          <a class="nav-link text-primary" href="/login">Login</a>
-        </li>
+            <a class="nav-link text-info" href="/login">Login</a>
+          </li>
       </ul>
     </div>
   </nav>
-  <span class="float-right" id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
+  <p class="text-right"> <span class=" mr-2" id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span></p>
 
   {% block body %} 
   {% endblock %}
