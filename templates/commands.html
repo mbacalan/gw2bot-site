@@ -14,7 +14,9 @@
         <dt>account</dt>
         <dd>Information about your account</dd>
         <dt>bosses</dt>
-        <dd>Lists all the bosses you killed this week</dd>
+        <dd>Lists all the bosses you haven't killed this week</dd>
+        <dt>cats</dt>
+        <dd>Displays cats you haven't collected</dd>
         <dt>changelog</dt>
         <dd>List of recent changes to the bot</dd>
         <details>
@@ -29,6 +31,8 @@
             <li class="desc">Info about the given character</li>
             <li>list</li>
             <li class="desc">Lists all your characters</li>
+            <li>birthdays</li>
+            <li class="desc">Lists days until each of your character's birthdays</li>
           </ul>
         </details>
         <details>
@@ -51,8 +55,12 @@
             <li class="desc"> Show today's WvW dailies</li>
           </ul>
         </details>
+        <dt>dulfy</dt>
+        <dd>Search dulfy.net</dd>
         <dt>et</dt>
         <dd>The event timer. Shows upcoming world bosses</dd>
+        <dt>hotet</dt>
+        <dd>The HoT event timer. Shows phases of HoT maps</dd>
         <details>
           <summary>
             <dt>guild</dt>
@@ -163,11 +171,13 @@
         <details>
           <summary>
             <dt>updatenotifier</dt>
-            <dd>Commands related to setting up update notifier</dd>
+            <dd>Commands related to setting up notifcations whenever the game updates</dd>
           </summary>
           <ul>
             <li>channel</li>
             <li class="desc">Sets the channel to send the update announcement</li>
+            <li>toggle</li>
+            <li class="desc">Toggles posting update notifications</li>
           </ul>
         </details>
         <details>
@@ -190,7 +200,7 @@
       <dl>
         <details>
           <summary>
-            <dt>daily notifier</dt>
+            <dt>dailynotifier</dt>
             <dd>Sends a list of dailies to specified channel</dd>
           </summary>
           <ul>
@@ -198,6 +208,12 @@
             <li class="desc">Sets the channel to send the dailies to</li>
             <li>toggle</li>
             <li class="desc">Toggles posting dailies at server reset</li>
+            <li>autodelete</li>
+            <li class="desc">Toggles autodeleting last day's daily notification</li>
+            <li>autopin</li>
+            <li class="desc">Toggles autopinning daily notifications</li>
+            <li>categories</li>
+            <li class="desc">Choose which categories to display on daily notifications</li>
           </ul>
         </details>
       </dl>
