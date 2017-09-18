@@ -10,156 +10,177 @@
   <hr>
   <div class="row">
     <div class="col">
-      <dl>
-        <dt>account</dt>
-        <dd>Information about your account</dd>
-        <dt>bosses</dt>
-        <dd>Lists all the bosses you haven't killed this week</dd>
-        <dt>cats</dt>
-        <dd>Displays cats you haven't collected</dd>
-        <dt>changelog</dt>
-        <dd>List of recent changes to the bot</dd>
-        <details>
-          <summary>
-            <dt>character</dt>
-            <dd>Character related commands</dd>
-          </summary>
-          <ul>
-            <li>gear</li>
-            <li class="desc">Displays the gear of given character</li>
-            <li>info</li>
-            <li class="desc">Info about the given character</li>
-            <li>list</li>
-            <li class="desc">Lists all your characters</li>
-            <li>birthdays</li>
-            <li class="desc">Lists days until each of your character's birthdays</li>
-          </ul>
-        </details>
-        <details>
-          <summary>
-            <dt>daily</dt>
-            <dd>Commands showing daily things</dd>
-          </summary>
-          <ul>
-            <li>all</li>
-            <li class="desc">Show today's all dailies</li>
-            <li>fractals</li>
-            <li class="desc">Show today's fractal dailie</li>
-            <li>psna</li>
-            <li class="desc">Show today's Pact Supply Network Agent locations</li>
-            <li>pve</li>
-            <li class="desc">Show today's PvE dailies</li>
-            <li>pvp</li>
-            <li class="desc">Show today's PvP dailies</li>
-            <li>wvw</li>
-            <li class="desc"> Show today's WvW dailies</li>
-          </ul>
-        </details>
-        <dt>dulfy</dt>
-        <dd>Search dulfy.net</dd>
-        <dt>et</dt>
-        <dd>The event timer. Shows upcoming world bosses</dd>
-        <dt>hotet</dt>
-        <dd>The HoT event timer. Shows phases of HoT maps</dd>
-        <details>
-          <summary>
-            <dt>guild</dt>
-            <dd>Guild related commands</dd>
-          </summary>
-          <ul>
-            <li>info</li>
-            <li class="desc">Information about general guild stats</li>
-            <li>members</li>
-            <li class="desc">Get list of all members and their ranks</li>
-            <li>treasury</li>
-            <li class="desc">Get list of current and needed items for upgrades</li>
-          </ul>
-        </details>
-        <dt>gw2wiki</dt>
-        <dd>Search the Guild Wars 2 wiki</dd>
-        <details>
-          <summary>
-            <dt>key</dt>
-            <dd>Commands related to API keys</dd>
-          </summary>
-          <ul>
-            <li>add</li>
-            <li class="desc">Adds your key and associates it with your discord account</li>
-            <li>info</li>
-            <li class="desc">Information about your api key</li>
-            <li>remove</li>
-            <li class="desc">Removes your key from the list</li>
-          </ul>
-        </details>
-      </dl>
+      <ul class="list-group">
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">account</h5>
+          <small>Information about your account</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">bosses</h5>
+          <small>Lists all the bosses you haven't killed this week</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">cats</h5>
+          <small>Displays cats you haven't collected</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">changelog</h5>
+          <small>List of recent changes to the bot</small>
+        </div>
+        <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">character <span class="badge badge-secondary">4</span></h5>
+          <small>Character related commands</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">gear</p>
+            <small>Displays the gear of given character</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">info</p>
+            <small>Info about the given character</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">list</p>
+            <small>Lists all your characters</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">birthdays</p>
+            <small>Lists days until each of your character's birthdays</small>
+        </div>
+        <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">daily <span class="badge badge-secondary">6</span></h5>
+          <small>Commands showing daily things</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">all</p>
+            <small>Show today's all dailies</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">fractal</p>
+            <small>Show today's fractal dailies</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">psna</p>
+            <small>Show today's Pact Supply Network Agent locations</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">pve</p>
+            <small>Show today's PvE dailies</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">pvp</p>
+            <small>Show today's PvP dailies</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">wvw</p>
+            <small>Show today's WvW dailies</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">dulfy</h5>
+          <small>Search dulfy.net</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">et</h5>
+          <small>The event timer. Shows upcoming world bosses</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">hotet</h5>
+          <p class="mb-1">The HoT event timer. Shows phases of HoT maps</p>
+        </div>
+        <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">guild <span class="badge badge-secondary">3</span></h5>
+          <small>Guild related commands</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">info</p>
+            <small>Information about general guild stats</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">members</p>
+            <small>Get list of all members and their ranks</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">treasury</p>
+            <small>Get list of current and needed items for upgrades</small>
+          </div>
+          <div class="list-group-item list-group-item-secondary">
+              <h5 class="font-weight-bold">gw2wiki</h5>
+              <small>Search the Guild Wars 2 wiki</small>
+          </div>
+      </ul>
     </div>
     <div class="col">
-      <dl>
-        <dt>prefix</dt>
-        <dd>Sets bot's prefixes for this server</dd>
-        <details>
-          <summary>
-            <dt>pvp</dt>
-            <dd>Commands related to PvP</dd>
-          </summary>
-          <ul>
-            <li>  professions</li>
-            <li class="desc">Information about your pvp profession stats.</li>
-            <li>  stats</li>
-            <li class="desc">Information about your general pvp stats</li>
-          </ul>
-        </details>
-        <dt>search</dt>
-        <dd>Find items on your account</dd>
-        <dt>skillinfo</dt>
-        <dd>Information about a given skill</dd>
-        <details>
-          <summary>
-            <dt>tp</dt>
-            <dd>Commands related to Trading Post</dd>
-          </summary>
-          <ul>
-            <li>current</li>
-            <li class="desc">Show current selling/buying transactions</li>
-            <li> price</li>
-            <li class="desc">Checks price of an item</li>
-          </ul>
-        </details>
-        <details>
-          <summary>
-            <dt>wallet</dt>
-            <dd>Commands related to wallet</dd>
-          </summary>
-          <ul>
-            <li>currencies</li>
-            <li class="desc">Returns a list of all currencies</li>
-            <li> currency</li>
-            <li class="desc">Info about a currency. See [p]wallet currencies for list</li>
-            <li>maps</li>
-            <li class="desc">Shows map-specific currencies</li>
-            <li>show</li>
-            <li class="desc">Shows most important currencies in your wallet</li>
-            <li>tokens</li>
-            <li class="desc">Shows instance-specific currencies</li>
-          </ul>
-        </details>
-        <details>
-          <summary>
-            <dt>wvw</dt>
-            <dd>Commands related to WvW</dd>
-          </summary>
-          <ul>
-            <li>info</li>
-            <li class="desc">Info about a world. If none is provided, defaults to account's world</li>
-            <li>worlds</li>
-            <li class="desc"> List all worlds</li>
-          </ul>
-        </details>
-        <dt>li</dt>
-        <dd>Shows how many Legendary Insights you have</dd>
-        <dt>help</dt>
-        <dd>Shows the commands menu</dd>
-      </dl>
+      <ul class="list-group">
+         <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">key <span class="badge badge-secondary">3</span></h5>
+          <small>Commands related to API keys</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">add</p>
+            <small>Adds your key and associates it with your discord account</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">info</p>
+            <small>Information about your API key</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">remove</p>
+            <small>Removes your key from the list</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">prefix</h5>
+          <small>Sets bot's prefixes for this server</small>
+        </div>
+        <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">pvp <span class="badge badge-secondary">2</span></h5>
+          <small>Commands related to PvP</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">professions</p>
+            <small>Information about your pvp profession stats</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">stats</p>
+            <small>Information about your general PvP stats</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">search</h5>
+          <small>Search your account for items</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">skillinfo</h5>
+          <small>Information about a given skill</small>
+        </div>
+        <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">tp <span class="badge badge-secondary">2</span></h5>
+          <small>Commands related to Trading Post</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">current</p>
+            <small>Show current selling/buying transactions</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">price</p>
+            <small>Checks price of an item</small>
+        </div>
+        <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">wallet <span class="badge badge-secondary">5</span></h5>
+          <p class="mb-1">Commands related to wallet</p>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">currencies</p>
+            <small>Returns a list of all currencies</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">currency</p>
+            <small>Info about a currency. See [p]wallet currencies for list</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">maps</p>
+            <small>Shows map-specific currencies</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">show</p>
+            <small>Shows most important currencies in your wallet</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">tokens</p>
+            <small>Shows instance-specific currencies</small>
+        </div>
+        <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">wvw <span class="badge badge-secondary">2</span></h5>
+          <small>Commands related to WvW</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">info</p>
+            <small>Info about a world. If none is provided, defaults to account's world</small>
+          <hr class="m-1">
+            <p class="font-weight-bold mb-1">worlds</p>
+            <small>List all worlds</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">li</h5>
+          <small>Shows how many Legendary Insights you have</small>
+        </div>
+        <div class="list-group-item list-group-item-secondary">
+          <h5 class="font-weight-bold">help</h5>
+          <small>Shows the commands menu</small>
+        </div>
+      </ul>
     </div>
   </div>
   <hr>
@@ -167,57 +188,49 @@
   <hr>
   <div class="row">
     <div class="col">
-      <dl>
-        <details>
-          <summary>
-            <dt>updatenotifier</dt>
-            <dd>Commands related to setting up notifcations whenever the game updates</dd>
-          </summary>
-          <ul>
-            <li>channel</li>
-            <li class="desc">Sets the channel to send the update announcement</li>
-            <li>toggle</li>
-            <li class="desc">Toggles posting update notifications</li>
-          </ul>
-        </details>
-        <details>
-          <summary>
-            <dt>newsfeed</dt>
-            <dd>For setting up automatic guildwars2.com news feed</dd>
-          </summary>
-          <ul>
-            <li>
-              channel
-            </li>
-            <li class="desc">Sets the channel to send the news to</li>
-            <li>toggle</li>
-            <li class="desc">Toggles posting news</li>
-          </ul>
-        </details>
-      </dl>
+      <div class="list-group-item list-group-item-danger">
+        <h5 class="font-weight-bold">updatenotifier <span class="badge badge-secondary">2</span></h5>
+        <p class="mb-1">Commands related to setting up notifcations whenever the game updates</p>
+      <hr class="m-1">
+        <p class="font-weight-bold mb-1">channel</p>
+        <small>Sets the channel to send the dailies to</small>
+      <hr class="m-1">
+        <p class="font-weight-bold mb-1">toggle</p>
+        <small>Toggles posting dailies at server reset</small>
+      </div>
+      <div class="list-group-item list-group-item-danger">
+          <h5 class="font-weight-bold">newsfeed <span class="badge badge-secondary">2</span></h5>
+          <p class="mb-1">For setting up automatic guildwars2.com news feed</p>
+        <hr class="m-1">
+          <p class="font-weight-bold mb-1">channel</p>
+          <small>Sets the channel to send the dailies to</small>
+        <hr class="m-1">
+          <p class="font-weight-bold mb-1">toggle</p>
+          <small>Toggles posting dailies at server reset</small>
+      </div>
     </div>
     <div class="col">
-      <dl>
-        <details>
-          <summary>
-            <dt>dailynotifier</dt>
-            <dd>Sends a list of dailies to specified channel</dd>
-          </summary>
-          <ul>
-            <li>channel</li>
-            <li class="desc">Sets the channel to send the dailies to</li>
-            <li>toggle</li>
-            <li class="desc">Toggles posting dailies at server reset</li>
-            <li>autodelete</li>
-            <li class="desc">Toggles autodeleting last day's daily notification</li>
-            <li>autopin</li>
-            <li class="desc">Toggles autopinning daily notifications</li>
-            <li>categories</li>
-            <li class="desc">Choose which categories to display on daily notifications</li>
-          </ul>
-        </details>
-      </dl>
+      <div class="list-group-item list-group-item-danger">
+        <h5 class="font-weight-bold">dailynotifier <span class="badge badge-secondary">5</span></h5>
+        <p class="mb-1">Sends a list of dailies to specified channel</p>
+        <hr class="m-1">
+          <p class="font-weight-bold mb-1">channel</p>
+          <small>Sets the channel to send the dailies to</small>
+        <hr class="m-1">
+          <p class="font-weight-bold mb-1">toggle</p>
+          <small>Toggles posting dailies at server reset</small>
+        <hr class="m-1">
+          <p class="font-weight-bold mb-1">autodelete</p>
+          <small>Toggles autodeleting last day's daily notification</small>
+        <hr class="m-1">
+          <p class="font-weight-bold mb-1">autopin</p>
+          <small>Toggles autopinning daily notifications</small>
+        <hr class="m-1">
+          <p class="font-weight-bold mb-1">categories</p>
+          <small>Choose which categories to display on daily notifications</small>
+      </div>
     </div>
   </div>
 </div>
+
 {% endblock %}
