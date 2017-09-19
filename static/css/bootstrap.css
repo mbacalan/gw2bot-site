@@ -3846,36 +3846,8 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
-/* COMMANDS */
-li.desc {
-  list-style-type: none; }
-
-details {
-  background-color: #463A3A;
-  color: white;
-  outline: none; }
-  details [open] summary {
-    background: transparent;
-    background-color: #C32319;
-    color: black; }
-
-summary {
-  background-color: white;
-  color: black;
-  cursor: pointer;
-  transition: background-color 0.5s; }
-  summary :hover {
-    background-color: #C32319; }
-
-details summary::-moz-details-marker {
-  /* Hide the default marker for CHROME. */
-  display: none; }
-
-details > summary:first-of-type {
-  /*Hide the default marker for FIREFOX */
-  list-style-type: none; }
-
-/* STICKY FOOTER */
+/* Sticky footer styles
+-------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%; }
@@ -3885,23 +3857,16 @@ body {
   margin-bottom: 50px; }
 
 .footer {
-  text-align: center;
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 50px;
-  line-height: 10px;
-  /* Vertically center the text there */
   background-color: #343A40; }
 
 footer p {
-  display: inline-block;
-  font-size: 10.5px;
+  text-align: center;
   color: white;
-  line-height: 2;
-  margin: -1px;
-  margin-top: 4px; }
-
-p.pusher {
-  padding-bottom: 10px; }
+  font-size: 11px;
+  line-height: 0.5px;
+  margin-top: 15px; }
