@@ -1,5 +1,5 @@
 # gw2bot-site
-A website repository for [GW2Bot](https://github.com/Maselkov/GW2Bot) by Maselkov.
+A website repository for [GW2Bot](https://github.com/Maselkov/GW2Bot) by Maselkov. Deployed at [gw2bot.info](https://gw2bot.info/)
 
 The purpose of the website is to provide information about the bot, present its features and make it more accessible.
 
