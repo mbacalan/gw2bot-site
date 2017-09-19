@@ -3,13 +3,11 @@
 {% set active_page = "Home" %}
 
 {% block body %}
-<span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
-<img id="loader" src="/static/img/loading.svg">
-<main class="home">
-  <p>Bring the world of Tyria into your Discord server</p>
-  <img alt="A .gif demonstration of the bot" src="/static/img/botdemo.gif">
-  <p class="invite">
-    <a href={{invite_link}}>Invite!</a>
-  </p>
-</main>
+
+<div class="container text-center">
+  <p class="display-4 mt-3 text-center">Bring the world of Tyria into Discord</p>
+  <p><a class="btn btn-lg btn-danger" href={{invite_link}}>Add To Server!</a></p>
+  <hr>
+  <img class="img-fluid rounded mx-auto d-block" alt="A .gif demonstration of the bot" src="/static/img/botdemo.gif">
+</div>
 {% endblock %}
