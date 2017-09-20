@@ -99,3 +99,4 @@ ENV/
 .mypy_cache/
 
 .vscode/tasks.json
+navbar.html
