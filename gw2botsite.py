@@ -3,7 +3,6 @@ from flask import Flask, render_template, redirect, session, request, url_for, j
 from requests_oauthlib import OAuth2Session
 import config
 
-
 app = Flask(__name__)
 app.config.from_object(config)
 
@@ -16,7 +15,6 @@ AUTHORIZATION_BASE_URL = API_BASE_URL + '/oauth2/authorize'
 TOKEN_URL = API_BASE_URL + '/oauth2/token'
 BOT_INVITE_LINK = config.BOT_INVITE_LINK
 BOT_SUPPORT_SERVER_LINK = config.BOT_SUPPORT_SERVER_LINK
-
 
 if 'http://' in OAUTH2_REDIRECT_URI:
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = 'true'
@@ -41,28 +39,33 @@ def make_session(token=None, state=None, scope=None):
         token_updater=token_updater)
 
 
-
 @app.route('/')
 def home():
-    return render_template('index.html', invite_link = BOT_INVITE_LINK, 
-                           support_link = BOT_SUPPORT_SERVER_LINK)
+    return render_template(
+        'index.html',
+        invite_link=BOT_INVITE_LINK,
+        support_link=BOT_SUPPORT_SERVER_LINK)
 
 
 @app.route('/commands')
 def commands():
-    return render_template('commands.html', support_link = BOT_SUPPORT_SERVER_LINK)
+    return render_template(
+        'commands.html', support_link=BOT_SUPPORT_SERVER_LINK)
 
 
 @app.route('/faq')
 def faq():
-    return render_template('faq.html', support_link = BOT_SUPPORT_SERVER_LINK)
+    return render_template('faq.html', support_link=BOT_SUPPORT_SERVER_LINK)
+
 
 @app.route('/login')
 def login():
     discord = make_session(scope=["identify"])
-    authorization_url, state = discord.authorization_url(AUTHORIZATION_BASE_URL)
+    authorization_url, state = discord.authorization_url(
+        AUTHORIZATION_BASE_URL)
     session['oauth2_state'] = state
     return redirect(authorization_url)
+
 
 @app.route('/callback')
 def callback():
@@ -75,7 +78,6 @@ def callback():
         authorization_response=request.url)
     session['oauth2_token'] = token
     return redirect(url_for('.home'))
-
 
 
 if __name__ == '__main__':
