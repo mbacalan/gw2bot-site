@@ -55,7 +55,10 @@ def commands():
 
 @app.route('/faq')
 def faq():
-    return render_template('faq.html', support_link=BOT_SUPPORT_SERVER_LINK)
+    return render_template(
+        'faq.html',
+        invite_link=BOT_INVITE_LINK,
+        support_link=BOT_SUPPORT_SERVER_LINK)
 
 
 @app.route('/login')
