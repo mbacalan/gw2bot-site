@@ -12,39 +12,51 @@
   <div class="row">
     <div class="col">
       <ul class="list-group">
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">account</h4>
+          <h4>account</h4>
           <small>Information about your account</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">achievementinfo</h4>
+          <h4>achievementinfo</h4>
           <small>Display achievement information and your completion status</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">bosses</h4>
+          <h4>bosses</h4>
           <small>Lists all the bosses you haven't killed this week</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">botnews</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseBotnews" aria-expanded="false" aria-controls="collapseBotnews">botnews</a></h4>
           <small>Automatically sends news about new features</small>
+          <div class="collapse" id="collapseBotnews">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">channel</p>
             <small>Sets the channel to send bot news to</small>
           <hr class="m-1">
             <p class="font-weight-bold mb-1">toggle</p>
             <small>Toggles posting bot news</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">cats</h4>
+          <h4>cats</h4>
           <small>Displays cats you haven't collected</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">changelog</h4>
+          <h4>changelog</h4>
           <small>List of recent changes to the bot</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">character</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseCharacter" aria-expanded="false" aria-controls="collapseCharacter">character</a></h4>
           <small>Character related commands</small>
+          <div class="collapse" id="collapseCharacter">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">birthdays</p>
             <small>Lists days until each of your character's birthdays</small>
@@ -69,10 +81,14 @@
           <hr class="m-1">
             <p class="font-weight-bold mb-1">wvwbuild</p>
             <small>Displays the build of given character</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">daily</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseDaily" aria-expanded="false" aria-controls="collapseDaily">daily</a></h4>
           <small>Commands showing daily things</small>
+          <div class="collapse" id="collapseDaily">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">all</p>
             <small>Show today's all dailies</small>
@@ -91,18 +107,24 @@
           <hr class="m-1">
             <p class="font-weight-bold mb-1">wvw</p>
             <small>Show today's WvW dailies</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">dulfy</h4>
+          <h4>dulfy</h4>
           <small>Search dulfy.net</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">et</h4>
+          <h4>et</h4>
           <small>The event timer. Shows upcoming world bosses</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">gem</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseGem" aria-expanded="false" aria-controls="collapseGem">gem</a></h4>
           <small>Commands related to gems</small>
+          <div class="collapse" id="collapseGem">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">price</p>
             <small>Lists current gold/gem exchange prices</small>
@@ -110,9 +132,12 @@
             <p class="font-weight-bold mb-1">track</p>
             <small>Receive a notification when cost of 400 gems drops below the specified cost</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">guild</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseGuild" aria-expanded="false" aria-controls="collapseGuild">guild</a></h4>
           <small>Guild related commands</small>
+          <div class="collapse" id="collapseGuild">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">info</p>
             <small>Information about general guild stats</small>
@@ -122,14 +147,14 @@
           <hr class="m-1">
             <p class="font-weight-bold mb-1">treasury</p>
             <small>Get list of current and needed items for upgrades</small>
+          </div>
         </li>
-       </ul>
-    </div>
-    <div class="col">
-      <ul class="list-group">
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">guildsync</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseGuildsync" aria-expanded="false" aria-controls="collapseGuildsync">guildsync</a></h4>
           <small>Guild synchronization related commands.</small>
+          <div class="collapse" id="collapseGuildsync">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">clear</p>
             <small>Wipes settings and created roles and turns sync off</small>
@@ -142,18 +167,29 @@
           <hr class="m-1">
             <p class="font-weight-bold mb-1">toggle</p>
             <small>Toggles synchronization on/off - does not wipe settings</small>
+          </div>
         </li>
+
+       </ul>
+    </div>
+    <div class="col">
+      <ul class="list-group">
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">gw2wiki</h4>
+          <h4>gw2wiki</h4>
           <small>Search the Guild Wars 2 wiki</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">hotet</h4>
+          <h4>hotet</h4>
           <small>The HoT event timer. Shows phases of HoT maps</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">key</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseKey" aria-expanded="false" aria-controls="collapseKey">key</a></h4>
           <small>Commands related to API keys</small>
+          <div class="collapse" id="collapseKey">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">add</p>
             <small>Adds your key and associates it with your discord account</small>
@@ -163,14 +199,19 @@
           <hr class="m-1">
             <p class="font-weight-bold mb-1">remove</p>
             <small>Removes your key from the list</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">prefix</h4>
+          <h4>prefix</h4>
           <small>Sets bot's prefixes for this server</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">pvp</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapsePvp" aria-expanded="false" aria-controls="collapsePvp">pvp</a></h4>
           <small>Commands related to PvP</small>
+          <div class="collapse" id="collapsePvp">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">professions</p>
             <small>Information about your pvp profession stats</small>
@@ -178,34 +219,46 @@
             <p class="font-weight-bold mb-1">stats</p>
             <small>Information about your general PvP stats</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">search</h4>
+          <h4>search</h4>
           <small>Search your account for items</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">server</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseServer" aria-expanded="false" aria-controls="collapseServer">server</a></h4>
           <small>Commands for server management</small>
+          <div class="collapse" id="collapseServer">
           <hr class="m-1">
             <p class="font-weight-bold m-1">forceaccountnames</p>
             <small>Automatically change nicknames to in-game names</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">skillinfo</h4>
+          <h4>skillinfo</h4>
           <small>Information about a given skill</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">tp</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseTp" aria-expanded="false" aria-controls="collapseTp">tp</a></h4>
           <small>Commands related to Trading Post</small>
+          <div class="collapse" id="collapseTp">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">current</p>
             <small>Show current selling/buying transactions</small>
           <hr class="m-1">
             <p class="font-weight-bold mb-1">price</p>
             <small>Checks price of an item</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">wallet</h4>
-          <p class="mb-1">Commands related to wallet</p>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseWallet" aria-expanded="false" aria-controls="collapseWallet">wallet</a></h4>
+          <small class="mb-1">Commands related to wallet</small>
+          <div class="collapse" id="collapseWallet">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">currencies</p>
             <small>Returns a list of all currencies</small>
@@ -221,10 +274,14 @@
           <hr class="m-1">
             <p class="font-weight-bold mb-1">tokens</p>
             <small>Shows instance-specific currencies</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">wvw</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseWvw" aria-expanded="false" aria-controls="collapseWvw">wvw</a></h4>
           <small>Commands related to WvW</small>
+          <div class="collapse" id="collapseWvw">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">info</p>
             <small>Info about a world. If none is provided, defaults to account's world</small>
@@ -234,15 +291,19 @@
           <hr class="m-1">
             <p class="font-weight-bold mb-1">populationtrack</p>
             <small>Receive a notification when the world is no longer full</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">li</h4>
+          <h4>li</h4>
           <small>Shows how many Legendary Insights you have</small>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">help</h4>
+          <h4>help</h4>
           <small>Shows the commands menu</small>
         </li>
+
       </ul>
     </div>
   </div>
@@ -252,19 +313,26 @@
   <div class="row">
     <div class="col">
       <ul class="list-group">
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">bossnotifier</h4>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseBossnotifier" aria-expanded="false" aria-controls="collapseBossnotifier">bossnotifier</a></h4>
           <small>Sends the next two bosses every 15 minutes to a channel</small>
+          <div class="collapse" id="collapseBossnotifier">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">channel</p>
             <small>Sets the channel to send the bosses to</small>
           <hr class="m-1">
             <p class="font-weight-bold mb-1">toggle</p>
             <small>Toggles posting upcoming bosses</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-            <h4 class="font-weight-bold">dailynotifier</h4>
-            <p class="mb-1">Sends a list of dailies to specified channel</p>
+            <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseDailynotifier" aria-expanded="false" aria-controls="collapseDailynotifier">dailynotifier</a></h4>
+            <small class="mb-1">Sends a list of dailies to specified channel</small>
+            <div class="collapse" id="collapseDailynotifier">
             <hr class="m-1">
               <p class="font-weight-bold mb-1">channel</p>
               <small>Sets the channel to send the dailies to</small>
@@ -280,31 +348,42 @@
             <hr class="m-1">
               <p class="font-weight-bold mb-1">categories</p>
               <small>Choose which categories to display on daily notifications</small>
+            </div>
           </li>
+
       </ul>
     </div>
     <div class="col">
       <ul class="list-group">
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">updatenotifier</h4>
-          <p class="mb-1">For setting up notifcations whenever the game updates</p>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseUpdatenotifier" aria-expanded="false" aria-controls="collapseUpdatenotifier">updatenotifier</a></h4>
+          <small class="mb-1">For setting up notifcations whenever the game updates</small>
+          <div class="collapse" id="collapseUpdatenotifier">
         <hr class="m-1">
           <p class="font-weight-bold mb-1">channel</p>
           <small>Sets the channel to send the update announcement</small>
         <hr class="m-1">
           <p class="font-weight-bold mb-1">toggle</p>
           <small>Toggles sending game update notifications</small>
+          </div>
         </li>
+
         <li class="list-group-item border border-danger">
-          <h4 class="font-weight-bold">newsfeed</h4>
-          <p class="mb-1">For setting up automatic guildwars2.com news feed</p>
+          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+            href="#collapseNewsfeed" aria-expanded="false" aria-controls="collapseNewsfeed">newsfeed</a></h4>
+          <small class="mb-1">For setting up automatic guildwars2.com news feed</small>
+          <div class="collapse" id="collapseNewsfeed">
           <hr class="m-1">
             <p class="font-weight-bold mb-1">channel</p>
             <small>Sets the channel to send the news to</small>
           <hr class="m-1">
             <p class="font-weight-bold mb-1">toggle</p>
             <small>Toggles posting news</small>
+          </div>
         </li>
+
       </ul>
     </div>
   </div>
