@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
   <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -20,6 +20,12 @@
   <meta name="description" content="GW2Bot is a powerful, Guild Wars 2 bot for Discord!">
   <meta name="keywords" content="gw2, gw2bot, gw2 discord, discord bot">
   <title>GW2Bot - A Discord Bot</title>
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Guild Wars 2 Bot">
+  <meta property="og:description" content="GW2Bot is a powerful, Guild Wars 2 bot for Discord!">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.gw2bot.info">
+  <meta property="og:image" content="https://gw2bot.info/static/img/avatarwithtext.png">
 </head>
 
 {% set navigation_bar = [
@@ -36,7 +42,7 @@
     <img src="/static/img/avatarwithtext.png" alt="GW2Bot Logo" class="img-fluid mx-auto d-block d-sm-none d-md-none d-lg-none d-xl-none">
   </div>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-md">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-md sticky-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
