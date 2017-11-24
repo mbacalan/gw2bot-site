@@ -4,6 +4,25 @@
 
 {% block body %}
 
+{% macro cmd_main_expand(name, description, toggleid) -%}
+<h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+  href="#{{ toggleid }}" aria-expanded="false" aria-controls="{{ toggleid }}">{{ name }}</a></h4>
+  <small>{{ description }}</small>
+{%- endmacro %}
+
+{% macro cmd_main(name, description) -%}
+<li class="list-group-item border border-danger">
+    <h4>{{name}}</h4>
+    <small>{{description}}</small>
+</li>
+{%- endmacro %}
+
+{% macro cmd_arg(name, description) -%}
+<hr class="m-1">
+   <p class="font-weight-bold mb-1">{{ name }}</p>
+   <small>{{ description }}</small>
+{%- endmacro %}
+
 <div class="container text-center">
   <hr>
   <h3>The default prefix is $</h3>
@@ -13,174 +32,79 @@
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4>account</h4>
-          <small>Information about your account</small>
-        </li>
+        {{ cmd_main("account", "Information about your account") }}
+        {{ cmd_main("achievementinfo", "Display achievement information and your completion status")}}
+        {{ cmd_main("bosses", "Lists all the bosses you haven't killed this week") }}
 
         <li class="list-group-item border border-danger">
-          <h4>achievementinfo</h4>
-          <small>Display achievement information and your completion status</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4>bosses</h4>
-          <small>Lists all the bosses you haven't killed this week</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseBotnews" aria-expanded="false" aria-controls="collapseBotnews">botnews</a></h4>
-          <small>Automatically sends news about new features</small>
+          {{ cmd_main_expand("botnews", "Automatically sends news about new features", "collapseBotnews") }}
           <div class="collapse" id="collapseBotnews">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">channel</p>
-            <small>Sets the channel to send bot news to</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">toggle</p>
-            <small>Toggles posting bot news</small>
+            {{ cmd_arg("channel", "Sets the channel to send bot news to") }}
+            {{ cmd_arg("toggle", "Toggles posting bot news") }}
           </div>
         </li>
 
-        <li class="list-group-item border border-danger">
-          <h4>cats</h4>
-          <small>Displays cats you haven't collected</small>
-        </li>
+        {{ cmd_main("cats", "Displays cats you haven't collected") }}
+        {{ cmd_main("changelog", "List of recent changes to the bot") }}
 
         <li class="list-group-item border border-danger">
-          <h4>changelog</h4>
-          <small>List of recent changes to the bot</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseCharacter" aria-expanded="false" aria-controls="collapseCharacter">character</a></h4>
-          <small>Character related commands</small>
+          {{ cmd_main_expand("character", "Character related commands", "collapseCharacter") }}
           <div class="collapse" id="collapseCharacter">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">birthdays</p>
-            <small>Lists days until each of your character's birthdays</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">crafting</p>
-            <small>Displays your characters and their crafting level</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">build</p>
-            <small>Displays the build of given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">gear</p>
-            <small>Displays the gear of given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">info</p>
-            <small>Info about the given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">list</p>
-            <small>Lists all your characters</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">pvpbuild</p>
-            <small>Displays the build of given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">togglepublic</p>
-            <small>Toggle your character's status to public</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">wvwbuild</p>
-            <small>Displays the build of given character</small>
+            {{ cmd_arg("birthdays", "Lists days until each of your character's birthdays") }}
+            {{ cmd_arg("crafting", "Displays your characters and their crafting level") }}
+            {{ cmd_arg("build", ">Displays the build of given character") }}
+            {{ cmd_arg("gear", "Displays the gear of given character") }}
+            {{ cmd_arg("info", "Info about the given character") }}
+            {{ cmd_arg("list", "Lists all your characters") }}
+            {{ cmd_arg("pvpbuild", "Displays the build of given character") }}
+            {{ cmd_arg("togglepublic", "Toggle your character's status to public") }}
+            {{ cmd_arg("wvwbuild", "Displays the build of given character") }}
           </div>
         </li>
 
-        <li class="list-group-item border border-danger">
-          <h4>chatcode</h4>
-          <small>Generate a chat code</small>
-        </li>
+        {{ cmd_main("chatcode", "Generate a chat code") }}
 
         <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseDaily" aria-expanded="false" aria-controls="collapseDaily">daily</a></h4>
-          <small>Commands showing daily things</small>
+          {{ cmd_main_expand("daily", "Commands showing daily things", "collapseDaily") }}
           <div class="collapse" id="collapseDaily">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">all</p>
-            <small>Show today's all dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">fractal</p>
-            <small>Show today's fractal dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">psna</p>
-            <small>Show today's Pact Supply Network Agent locations</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">pve</p>
-            <small>Show today's PvE dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">pvp</p>
-            <small>Show today's PvP dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">wvw</p>
-            <small>Show today's WvW dailies</small>
+            {{ cmd_arg("all", "Show today's all dailies") }}
+            {{ cmd_arg("fractal", "Show today's all fractal dailies") }}
+            {{ cmd_arg("psna", "Show today's Pact Supply Network Agent locations") }}
+            {{ cmd_arg("pve", "Show today's PvE dailies") }}
+            {{ cmd_arg("pvp", "Show today's PvP dailies") }}
+            {{ cmd_arg("wvw", "Show today's WvW dailies") }}
           </div>
         </li>
 
-        <li class="list-group-item border border-danger">
-          <h4>dulfy</h4>
-          <small>Search dulfy.net</small>
-        </li>
+        {{ cmd_main("dulfy", "Search dulfy.net") }}
+        {{ cmd_main("et", "The event timer, Shows upcoming world bosses") }}
 
         <li class="list-group-item border border-danger">
-          <h4>et</h4>
-          <small>The event timer. Shows upcoming world bosses</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseGem" aria-expanded="false" aria-controls="collapseGem">gem</a></h4>
-          <small>Commands related to gems</small>
+          {{ cmd_main_expand("gem", "Commands related to gems", "collapseGem") }}
           <div class="collapse" id="collapseGem">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">price</p>
-            <small>Lists current gold/gem exchange prices</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">track</p>
-            <small>Receive a notification when cost of 400 gems drops below the specified cost</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseGuild" aria-expanded="false" aria-controls="collapseGuild">guild</a></h4>
-          <small>Guild related commands</small>
-          <div class="collapse" id="collapseGuild">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">default</p>
-            <small>Set your preferred guild for guild commands on current Discord Server.</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">info</p>
-            <small>Information about general guild stats</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">log</p>
-            <small>Get log of last 20 entries of stash</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">members</p>
-            <small>Get list of all members and their ranks</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">treasury</p>
-            <small>Get list of current and needed items for upgrades</small>
+            {{ cmd_arg("price", "Lists current gold/gem exchange prices") }}
+            {{ cmd_arg("track", "Recive a notification when cost of 400 gems drops below the specified cost") }}
           </div>
         </li>
 
         <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseGuildsync" aria-expanded="false" aria-controls="collapseGuildsync">guildsync</a></h4>
-          <small>Guild synchronization related commands.</small>
+          {{ cmd_main_expand("guild", "Guild related commands", "collapseGuild") }}
+          <div class="collapse" id="collapseGuild">
+            {{ cmd_arg("default", "Set your preferred guild for guild commands on current Discord Server") }}
+            {{ cmd_arg("info", "Information about general guild stats") }}
+            {{ cmd_arg("log", "Get log of last 20 entries of stash") }}
+            {{ cmd_arg("members", "Get list of all members and their ranks") }}
+            {{ cmd_arg("treasury", "Get list of current and needed items for upgrades") }}
+          </div>
+        </li>
+
+        <li class="list-group-item border border-danger">
+          {{ cmd_main_expand("guildsync", "Guild synchronization related commands", "collapseGuildsync") }}
           <div class="collapse" id="collapseGuildsync">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">clear</p>
-            <small>Wipes settings and created roles and turns sync off</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">now</p>
-            <small>Force a synchronization, also deletes or creates new ranks as needed</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">setup</p>
-            <small>Setup process for ingame roster to discord member list synchronization</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">toggle</p>
-            <small>Toggles synchronization on/off - does not wipe settings</small>
+            {{ cmd_arg("clear", "Wipes settings and created roles and turns sync off") }}
+            {{ cmd_arg("now", "Force a synchronization, also deletes or creates new ranks as needed") }}
+            {{ cmd_arg("setup", "Setup process for ingame roster to discord member list synchronization") }}
+            {{ cmd_arg("toggle", "Toggles synchronization on/off - does not wipe settings") }}
           </div>
         </li>
 
@@ -189,40 +113,20 @@
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4>gw2wiki</h4>
-          <small>Search the Guild Wars 2 wiki</small>
-        </li>
+        {{ cmd_main("gw2wiki", "Search the Guild Wars 2 wiki") }}
+        {{ cmd_main("hotet", "The HoT event timer. Shows phases of HoT maps") }}
 
         <li class="list-group-item border border-danger">
-          <h4>hotet</h4>
-          <small>The HoT event timer. Shows phases of HoT maps</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseKey" aria-expanded="false" aria-controls="collapseKey">key</a></h4>
-          <small>Commands related to API keys</small>
+          {{ cmd_main_expand("key", "Commands related to API keys", "collapseKey") }}
           <div class="collapse" id="collapseKey">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">add</p>
-            <small>Adds your key and associates it with your discord account</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">info</p>
-            <small>Information about your API key</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">remove</p>
-            <small>Removes your key from the list</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">switch</p>
-            <small>Swaps between multiple stored API keys.</small>
+            {{ cmd_arg("add", "Adds your key and associates it with your discord account") }}
+            {{ cmd_arg("info", "Information about your API key") }}
+            {{ cmd_arg("remove", "Removes your key from the list") }}
+            {{ cmd_arg("switch", "Swaps between multiple stored API keys") }}
           </div>
         </li>
 
-        <li class="list-group-item border border-danger">
-          <h4>prefix</h4>
-          <small>Sets bot's prefixes for this server</small>
-        </li>
+        {{ cmd_main("prefix", "Sets bot's prefixes for this server") }}
 
         <li class="list-group-item border border-danger">
           <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
@@ -237,10 +141,7 @@
             <small>Information about your general PvP stats</small>
         </li>
 
-        <li class="list-group-item border border-danger">
-          <h4>search</h4>
-          <small>Search your account for items</small>
-        </li>
+        {{ cmd_main("search", "Search your account for items") }}
 
         <li class="list-group-item border border-danger">
           <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
@@ -252,10 +153,7 @@
             <small>Automatically change nicknames to in-game names</small>
         </li>
 
-        <li class="list-group-item border border-danger">
-          <h4>skillinfo</h4>
-          <small>Information about a given skill</small>
-        </li>
+        {{ cmd_main("skillinfo", "Information about a given skill") }}
 
         <li class="list-group-item border border-danger">
           <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
@@ -314,15 +212,8 @@
           </div>
         </li>
 
-        <li class="list-group-item border border-danger">
-          <h4>li</h4>
-          <small>Shows how many Legendary Insights you have</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4>help</h4>
-          <small>Shows the commands menu</small>
-        </li>
+        {{ cmd_main("li", "Shows how many Legendary Insights you have") }}
+        {{ cmd_main("help", "Shows the commands menu") }}
 
       </ul>
     </div>
@@ -414,20 +305,9 @@
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4>info</h4>
-          <small>Display bot's info</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4>ping</h4>
-          <small>Pong!</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-            <h4>uptime</h4>
-            <small>Display bot's uptime</small>
-          </li>
+        {{ cmd_main("info", "Display bot's info") }}
+        {{ cmd_main("ping", "Pong!") }}
+        {{ cmd_main("uptime", "Display bot's uptime") }}
 
       </ul>
     </div>
