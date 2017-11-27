@@ -1,0 +1,130 @@
+{% macro main_expand(name, description, toggleid, cmdargs) -%}
+<li class="list-group-item border border-danger">
+  <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
+    href="#{{ toggleid }}" aria-expanded="false" aria-controls="{{ toggleid }}">{{ name }}</a></h4>
+  <small>{{ description }}</small>
+  <div class="collapse" id="{{ toggleid }}">
+    {% for arg_name, arg_description in cmdargs %}
+      {{ arg(arg_name, arg_description) }}
+    {% endfor %}
+  </div>
+</li>
+{%- endmacro %}
+
+{% macro main(name, description) -%}
+<li class="list-group-item border border-danger">
+  <h4>{{name}}</h4>
+  <small>{{description}}</small>
+</li>
+{%- endmacro %}
+
+{% macro arg(arg_name, arg_description) -%}
+<hr class="m-1">
+  <p class="font-weight-bold mb-1">{{ arg_name }}</p>
+  <small>{{ arg_description }}</small>
+{%- endmacro %}
+
+{% set botnewsArgs = [
+  ("channel", "Sets the channel to send bot news to"),
+  ("toggle", "Toggles posting bot news")
+] -%}
+
+{% set characterArgs = [
+  ("birthdays", "Lists days until each of your character's birthdays"),
+  ("crafting", "Displays your characters and their crafting level"),
+  ("build", "Displays the build of given character"),
+  ("gear", "Displays the gear of given character"),
+  ("info", "Info about the given character"),
+  ("list", "Lists all your characters"),
+  ("pvpbuild", "Displays the build of given character"),
+  ("togglepublic", "Toggle your character's status to public"),
+  ("wvwbuild", "Displays the build of given character")
+] -%}
+
+{% set dailyArgs = [
+  ("all", "Show today's all dailies"),
+  ("fractal", "Show today's all fractal dailies"),
+  ("psna", "Show today's Pact Supply Network Agent locations"),
+  ("pve", "Show today's PvE dailies"),
+  ("pvp", "Show today's PvP dailies"),
+  ("wvw", "Show today's WvW dailies")
+] -%}
+
+{% set gemArgs = [
+  ("price", "Lists current gold/gem exchange prices"),
+  ("track", "Recive a notification when cost of 400 gems drops below the specified cost")
+] -%}
+
+{% set guildArgs = [
+  ("default", "Set your preferred guild for guild commands on current Discord Server"),
+  ("info", "Information about general guild stats"),
+  ("log", "Get log of last 20 entries of stash"),
+  ("members", "Get list of all members and their ranks"),
+  ("treasury", "Get list of current and needed items for upgrades")
+] -%}
+
+{% set guildsyncArgs = [
+  ("clear", "Wipes settings and created roles and turns sync off"),
+  ("now", "Force a synchronization, also deletes or creates new ranks as needed"),
+  ("setup", "Setup process for ingame roster to Discord member list synchronization"),
+  ("toggle", "Toggles synchronization on/off - does not wipe settings")
+] -%}
+
+{% set keyArgs = [
+  ("add", "Adds your key and associates it with your Discord account"),
+  ("info", "Information about your API key"),
+  ("remove", "Removes your key from the list"),
+  ("switch", "Swaps between multiple stored API keys")
+] -%}
+
+{% set pvpArgs = [
+  ("professions", "Information about your PvP profession stats"),
+  ("stats", "Information about your general PvP stats")
+] -%}
+
+{% set serverArgs = [
+  ("forceaccountnames", "Automatically change nicknames to in-game names")
+] -%}
+
+{% set tpArgs = [
+  ("current", "Show current selling/buying transactions"),
+  ("delivery", "Show your items awaiting in delivery box"),
+  ("price", "Checks price of an item")
+] -%}
+
+{% set walletArgs = [
+  ("currencies", "Returns a list of all currencies"),
+  ("currency", "Info about a currency. See [p]wallet currencies for list"),
+  ("maps", "Shows map-specific currencies"),
+  ("show", "Shows most important currencies in your wallet"),
+  ("tokens", "Shows instance-specific currencies")
+] -%}
+
+{% set wvwArgs = [
+  ("info", "Info about a world. If none is provided, defaults to account's world"),
+  ("worlds", "List all worlds"),
+  ("populationtrack", "Receive a notification when the world is no longer full")
+] -%}
+
+{% set bossnotifierArgs = [
+  ("chanel", "Sets the channel to send the bosses to"),
+  ("toggle", "Toggles posting upcoming bosses")
+] -%}
+
+{% set dailynotifierArgs = [
+  ("channel", "Sets the channel to send the dailies to"),
+  ("toggle", "Toggles posting dailies at server reset"),
+  ("autodelete", "Toggles autodeleting last day's daily notification"),
+  ("autopin", "Toggles autopinning daily notifications"),
+  ("categories", "Choose which categories to display on daily notifications")
+] -%}
+
+{%set updatenotifierArgs = [
+  ("channel", "Sets the channel to send the update announcement"),
+  ("toggle", "Toggles sending game update notifications")
+] -%}
+
+{%set newsfeedArgs = [
+  ("channel", "Sets the channel to send the news to"),
+  ("toggle", "Toggles posting news")
+] -%}
