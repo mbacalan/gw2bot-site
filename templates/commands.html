@@ -17,7 +17,7 @@
 
         {{ cmd.main("account", "Information about your account") }}
         {{ cmd.main("achievementinfo", "Display achievement information and your completion status")}}
-        {{ cmd.main("bosses", "Lists all the bosses you haven't killed this week") }}
+        {{ cmd.main("bosses", "Shows your raid progression for the week") }}
 
         {{ cmd.main_expand("botnews", "Automatically sends news about new features", "collapseBotnews", cmd.botnewsArgs) }}
 
@@ -31,7 +31,7 @@
         {{ cmd.main_expand("daily", "Commands showing daily things", "collapseDaily", cmd.dailyArgs) }}
 
         {{ cmd.main("dulfy", "Search dulfy.net") }}
-        {{ cmd.main("et", "The event timer, Shows upcoming world bosses") }}
+        {{ cmd.main("et", "The event timer, shows upcoming world bosses") }}
 
         {{ cmd.main_expand("gem", "Commands related to gems", "collapseGem", cmd.gemArgs) }}
 
@@ -45,11 +45,11 @@
       <ul class="list-group">
 
         {{ cmd.main("gw2wiki", "Search the Guild Wars 2 wiki") }}
-        {{ cmd.main("hotet", "The HoT event timer. Shows phases of HoT maps") }}
+        {{ cmd.main("hotet", "The HoT event timer, shows phases of HoT maps") }}
 
         {{ cmd.main_expand("key", "Commands related to API keys", "collapseKey", cmd.keyArgs) }}
 
-        {{ cmd.main("prefix", "Sets bot's prefixes for this server") }}
+        {{ cmd.main("prefix", "Set bot's prefixes for this server") }}
 
         {{ cmd.main_expand("pvp", "Commands related to PvP", "collapsePvp", cmd.pvpArgs) }}
 
