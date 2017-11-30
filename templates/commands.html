@@ -1,6 +1,8 @@
-{% extends "layout.html"%}
+{% extends "layout.html" %}
 
 {% set active_page = "Commands" %}
+
+{% import "command_args.html" as cmd %}
 
 {% block body %}
 
@@ -13,316 +15,58 @@
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4>account</h4>
-          <small>Information about your account</small>
-        </li>
+        {{ cmd.main("account", "Information about your account") }}
+        {{ cmd.main("achievementinfo", "Display achievement information and your completion status")}}
+        {{ cmd.main("bosses", "Shows your raid progression for the week") }}
 
-        <li class="list-group-item border border-danger">
-          <h4>achievementinfo</h4>
-          <small>Display achievement information and your completion status</small>
-        </li>
+        {{ cmd.main_expand("botnews", "Automatically sends news about new features", "collapseBotnews", cmd.botnewsArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4>bosses</h4>
-          <small>Lists all the bosses you haven't killed this week</small>
-        </li>
+        {{ cmd.main("cats", "Displays cats you haven't collected") }}
+        {{ cmd.main("changelog", "List of recent changes to the bot") }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseBotnews" aria-expanded="false" aria-controls="collapseBotnews">botnews</a></h4>
-          <small>Automatically sends news about new features</small>
-          <div class="collapse" id="collapseBotnews">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">channel</p>
-            <small>Sets the channel to send bot news to</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">toggle</p>
-            <small>Toggles posting bot news</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("character", "Character related commands", "collapseCharacter", cmd.characterArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4>cats</h4>
-          <small>Displays cats you haven't collected</small>
-        </li>
+        {{ cmd.main("chatcode", "Generate a chat code") }}
 
-        <li class="list-group-item border border-danger">
-          <h4>changelog</h4>
-          <small>List of recent changes to the bot</small>
-        </li>
+        {{ cmd.main_expand("daily", "Commands showing daily things", "collapseDaily", cmd.dailyArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseCharacter" aria-expanded="false" aria-controls="collapseCharacter">character</a></h4>
-          <small>Character related commands</small>
-          <div class="collapse" id="collapseCharacter">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">birthdays</p>
-            <small>Lists days until each of your character's birthdays</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">crafting</p>
-            <small>Displays your characters and their crafting level</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">build</p>
-            <small>Displays the build of given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">gear</p>
-            <small>Displays the gear of given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">info</p>
-            <small>Info about the given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">list</p>
-            <small>Lists all your characters</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">pvpbuild</p>
-            <small>Displays the build of given character</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">togglepublic</p>
-            <small>Toggle your character's status to public</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">wvwbuild</p>
-            <small>Displays the build of given character</small>
-          </div>
-        </li>
+        {{ cmd.main("dulfy", "Search dulfy.net") }}
+        {{ cmd.main("et", "The event timer, shows upcoming world bosses") }}
 
-        <li class="list-group-item border border-danger">
-          <h4>chatcode</h4>
-          <small>Generate a chat code</small>
-        </li>
+        {{ cmd.main_expand("gem", "Commands related to gems", "collapseGem", cmd.gemArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseDaily" aria-expanded="false" aria-controls="collapseDaily">daily</a></h4>
-          <small>Commands showing daily things</small>
-          <div class="collapse" id="collapseDaily">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">all</p>
-            <small>Show today's all dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">fractal</p>
-            <small>Show today's fractal dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">psna</p>
-            <small>Show today's Pact Supply Network Agent locations</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">pve</p>
-            <small>Show today's PvE dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">pvp</p>
-            <small>Show today's PvP dailies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">wvw</p>
-            <small>Show today's WvW dailies</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("guild", "Guild related commands", "collapseGuild", cmd.guildArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4>dulfy</h4>
-          <small>Search dulfy.net</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4>et</h4>
-          <small>The event timer. Shows upcoming world bosses</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseGem" aria-expanded="false" aria-controls="collapseGem">gem</a></h4>
-          <small>Commands related to gems</small>
-          <div class="collapse" id="collapseGem">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">price</p>
-            <small>Lists current gold/gem exchange prices</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">track</p>
-            <small>Receive a notification when cost of 400 gems drops below the specified cost</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseGuild" aria-expanded="false" aria-controls="collapseGuild">guild</a></h4>
-          <small>Guild related commands</small>
-          <div class="collapse" id="collapseGuild">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">default</p>
-            <small>Set your preferred guild for guild commands on current Discord Server.</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">info</p>
-            <small>Information about general guild stats</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">log</p>
-            <small>Get log of last 20 entries of stash</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">members</p>
-            <small>Get list of all members and their ranks</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">treasury</p>
-            <small>Get list of current and needed items for upgrades</small>
-          </div>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseGuildsync" aria-expanded="false" aria-controls="collapseGuildsync">guildsync</a></h4>
-          <small>Guild synchronization related commands.</small>
-          <div class="collapse" id="collapseGuildsync">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">clear</p>
-            <small>Wipes settings and created roles and turns sync off</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">now</p>
-            <small>Force a synchronization, also deletes or creates new ranks as needed</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">setup</p>
-            <small>Setup process for ingame roster to discord member list synchronization</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">toggle</p>
-            <small>Toggles synchronization on/off - does not wipe settings</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("guildsync", "Guild synchronization related commands", "collapseGuildsync", cmd.guildsyncArgs) }}
 
        </ul>
     </div>
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4>gw2wiki</h4>
-          <small>Search the Guild Wars 2 wiki</small>
-        </li>
+        {{ cmd.main("gw2wiki", "Search the Guild Wars 2 wiki") }}
+        {{ cmd.main("hotet", "The HoT event timer, shows phases of HoT maps") }}
 
-        <li class="list-group-item border border-danger">
-          <h4>hotet</h4>
-          <small>The HoT event timer. Shows phases of HoT maps</small>
-        </li>
+        {{ cmd.main_expand("key", "Commands related to API keys", "collapseKey", cmd.keyArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseKey" aria-expanded="false" aria-controls="collapseKey">key</a></h4>
-          <small>Commands related to API keys</small>
-          <div class="collapse" id="collapseKey">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">add</p>
-            <small>Adds your key and associates it with your discord account</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">info</p>
-            <small>Information about your API key</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">remove</p>
-            <small>Removes your key from the list</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">switch</p>
-            <small>Swaps between multiple stored API keys.</small>
-          </div>
-        </li>
+        {{ cmd.main("prefix", "Set bot's prefixes for this server") }}
 
-        <li class="list-group-item border border-danger">
-          <h4>prefix</h4>
-          <small>Sets bot's prefixes for this server</small>
-        </li>
+        {{ cmd.main_expand("pvp", "Commands related to PvP", "collapsePvp", cmd.pvpArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapsePvp" aria-expanded="false" aria-controls="collapsePvp">pvp</a></h4>
-          <small>Commands related to PvP</small>
-          <div class="collapse" id="collapsePvp">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">professions</p>
-            <small>Information about your pvp profession stats</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">stats</p>
-            <small>Information about your general PvP stats</small>
-        </li>
+        {{ cmd.main("search", "Search your account for items") }}
 
-        <li class="list-group-item border border-danger">
-          <h4>search</h4>
-          <small>Search your account for items</small>
-        </li>
+        {{ cmd.main_expand("server", "Commands for server management", "collapseServer", cmd.serverArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseServer" aria-expanded="false" aria-controls="collapseServer">server</a></h4>
-          <small>Commands for server management</small>
-          <div class="collapse" id="collapseServer">
-          <hr class="m-1">
-            <p class="font-weight-bold m-1">forceaccountnames</p>
-            <small>Automatically change nicknames to in-game names</small>
-        </li>
+        {{ cmd.main("skillinfo", "Information about a given skill") }}
 
-        <li class="list-group-item border border-danger">
-          <h4>skillinfo</h4>
-          <small>Information about a given skill</small>
-        </li>
+        {{ cmd.main_expand("tp", "Commands related to Trading Post", "collapseTp", cmd.tpArgs ) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseTp" aria-expanded="false" aria-controls="collapseTp">tp</a></h4>
-          <small>Commands related to Trading Post</small>
-          <div class="collapse" id="collapseTp">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">current</p>
-            <small>Show current selling/buying transactions</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">delivery</p>
-            <small>Show your items awaiting in delivery box</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">price</p>
-            <small>Checks price of an item</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("wallet", "Commands related to wallet", "collapseWallet", cmd.walletArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseWallet" aria-expanded="false" aria-controls="collapseWallet">wallet</a></h4>
-          <small class="mb-1">Commands related to wallet</small>
-          <div class="collapse" id="collapseWallet">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">currencies</p>
-            <small>Returns a list of all currencies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">currency</p>
-            <small>Info about a currency. See [p]wallet currencies for list</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">maps</p>
-            <small>Shows map-specific currencies</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">show</p>
-            <small>Shows most important currencies in your wallet</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">tokens</p>
-            <small>Shows instance-specific currencies</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("wvw", "Commands related to wvw", "collapseWvw", cmd.wvwArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseWvw" aria-expanded="false" aria-controls="collapseWvw">wvw</a></h4>
-          <small>Commands related to WvW</small>
-          <div class="collapse" id="collapseWvw">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">info</p>
-            <small>Info about a world. If none is provided, defaults to account's world</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">worlds</p>
-            <small>List all worlds</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">populationtrack</p>
-            <small>Receive a notification when the world is no longer full</small>
-          </div>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4>li</h4>
-          <small>Shows how many Legendary Insights you have</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4>help</h4>
-          <small>Shows the commands menu</small>
-        </li>
+        {{ cmd.main("li", "Shows how many Legendary Insights you have") }}
+        {{ cmd.main("help", "Shows the commands menu") }}
 
       </ul>
     </div>
@@ -334,75 +78,21 @@
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseBossnotifier" aria-expanded="false" aria-controls="collapseBossnotifier">bossnotifier</a></h4>
-          <small>Sends the next two bosses every 15 minutes to a channel</small>
-          <div class="collapse" id="collapseBossnotifier">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">channel</p>
-            <small>Sets the channel to send the bosses to</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">toggle</p>
-            <small>Toggles posting upcoming bosses</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("bossnotifier", "Sends the next two bosses every 15 minutes to a channel",
+         "collapseBossnotifier", cmd.bossnotifierArgs) }}
 
-        <li class="list-group-item border border-danger">
-            <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseDailynotifier" aria-expanded="false" aria-controls="collapseDailynotifier">dailynotifier</a></h4>
-            <small class="mb-1">Sends a list of dailies to specified channel</small>
-            <div class="collapse" id="collapseDailynotifier">
-            <hr class="m-1">
-              <p class="font-weight-bold mb-1">channel</p>
-              <small>Sets the channel to send the dailies to</small>
-            <hr class="m-1">
-              <p class="font-weight-bold mb-1">toggle</p>
-              <small>Toggles posting dailies at server reset</small>
-            <hr class="m-1">
-              <p class="font-weight-bold mb-1">autodelete</p>
-              <small>Toggles autodeleting last day's daily notification</small>
-            <hr class="m-1">
-              <p class="font-weight-bold mb-1">autopin</p>
-              <small>Toggles autopinning daily notifications</small>
-            <hr class="m-1">
-              <p class="font-weight-bold mb-1">categories</p>
-              <small>Choose which categories to display on daily notifications</small>
-            </div>
-          </li>
+         {{ cmd.main_expand("dailynotifier", "Sends a list of dailies to specified channel",
+          "collapseDailynotifier", cmd.dailynotifierArgs ) }}
 
       </ul>
     </div>
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseUpdatenotifier" aria-expanded="false" aria-controls="collapseUpdatenotifier">updatenotifier</a></h4>
-          <small class="mb-1">For setting up notifcations whenever the game updates</small>
-          <div class="collapse" id="collapseUpdatenotifier">
-        <hr class="m-1">
-          <p class="font-weight-bold mb-1">channel</p>
-          <small>Sets the channel to send the update announcement</small>
-        <hr class="m-1">
-          <p class="font-weight-bold mb-1">toggle</p>
-          <small>Toggles sending game update notifications</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("updatenotifier", "For setting up notifcations whenever the game updates",
+         "collapseUpdatenotifier", cmd.updatenotifierArgs) }}
 
-        <li class="list-group-item border border-danger">
-          <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-            href="#collapseNewsfeed" aria-expanded="false" aria-controls="collapseNewsfeed">newsfeed</a></h4>
-          <small class="mb-1">For setting up automatic guildwars2.com news feed</small>
-          <div class="collapse" id="collapseNewsfeed">
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">channel</p>
-            <small>Sets the channel to send the news to</small>
-          <hr class="m-1">
-            <p class="font-weight-bold mb-1">toggle</p>
-            <small>Toggles posting news</small>
-          </div>
-        </li>
+        {{ cmd.main_expand("newsfeed", "For setting up automatic guildwars2.com news feed", "collapseNewsfeed", cmd.newsfeedArgs) }}
 
       </ul>
     </div>
@@ -414,20 +104,9 @@
     <div class="col">
       <ul class="list-group">
 
-        <li class="list-group-item border border-danger">
-          <h4>info</h4>
-          <small>Display bot's info</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-          <h4>ping</h4>
-          <small>Pong!</small>
-        </li>
-
-        <li class="list-group-item border border-danger">
-            <h4>uptime</h4>
-            <small>Display bot's uptime</small>
-          </li>
+        {{ cmd.main("info", "Display bot's info") }}
+        {{ cmd.main("ping", "Pong!") }}
+        {{ cmd.main("uptime", "Display bot's uptime") }}
 
       </ul>
     </div>
