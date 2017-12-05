@@ -2,8 +2,8 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
-  <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
   <meta charset="utf-8">
   <!-- If IE use the latest rendering engine -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,15 @@
   <meta name="description" content="GW2Bot is a powerful, Guild Wars 2 bot for Discord!">
   <meta name="keywords" content="gw2, gw2bot, gw2 discord, discord bot">
   <title>GW2Bot - A Discord Bot</title>
+  <!--- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="static/js/lib/jquery-3.2.1.min.js"><\/script>');
+  </script>
+  <script src="/static/js/jquery-ui.js"></script>
+  <script src="/static/js/accordion.js"></script>
   <!-- Open Graph Tags -->
   <meta property="og:title" content="Guild Wars 2 Bot">
   <meta property="og:description" content="GW2Bot is a powerful, Guild Wars 2 bot for Discord!">
@@ -38,36 +47,32 @@
 
 <body>
   <div>
-    <img class="img-fluid d-none d-sm-block d-md-block d-lg-block d-xl-block" alt="Banner with GW2Bot Logo" src="/static/img/banner.png">
-    <img src="/static/img/avatarwithtext.png" alt="GW2Bot Logo" class="img-fluid mx-auto d-block d-sm-none d-md-none d-lg-none d-xl-none">
+    <img src="/static/img/banner.png" alt="Banner with GW2Bot Logo" id="banner-lg">
+    <img src="/static/img/avatarwithtext.png" alt="GW2Bot Logo" id="banner-sm">
   </div>
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-toggleable-md sticky-top">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
-      <ul class="navbar-nav">
+  <nav>
+    <div>
+      <ul>
         {% for href, id, caption in navigation_bar %}
-        <li{% if id == active_page %} class="nav-item active" {% endif %}>
-          <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+        <li{% if id == active_page %} class="active" {% endif %}>
+          <a href="{{ href|e }}">{{ caption|e }}</a>
         </li>
         {% endfor %}
-        <li class="nav-item">
-          <a class="nav-link" href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
+        <li>
+          <a href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
         </li>
       </ul>
     </div>
   </nav>
-  <p class="text-right"> <span class=" mr-2" id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span></p>
+  <p id="apicheck"><span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span></p>
 
   {% block body %}
   {% endblock %}
 
   <p class="pusher"></p>
 
-  <div class="text-center">
+  <div id="paypal">
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
     <input type="hidden" name="cmd" value="_s-xclick">
     <input type="hidden" name="hosted_button_id" value="96N5SP5FYTTGJ">
@@ -76,30 +81,24 @@
     </form>
   </div>
 
-<footer class="footer d-none d-sm-none d-md-none d-lg-block d-xl-block">
+<footer id="footer-lg">
   <div class="container">
     <p>©2017 - GW2Bot created by Maselkov#2365, Website created by Penemue#8514&nbsp;-
-      &nbsp; If you want to contribute, see <a class="text-info" target="_blank" href="https://github.com/Maselkov/GW2Bot">here for the bot </a>
-      and <a class="text-info" target="_blank" href="https://github.com/pen-mb/gw2bot-site">here for the website.</a> Thanks to all contributors.</p>
+      &nbsp; If you want to contribute, see <a target="_blank" href="https://github.com/Maselkov/GW2Bot">here for the bot </a>
+      and <a target="_blank" href="https://github.com/pen-mb/gw2bot-site">here for the website.</a> Thanks to all contributors.</p>
       <p>Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation.</p>
   </div>
 </footer>
 
-<footer class="footer d-block d-sm-block d-md-block d-lg-none d-xl-none">
+<footer>
   <div class="container">
-    <p><a class="text-info" target="_blank" href="https://github.com/Maselkov/GW2Bot">GW2Bot</a> by Maselkov#2365,
-    <a class="text-info" target="_blank" href="https://github.com/pen-mb/gw2bot-site">Website</a> by Penemue#8514.</p>
+    <p><a target="_blank" href="https://github.com/Maselkov/GW2Bot">GW2Bot</a> by Maselkov#2365,
+    <a target="_blank" href="https://github.com/pen-mb/gw2bot-site">Website</a> by Penemue#8514.</p>
   </div>
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-  window.jQuery || document.write('<script src="static/js/lib/jquery-3.2.1.min.js"><\/script>');
-</script>
 <script src="/static/js/apicheck.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-  crossorigin="anonymous"></script>
-<script src="/static/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
