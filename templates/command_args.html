@@ -1,26 +1,29 @@
-{% macro main_expand(name, description, toggleid, cmdargs) -%}
-<li class="list-group-item border border-danger">
-  <h4><a class="btn btn-outline-dark btn-lg" data-toggle="collapse"
-    href="#{{ toggleid }}" aria-expanded="false" aria-controls="{{ toggleid }}">{{ name }}</a></h4>
-  <small>{{ description }}</small>
-  <div class="collapse" id="{{ toggleid }}">
-    {% for arg_name, arg_description in cmdargs %}
+{% macro main_expand(name, description, cmdargs) -%}
+<li class="list-group-item border">
+  <div class="accordion">
+    <div class="acc-head">
+      <h3><a class="button">{{ name }}</a></h3>
+      <small>{{ description }}</small>
+    </div>
+    <div>
+      {% for arg_name, arg_description in cmdargs %}
       {{ arg(arg_name, arg_description) }}
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </li>
 {%- endmacro %}
 
 {% macro main(name, description) -%}
-<li class="list-group-item border border-danger">
-  <h4>{{name}}</h4>
+<li class="list-group-item border">
+  <h3>{{name}}</h3>
   <small>{{description}}</small>
 </li>
 {%- endmacro %}
 
 {% macro arg(arg_name, arg_description) -%}
-<hr class="m-1">
-  <p class="font-weight-bold mb-1">{{ arg_name }}</p>
+<hr>
+  <p>{{ arg_name }}</p>
   <small>{{ arg_description }}</small>
 {%- endmacro %}
 

@@ -98,5 +98,9 @@ ENV/
 # mypy
 .mypy_cache/
 
-.vscode/tasks.json
-navbar.html
+# pen production
+.vscode/
+.sass-cache/
+gulpfile.js
+static/sass/
+static/css/style.css.map

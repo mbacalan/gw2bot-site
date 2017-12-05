@@ -1,19 +1,19 @@
 {% extends "layout.html"%} {% set active_page = "F.A.Q" %} {% block body %}
-<div class="container text-center">
+<div id="faq">
   <hr>
-  <h3>Frequently Asked Questions</h3>
+  <h1>Frequently Asked Questions</h1>
   <hr>
-  <h4>How do I use the bot?</h4>
+  <h2>How do I use the bot?</h2>
     <p>After the bot has been added to the server using
       <a href={{invite_link}}>this link</a>, you can access the commands using $ prefix.
       Type $help for list of all commands. Server admins can change the prefix to something else using $prefix.</p>
-  <h4>Does the bot work in DMs?</h4>
+  <h2>Does the bot work in DMs?</h2>
     <p>Yes. API keys are cross-server too, if you're in multiple servers with the bot.</p>
-  <h4>How do I setup game update notifications?</h4>
+  <h2>How do I setup game update notifications?</h2>
   <p>First, you must have the "manage server" permission. Provided you have that, first point the bot to the channel where
     it'll post announcements, using $updatenotifier channel. After that, enable it using $updatenotifier toggle on. Make
     sure the bot has permissions to talk in that channel.</p>
-  <h4>What is guildsync?</h4>
+  <h2>What is guildsync?</h2>
     <p>guildsync is a feature which allows you to sync your in game ranks with discord roles. In case of issues, follow these
       guidelines:
       <p>guildsync requires leader permissions in game.<br>
