@@ -91,19 +91,19 @@ footer {
 
 #index {
   text-align: center; }
-  #index button {
+  #index #button {
+    display: inline-block;
     margin-bottom: 5px;
     padding: 1.2rem 1.5rem;
     transition: 0.5s;
     background-color: #dc3545;
     border: none;
     border-radius: 0.3rem;
-    cursor: pointer; }
-    #index button a {
-      text-decoration: none;
-      font-size: 2rem;
-      color: #fff; }
-  #index button:hover {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff; }
+  #index #button:hover {
     transition: 0.5s;
     background-color: #c82333; }
   #index img {
