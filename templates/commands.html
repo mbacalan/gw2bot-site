@@ -109,6 +109,7 @@
       <ul class="list-group">
 
         {{ cmd.main("uptime", "Display bot's uptime") }}
+        {{ cmd.main_expand("stats", "Statistic related commands", cmd.newsfeedArgs) }}
 
       </ul>
     </div>

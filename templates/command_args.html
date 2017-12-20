@@ -69,6 +69,7 @@
 
 {% set guildsyncArgs = [
   ("clear", "Wipes settings and created roles and turns sync off"),
+  ("guildrole", "Adds a new role based on the guild tag for channel management"),
   ("now", "Force a synchronization, also deletes or creates new ranks as needed"),
   ("setup", "Setup process for ingame roster to Discord member list synchronization"),
   ("toggle", "Toggles synchronization on/off - does not wipe settings")
@@ -131,4 +132,9 @@
 {%set newsfeedArgs = [
   ("channel", "Sets the channel to send the news to"),
   ("toggle", "Toggles posting news")
+] -%}
+
+{%set newsfeedArgs = [
+  ("server", "Statistics of this server"),
+  ("user", "Statistics of this user")
 ] -%}
