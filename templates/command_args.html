@@ -1,15 +1,11 @@
 {% macro main_expand(name, description, cmdargs) -%}
 <li class="list-group-item border">
-  <div class="accordion">
-    <div class="acc-head">
-      <h3><a class="button">{{ name }}</a></h3>
-      <small>{{ description }}</small>
-    </div>
-    <div>
-      {% for arg_name, arg_description in cmdargs %}
-      {{ arg(arg_name, arg_description) }}
-      {% endfor %}
-    </div>
+  <h3><a class="button">{{ name }}</a></h3>
+  <small>{{ description }}</small>
+  <div class="args">
+    {% for arg_name, arg_description in cmdargs %}
+    {{ arg(arg_name, arg_description) }}
+    {% endfor %}
   </div>
 </li>
 {%- endmacro %}
