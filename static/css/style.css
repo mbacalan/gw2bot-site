@@ -155,8 +155,6 @@ footer {
   #commands .list-group-item:first-child {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem; }
-  #commands .acc-head:focus {
-    outline: auto 0px; }
   #commands .border {
     border: 1px solid #dc3545; }
   #commands .button {
@@ -167,11 +165,10 @@ footer {
     border-radius: 0.3rem;
     border-color: #343a40;
     transition: all 0.15s ease-in-out; }
-  #commands .button:hover {
+  #commands .active, .button:hover {
     color: white;
-    background-color: #343a40; }
-  #commands .ui-accordion .ui-accordion-header {
-    cursor: pointer; }
+    background-color: #343a40;
+    cursor: pointer }
 
 #faq {
   margin: auto;
