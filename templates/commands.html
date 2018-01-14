@@ -1,9 +1,6 @@
 {% extends "layout.html" %}
-
 {% set active_page = "Commands" %}
-
 {% import "command_args.html" as cmd %}
-
 {% block body %}
 
 <div id="commands">
@@ -15,27 +12,28 @@
     <div class="col-1">
       <ul class="list-group">
 
-          {{ cmd.main("account", "Information about your account") }}
-          {{ cmd.main("achievementinfo", "Display achievement information and your completion status")}}
-          {{ cmd.main("bosses", "Shows your raid progression for the week") }}
+        {{ cmd.main("account", "Information about your account") }}
+        {{ cmd.main("achievementinfo", "Display achievement information and your completion status")}}
+        {{ cmd.main("bosses", "Shows your raid progression for the week") }}
 
-          {{ cmd.main("cats", "Displays cats you haven't collected") }}
-          {{ cmd.main("changelog", "List of recent changes to the bot") }}
+        {{ cmd.main("cats", "Displays cats you haven't collected") }}
+        {{ cmd.main("changelog", "List of recent changes to the bot") }}
 
-          {{ cmd.main_expand("character", "Character related commands", cmd.characterArgs) }}
+        {{ cmd.main_expand("character", "Character related commands", cmd.characterArgs) }}
 
-          {{ cmd.main("chatcode", "Generate a chat code") }}
+        {{ cmd.main("chatcode", "Generate a chat code") }}
 
-          {{ cmd.main_expand("daily", "Commands showing daily things", cmd.dailyArgs) }}
+        {{ cmd.main_expand("daily", "Commands showing daily things", cmd.dailyArgs) }}
 
-          {{ cmd.main("dulfy", "Search dulfy.net") }}
-          {{ cmd.main("et", "The event timer, shows upcoming world bosses") }}
+        {{ cmd.main("dulfy", "Search dulfy.net") }}
+        {{ cmd.main("et", "The event timer, shows upcoming world bosses") }}
 
-          {{ cmd.main_expand("gem", "Commands related to gems", cmd.gemArgs) }}
+        {{ cmd.main_expand("gem", "Commands related to gems", cmd.gemArgs) }}
 
-          {{ cmd.main_expand("guild", "Guild related commands", cmd.guildArgs) }}
+        {{ cmd.main_expand("guild", "Guild related commands", cmd.guildArgs) }}
 
-          {{ cmd.main_expand("guildsync", "Guild synchronization related commands", cmd.guildsyncArgs) }}
+        {{ cmd.main_expand("guildsync", "Guild synchronization related commands", cmd.guildsyncArgs) }}
+
         </ul>
       </div>
     <div class="col-2">
@@ -77,7 +75,7 @@
 
         {{ cmd.main_expand("bossnotifier", "Sends the next two bosses every 15 minutes to a channel", cmd.bossnotifierArgs) }}
 
-         {{ cmd.main_expand("dailynotifier", "Sends a list of dailies to specified channel", cmd.dailynotifierArgs ) }}
+        {{ cmd.main_expand("dailynotifier", "Sends a list of dailies to specified channel", cmd.dailynotifierArgs ) }}
 
       </ul>
     </div>
