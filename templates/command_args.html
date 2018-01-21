@@ -84,7 +84,8 @@
 ] -%}
 
 {% set serverArgs = [
-  ("forceaccountnames", "Automatically change nicknames to in-game names")
+  ("forceaccountnames", "Automatically change nicknames to in-game names"),
+  ("timezone", "Change the timezone bot will use in this server")
 ] -%}
 
 {% set tpArgs = [
@@ -122,6 +123,7 @@
 
 {%set updatenotifierArgs = [
   ("channel", "Sets the channel to send the update announcement"),
+  ("mention", "Change the type of mention to be included with update notifier"),
   ("toggle", "Toggles sending game update notifications")
 ] -%}
 
