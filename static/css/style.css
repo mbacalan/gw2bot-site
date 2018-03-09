@@ -122,6 +122,8 @@ footer {
   padding-left: 15px;
   width: 100%;
   text-align: center; }
+  #commands small {
+    display: block; }
   #commands small#com-exp {
     font-style: italic; }
   #commands h1 {
@@ -157,17 +159,21 @@ footer {
     border-top-right-radius: 0.25rem; }
   #commands .border {
     border: 1px solid #dc3545; }
-  #commands .button {
+  #commands button {
+    font-size: 1.5em;
     text-align: center;
-    white-space: nowrap;
-    border: 1px solid transparent;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #343a40;
     border-radius: 0.3rem;
-    border-color: #343a40;
-    transition: all 0.15s ease-in-out; }
-  #commands .active, .button:hover {
-    color: white;
+    line-height: 1.2;
+    background-color: white;
+    color: black;
+    white-space: nowrap;
+    transition: all 0.15s ease-in-out }
+  #commands .active, #commands button:hover {
     background-color: #343a40;
+    color: white;
     cursor: pointer }
 
 #faq {
