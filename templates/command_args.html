@@ -1,6 +1,6 @@
 {% macro main_expand(name, description, cmdargs) -%}
 <li class="list-group-item border">
-  <h3><a class="button">{{ name }}</a></h3>
+  <button>{{ name }}</button>
   <small>{{ description }}</small>
   <div class="args">
     {% for arg_name, arg_description in cmdargs %}
