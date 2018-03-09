@@ -1,12 +1,12 @@
 $(document).ready(function () {
   // Accordion
-  var button = $(".button");
-  button.parent().nextAll("div").toggleClass("hidden");
+  var button = $("button");
+  button.nextAll("div").toggleClass("hidden");
 
   button.click(function () {
     var clickedButton = $(this);
     clickedButton.toggleClass("active");
-    var args = clickedButton.parent().nextAll("div");
+    var args = clickedButton.nextAll("div");
     args.slideToggle(300);
   });
 
