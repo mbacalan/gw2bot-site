@@ -21,14 +21,11 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
-#banner-sm {
+.header-img {
   display: block;
   margin: auto;
   max-width: 100%;
   height: auto; }
-
-#banner-lg {
-  display: none; }
 
 nav {
   position: sticky;
@@ -208,15 +205,6 @@ footer {
   footer {
     display: none; } }
 @media (min-width: 1024px) {
-  #banner-lg {
-    display: block;
-    margin: auto;
-    max-width: 100%;
-    height: auto; }
-
-  #banner-sm {
-    display: none; }
-
   #index h1 {
     font-size: 3.3em; }
 
