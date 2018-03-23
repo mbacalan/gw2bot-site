@@ -37,10 +37,10 @@
 {% set active_page = active_page|default('Home') -%}
 
 <body>
-  <div>
-    <img src="/static/img/banner.png" alt="Banner with GW2Bot Logo" id="banner-lg">
-    <img src="/static/img/avatarwithtext.png" alt="GW2Bot Logo" id="banner-sm">
-  </div>
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/static/img/banner.png">
+    <img class="header-img" src="/static/img/avatarwithtext.png" alt="Banner with GW2Bot Logo">
+  </picture>
 
   <nav>
     <div>
