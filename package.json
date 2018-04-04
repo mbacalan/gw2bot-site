@@ -1,0 +1,13 @@
+{
+  "name": "gw2bot-site",
+  "version": "1.0.0",
+  "main": "gw2botsite.py",
+  "repository": "https://github.com/pen-mb/gw2bot-site.git",
+  "author": "Muhammed Bacalan <muhammedbacalan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1"
+  }
+}
