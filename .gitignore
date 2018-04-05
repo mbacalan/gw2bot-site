@@ -101,7 +101,4 @@ ENV/
 # pen production
 .vscode/
 .sass-cache/
-gulpfile.js
-static/sass/
-static/css/style.css.map
 node_modules/
