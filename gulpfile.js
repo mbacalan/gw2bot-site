@@ -4,7 +4,7 @@ var browserSync = require("browser-sync").create();
 var sass = require("gulp-sass");
 var prefixer = require("gulp-autoprefixer");
 var uglify = require("gulp-uglify");
-var sourcemaps = require("gulp-sourcemaps");
+var imagemin = require("gulp-imagemin");
 var exec = require("child_process").exec;
 
 // DEVELOPMENT
@@ -53,9 +53,10 @@ gulp.task("copyTemplates", function() {
     .pipe(gulp.dest("dist/templates"));
 });
 
-gulp.task("copyImg", function() {
+gulp.task("imageMin", function() {
   gulp
-    .src(["static/img/*"])
+    .src("static/img/*")
+    .pipe(imagemin())
     .pipe(gulp.dest("dist/static/img"));
 });
 
@@ -63,22 +64,18 @@ gulp.task("copyImg", function() {
 gulp.task("stylesDist", function () {
   gulp
     .src("static/sass/**/*.scss")
-    .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "compressed" })).on("error", sass.logError)
     .pipe(prefixer({ browsers: ["last 2 versions"] }))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest("dist/static/css"));
 });
 
 //Minify JS for production
-gulp.task("minify", function () {
+gulp.task("jsMin", function () {
   gulp
     .src("static/js/**/*.js")
-    .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest("dist/static/js"));
 });
 
 //Put everything together for production
-gulp.task("dist", ["copyPy", "copyTemplates", "copyImg", "stylesDist", "minify"]);
+gulp.task("dist", ["copyPy", "copyTemplates", "imageMin", "stylesDist", "jsMin"]);
