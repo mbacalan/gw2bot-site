@@ -43,18 +43,16 @@
   </picture>
 
   <nav>
-    <div>
-      <ul>
-        {% for href, id, caption in navigation_bar %}
-        <li{% if id == active_page %} class="active" {% endif %}>
-          <a href="{{ href|e }}">{{ caption|e }}</a>
-        </li>
-        {% endfor %}
-        <li>
-          <a href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
-        </li>
-      </ul>
-    </div>
+    <ul>
+      {% for href, id, caption in navigation_bar %}
+      <li{% if id == active_page %} class="active" {% endif %}>
+        <a href="{{ href|e }}">{{ caption|e }}</a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href={{support_link}} title="Join GW2Bot's Discord server">Support</a>
+      </li>
+    </ul>
   </nav>
   <p id="apicheck"><span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span></p>
 
