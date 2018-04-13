@@ -57,7 +57,7 @@ nav {
   margin: 2px 2px 0px 0px; }
 
 .headline, #index h1, #commands h1, #commands h3, #faq h1, #faq h2 {
-  font-size: 2.7em;
+  font-size: 2.5em;
   font-weight: 400;
   line-height: 1.2;
   margin-top: 1rem;
@@ -127,7 +127,7 @@ footer {
   #commands small#com-exp {
     font-style: italic; }
   #commands h1 {
-    font-size: 2em; }
+    font-size: 2.5em; }
   #commands h3 {
     margin-bottom: 1rem;
     font-size: 1.5em; }
@@ -181,14 +181,25 @@ footer {
   margin: auto;
   text-align: center; }
   #faq h1 {
-    font-size: 2em; }
+    font-size: 2.5em; }
   #faq h2 {
-    font-size: 3rem;
-    font-weight: lighter; }
+    font-size: 2em; }
   #faq p {
     line-height: 1.4;
     padding-left: 5%;
     padding-right: 5%; }
+  #faq a {
+    text-decoration: none;
+    color: #1895a8; }
+  #faq ul {
+    list-style: none;
+    line-height: 1.8em; }
+  #faq code {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 1.5rem;
+    padding: 2px;
+    background: #e3e3e3;
+    border-radius: 3px; }
 
 @media (max-width: 320px) {
   nav ul {
@@ -210,7 +221,7 @@ footer {
 
 @media (min-width: 1024px) {
   #index h1 {
-    font-size: 3.3em; }
+    font-size: 3em; }
   #commands .wrapper {
     grid-template-columns: repeat(2, 1fr); }
   #commands .col-2 {
