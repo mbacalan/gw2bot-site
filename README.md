@@ -1,20 +1,29 @@
 # gw2bot-site
-[![Build Status](https://travis-ci.org/pen-mb/gw2bot-site.svg?branch=master)](https://travis-ci.org/pen-mb/gw2bot-site)
 
-The website of [GW2Bot by Maselkov](https://github.com/Maselkov/GW2Bot). Deployed at [gw2bot.info](https://gw2bot.info/).
+> The website of [GW2Bot by Maselkov](https://github.com/Maselkov/GW2Bot).
 
-The purpose of the website is to provide information about the bot, present its features and make it more accessible.
+> [gw2bot.info](https://gw2bot.info/)
 
-## Installation
+## Build Setup
 
-This project uses [Flask](http://flask.pocoo.org/), so you will need Python. If you have Python, you can then use ``pip install -r requirements.txt``. To install the dev-dependencies, use ``npm install`` or ``yarn install``.
+This project uses [Flask](http://flask.pocoo.org/) for backend and [Vue.js](https://vuejs.org/) with [Webpack template](https://github.com/vuejs-templates/webpack) for frontend.
 
-## Development
+``` bash
+#Install backend dependencies, requires Python
+pip install -r requirements.txt
 
-Once you have everything installed, use the default gulp task with ``gulp`` or ``gulp default``. This will run the app, process .scss into .css, prefix them and start [browsersync](https://www.browsersync.io/).
+# Install frontnend dependencies, requires Node
+yarn install
 
+# Serve with hot reload at localhost:8080
+yarn run dev
 
-## Production
+# Build to ./dist for production with minification
+yarn run build
 
-To build for production, use ``gulp dist``. It will compress images losslessly, minify .js and .css and put everything in the **dist** folder. You can then run ``gw2botsite.py`` inside the **dist** folder to see the production version.
+# Build for production and view the bundle analyzer report
+yarn run build --report
 
+# See the production build in action at localhost:5000
+py gw2botsite.py
+```
