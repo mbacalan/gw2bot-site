@@ -61,8 +61,19 @@ nav {
   margin-top: 1rem;
   margin-bottom: 1.5rem; }
 
-#paypal {
-  text-align: center; }
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#patreon {
+  margin-bottom: 5px;
+}
+
+#paypal form input {
+  display: block;
+}
 
 #footer-lg {
   display: none; }
@@ -206,7 +217,9 @@ footer {
 
 @media (max-width: 320px) {
   nav ul {
-    font-size: 0.9em; } }
+    font-size: 0.9em; }
+  }
+
 @media (min-width: 935px) {
   body {
     margin-bottom: 5rem; }
@@ -221,13 +234,30 @@ footer {
     background-color: #343A40; }
 
   footer {
-    display: none; } }
+    display: none; }
+  }
+
 @media (min-width: 1024px) {
   #index h1 {
     font-size: 3em; }
+
+  .flex-wrapper {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #patreon {
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+
+  #paypal form input {
+    display: inline;
+  }
 
   #commands .wrapper {
     grid-template-columns: repeat(2, 1fr); }
   #commands .col-2 {
     grid-column: 2;
-    grid-row: 1; } }
+    grid-row: 1; }
+  }
