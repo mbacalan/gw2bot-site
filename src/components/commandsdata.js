@@ -4,9 +4,12 @@ export default {
   data() {
     return {
       commandsMainOne: {
-        account: { name: "account", desc: "Information about your account" },
+        account: {
+          name: "account",
+          desc: "Information about your account"
+        },
         achievementinfo: {
-          name: "achievementinfo",
+          name: "achievement",
           desc: "Display achievement information and your completion status"
         },
         bosses: {
@@ -31,7 +34,7 @@ export default {
             build: "Displays the build of given character",
             gear: "Displays the gear of given character",
             info: "Info about the given character",
-            list: "Lists all your characters",
+            list: "Lists all your characters with extra information",
             pvpbuild: "Displays the build of given character",
             togglepublic: "Toggle your character's status to public",
             wvwbuild: "Displays the build of given character"
@@ -59,7 +62,13 @@ export default {
         },
         et: {
           name: "et",
-          desc: "The event timer, shows upcoming world bosses"
+          desc: "The event timer",
+          args: {
+            bosses: "Upcoming world bosses",
+            day: "Current day/night cycle",
+            hot: "Event timer for HoT maps and Dry Top",
+            pof: "Event timer for PoF and LS4 maps"
+          }
         },
         gem: {
           name: "gem",
@@ -96,10 +105,6 @@ export default {
         gw2wiki: {
           name: "gw2wiki",
           desc: "Search the Guild Wars 2 wiki"
-        },
-        hotet: {
-          name: "hotet",
-          desc: "The HoT event timer, shows phases of HoT maps"
         },
         key: {
           name: "key",
@@ -143,7 +148,7 @@ export default {
             timezone: "Change the timezone bot will use in this server"
           }
         },
-        skillinfo: {
+        skill: {
           name: "skillinfo",
           desc: "Information about a given skill"
         },
@@ -155,6 +160,10 @@ export default {
             delivery: "Show your items awaiting in delivery box",
             price: "Checks price of an item"
           }
+        },
+        trait: {
+          name: "trait",
+          desc: "Information about a given trait"
         },
         wallet: {
           name: "wallet",
@@ -252,7 +261,7 @@ export default {
     };
   },
   methods: {
-    toggleActive: function(event, command) {
+    toggleActive: function (event, command) {
       if (command.active) {
         command.active = false;
       } else if (!command.active) {
