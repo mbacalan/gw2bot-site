@@ -75,14 +75,16 @@ export default {
           desc: "Commands related to gems",
           args: {
             price: "Lists current gold/gem exchange prices",
-            track: "Recive a notification when cost of 400 gems drops below the specified cost"
+            track:
+              "Recive a notification when cost of 400 gems drops below the specified cost"
           }
         },
         guild: {
           name: "guild",
           desc: "Guild related commands",
           args: {
-            default: "Set your preferred guild for guild commands on current Discord Server",
+            default:
+              "Set your preferred guild for guild commands on current Discord Server",
             info: "Information about general guild stats",
             log: "Get log of last 20 entries of stash/treasury/members",
             members: "Get list of all members and their ranks",
@@ -94,9 +96,12 @@ export default {
           desc: "Guild synchronization related commands",
           args: {
             clear: "Wipes settings and created roles and turns sync off",
-            guildrole: "Adds a new role based on the guild tag for channel management",
-            now: "Force a synchronization, also deletes or creates new ranks as needed",
-            setup: "Setup process for ingame roster to Discord member list synchronization",
+            guildrole:
+              "Adds a new role based on the guild tag for channel management",
+            now:
+              "Force a synchronization, also deletes or creates new ranks as needed",
+            setup:
+              "Setup process for ingame roster to Discord member list synchronization",
             toggle: "Toggles synchronization on/off - does not wipe settings"
           }
         }
@@ -113,7 +118,7 @@ export default {
             add: "Adds your key and associates it with your Discord account",
             info: "Information about your API key",
             remove: "Removes your key from the list",
-            switch: "Swaps between multiple stored API keys",
+            switch: "Swaps between multiple stored API keys"
           }
         },
         prefix: {
@@ -144,7 +149,8 @@ export default {
           name: "server",
           desc: "Commands for server management",
           args: {
-            forceaccountnames: "Automatically change nicknames to in-game names",
+            forceaccountnames:
+              "Automatically change nicknames to in-game names",
             timezone: "Change the timezone bot will use in this server"
           }
         },
@@ -170,19 +176,22 @@ export default {
           desc: "Commands related to wallet",
           args: {
             currencies: "Returns a list of all currencies",
-            currency: "Info about a currency. See [p]wallet currencies for list",
+            currency:
+              "Info about a currency. See [p]wallet currencies for list",
             maps: "Shows map-specific currencies",
             show: "Shows most important currencies in your wallet",
-            tokens: "Shows instance-specific currencies",
+            tokens: "Shows instance-specific currencies"
           }
         },
         wvw: {
           name: "wvw",
           desc: "Commands related to WvW",
           args: {
-            info: "Info about a world. If none is provided, defaults to account's world",
+            info:
+              "Info about a world. If none is provided, defaults to account's world",
             worlds: "List all worlds",
-            populationtrack: "Receive a notification when the world is no longer full",
+            populationtrack:
+              "Receive a notification when the world is no longer full"
           }
         },
         li: {
@@ -211,7 +220,8 @@ export default {
             toggle: "Toggles posting dailies at server reset",
             autodelete: "Toggles autodeleting last day's daily notification",
             autopin: "Toggles autopinning daily notifications",
-            categories: "Choose which categories to display on daily notifications"
+            categories:
+              "Choose which categories to display on daily notifications"
           }
         }
       },
@@ -221,7 +231,8 @@ export default {
           desc: "For setting up notifcations whenever the game updates",
           args: {
             channel: "Sets the channel to send the update announcement",
-            mention: "Change the type of mention to be included with update notifier",
+            mention:
+              "Change the type of mention to be included with update notifier",
             toggle: "Toggles sending game update notifications"
           }
         },
@@ -256,12 +267,12 @@ export default {
             server: "Statistics of this server",
             user: "Statistics of the user"
           }
-        },
+        }
       }
     };
   },
   methods: {
-    toggleActive: function (event, command) {
+    toggleActive: function(event, command) {
       if (command.active) {
         command.active = false;
       } else if (!command.active) {

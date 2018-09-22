@@ -9,8 +9,8 @@
     <a id="button" :href="inviteLink">Add To Server!</a>
     <hr>
     <picture>
-      <source media="(min-width: 1024px)" srcset="/static/img/botdemo.gif">
-      <img src="/static/img/botdemo-sm.gif" alt="A .gif demonstration of the bot">
+      <source media="(min-width: 1024px)" srcset="@/assets/img/botdemo.gif">
+      <img src="@/assets/img/botdemo-sm.gif" alt="A .gif demonstration of the bot">
     </picture>
   </div>
 </template>
@@ -55,4 +55,3 @@ export default {
   color: black;
 }
 </style>
-

@@ -163,7 +163,5 @@
   </div>
 </template>
 
-<script src="./commandsdata.js" scoped>
+<script src="@/commandsdata.js" scoped>
 </script>
-
-

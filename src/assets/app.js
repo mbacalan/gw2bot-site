@@ -1,3 +1,7 @@
+import Header from "@/components/Header.vue";
+import Donate from "@/components/Donate.vue";
+import Footer from "@/components/Footer.vue";
+
 let request = new XMLHttpRequest();
 request.open("GET", "https://api.guildwars2.com/v2/quaggans", true);
 
@@ -14,3 +18,11 @@ request.onerror = function() {
 };
 
 request.send();
+
+export default {
+  components: {
+    Header,
+    Donate,
+    Footer
+  }
+};

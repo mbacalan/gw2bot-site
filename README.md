@@ -6,23 +6,20 @@
 
 ## Build Setup
 
-This project uses [Flask](http://flask.pocoo.org/) for backend and [Vue.js](https://vuejs.org/) with [Webpack template](https://github.com/vuejs-templates/webpack) for frontend.
+This project uses [Flask](http://flask.pocoo.org/) for backend and [Vue.js](https://vuejs.org/) with [vue-cli3](https://cli.vuejs.org/) for frontend.
 
 ``` bash
 #Install backend dependencies, requires Python
 pip install -r requirements.txt
 
 # Install frontnend dependencies, requires Node
-yarn install
+npm install
 
 # Serve with hot reload at localhost:8080
-yarn run dev
+npm run serve
 
 # Build to ./dist for production with minification
-yarn run build
-
-# Build for production and view the bundle analyzer report
-yarn run build --report
+npm run build
 
 # See the production build in action at localhost:5000
 py gw2botsite.py
