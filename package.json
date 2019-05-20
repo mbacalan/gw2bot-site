@@ -39,6 +39,14 @@
       "autoprefixer": {}
     }
   },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "vue": {
+    "assetsDir": "static"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
