@@ -1,9 +1,5 @@
 <template>
   <div id="index">
-    <div class="alert" v-if="!alert">
-      <span class="close-button" v-on:click="closeAlert">&times;</span>
-      A major update is now live along with Patreon!
-    </div>
     <hr>
     <h1 class="headline">Bring the world of Tyria into Discord</h1>
     <a id="button" :href="inviteLink">Add To Server!</a>
@@ -16,20 +12,6 @@
 </template>
 
 <script scoped>
-export default {
-  props: ["inviteLink"],
-  methods: {
-    closeAlert: function(event) {
-      event.target.parentElement.style.display = "none";
-      document.cookie = "alert=off";
-    }
-  },
-  data() {
-    return {
-      alert: document.cookie
-    };
-  }
-};
 </script>
 
 <style scoped>
