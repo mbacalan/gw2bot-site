@@ -1,8 +1,8 @@
 <template>
-  <div id="commands">
+  <div class="commands">
     <hr>
     <h1>The default prefix is $</h1>
-    <small id="com-exp">Use commands with multiple options with a space in between: $key add</small>
+    <small class="com-exp">Use commands with multiple options with a space in between: $key add</small>
     <hr>
     <div class="wrapper">
       <div class="col-1">
@@ -162,6 +162,13 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+h3 {
+  font-family: "Raleway", sans-serif;
+}
+</style>
+
 
 <script src="@/commandsdata.js" scoped>
 </script>

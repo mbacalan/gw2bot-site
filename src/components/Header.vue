@@ -1,5 +1,5 @@
 <template>
-  <div id="header">
+  <div class="header">
     <picture>
       <source media="(min-width: 2550px)" srcset="@/assets/img/banner1440p.png">
       <source media="(min-width: 1024px)" srcset="@/assets/img/banner.png">

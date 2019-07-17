@@ -1,18 +1,50 @@
 <template>
   <div class="flex-wrapper">
-    <div id="patreon">
+    <div class="patreon">
       <a href="https://www.patreon.com/bePatron?u=9811418">
         <img src="@/assets/img/patreon.png">
       </a>
     </div>
 
-    <div id="paypal">
+    <div class="paypal">
       <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=96N5SP5FYTTGJ">
         <img src="@/assets/img/paypal.png">
       </a>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .patreon {
+    margin-bottom: 5px;
+  }
+
+  .paypal form input {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flex-wrapper {
+    flex-direction: row;
+    justify-content: center;
+
+    .patreon {
+      margin-right: 10px;
+      margin-bottom: 0px;
+    }
+
+    .paypal form input {
+      display: inline;
+    }
+  }
+}
+</style>
 
 <script>
 export default {
