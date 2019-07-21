@@ -5,8 +5,58 @@
       <source media="(min-width: 1024px)" srcset="@/assets/img/banner.png">
       <img class="header-img" src="@/assets/img/avatarwithtext.png" alt="Banner with GW2Bot Logo">
     </picture>
+    <nav>
+      <ul>
+        <router-link to="/" active-class="active" exact>Home</router-link>
+        <router-link to="/commands" active-class="active">Commands</router-link>
+        <router-link to="/faq" active-class="active">F.A.Q</router-link>
+        <a href="https://discord.gg/VyQTrwP">Support</a>
+      </ul>
+    </nav>
+    <p class="apicheck">
+      <span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
+    </p>
   </div>
 </template>
+
+<style lang="scss" scoped>
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+
+  ul {
+    font-size: 1.05em;
+    text-align: center;
+    list-style-type: none;
+    margin: 0px auto;
+    padding: 1rem;
+    overflow: hidden;
+    background-color: #343a40;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 1.2rem;
+
+    &:hover {
+      color: white;
+    }
+
+    &.active {
+      color: white;
+    }
+  }
+}
+
+.apicheck {
+  text-align: right;
+  margin: 2px 0px;
+}
+</style>
+
 
 <script>
 export default {

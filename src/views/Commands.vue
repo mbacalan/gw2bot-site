@@ -14,9 +14,9 @@
               <small>{{ command.desc }}</small>
             </div>
             <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
+              <h3 class="button" @click="toggleActive($event, command)" :class="{active: command.active}">
                 {{ command.name }}
-              </button>
+              </h3>
               <small>{{ command.desc }}</small>
               <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
               :key="argName.id">
@@ -38,9 +38,9 @@
               <small>{{ command.desc }}</small>
             </div>
             <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
+              <h3 class="button" @click="toggleActive($event, command)" :class="{active: command.active}">
                 {{ command.name }}
-              </button>
+              </h3>
               <small>{{ command.desc }}</small>
               <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
               :key="argName.id">
@@ -67,9 +67,9 @@
               <small>{{ command.desc }}</small>
             </div>
             <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
+              <h3 class="button" @click="toggleActive($event, command)" :class="{active: command.active}">
                 {{ command.name }}
-              </button>
+              </h3>
               <small>{{ command.desc }}</small>
               <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
               :key="argName.id">
@@ -91,9 +91,9 @@
               <small>{{ command.desc }}</small>
             </div>
             <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
+              <h3 class="button" @click="toggleActive($event, command)" :class="{active: command.active}">
                 {{ command.name }}
-              </button>
+              </h3>
               <small>{{ command.desc }}</small>
               <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
               :key="argName.id">
@@ -120,9 +120,9 @@
               <small>{{ command.desc }}</small>
             </div>
             <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
+              <h3 class="button" @click="toggleActive($event, command)" :class="{active: command.active}">
                 {{ command.name }}
-              </button>
+              </h3>
               <small>{{ command.desc }}</small>
               <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
               :key="argName.id">
@@ -144,9 +144,9 @@
               <small>{{ command.desc }}</small>
             </div>
             <div v-else>
-              <button @click="toggleActive($event, command)" :class="{active: command.active}">
+              <h3 class="button" @click="toggleActive($event, command)" :class="{active: command.active}">
                 {{ command.name }}
-              </button>
+              </h3>
               <small>{{ command.desc }}</small>
               <div class="args" v-show="command.active" v-for="(argDesc, argName,) in command.args"
               :key="argName.id">
@@ -164,8 +164,33 @@
 </template>
 
 <style lang="scss" scoped>
+h3,
+h3.button {
+  display: inline-block;
+  font-size: 1.5em;
+  padding: 0.4rem 1rem;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
 h3 {
+  border: 1px solid transparent;
   font-family: "Raleway", sans-serif;
+}
+
+h3.button {
+  cursor: pointer;
+  border: 1px solid #343a40;
+  border-radius: 0.3rem;
+  background-color: white;
+  transition: all 0.15s ease-in-out;
+
+  &.active,
+  &:hover {
+    background-color: #343a40;
+    color: white;
+    cursor: pointer;
+  }
 }
 </style>
 

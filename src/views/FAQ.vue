@@ -45,8 +45,10 @@
         <div class="list-group">
           <li class="list-group-item border">
             <h3>What is guildsync?</h3>
-            <p>guildsync is a feature which allows you to sync your in game ranks with discord roles.</p>
-            <p>Here is some key information about how it works;</p>
+            <p>
+              guildsync is a feature which allows you to sync your in game ranks with discord roles.
+              Here is some key information about how it works;
+            </p>
             <ul>
               <li>It requires leader permissions in game.</li>
               <li>It is tied to your account. If you remove your API key, it will break.</li>
@@ -80,14 +82,15 @@
     font-size: 2em;
   }
 
-  p {
+  p,
+  ul {
     line-height: 1.4;
     padding-left: 5%;
     padding-right: 5%;
   }
 
   .wrapper p {
-    font-weight: normal;
+    text-align: left;
   }
 
   a {
@@ -96,9 +99,9 @@
   }
 
   ul {
-    list-style: none;
+    list-style: decimal;
     line-height: 1.8em;
-    padding: 0;
+    text-align: left;
   }
 
   code {

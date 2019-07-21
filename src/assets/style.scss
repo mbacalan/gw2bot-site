@@ -23,7 +23,7 @@ h6 {
   font-size: 2.5em;
   font-weight: 400;
   line-height: 1.2;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -45,42 +45,6 @@ hr {
   margin: auto;
   max-width: 100%;
   height: auto;
-}
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1020;
-
-  ul {
-    font-size: 1.05em;
-    text-align: center;
-    list-style-type: none;
-    margin: 0px auto;
-    padding: 1rem;
-    overflow: hidden;
-    background-color: #343a40;
-  }
-
-  a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
-    text-align: center;
-    padding: 1.2rem;
-
-    &:hover {
-      color: white;
-    }
-
-    &.active {
-      color: white;
-    }
-  }
-}
-
-.apicheck {
-  text-align: right;
-  margin: 2px 0px;
 }
 
 .commands,
@@ -146,26 +110,6 @@ nav {
       .border {
         border: 1px solid #dc3545;
       }
-    }
-  }
-
-  // TODO: Normalize button with h3 in Commands
-  button {
-    font-size: 1.5em;
-    font-weight: 400;
-    padding: 0.4rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #343a40;
-    border-radius: 0.3rem;
-    background-color: white;
-    white-space: nowrap;
-    transition: all 0.15s ease-in-out;
-
-    &.active,
-    &:hover {
-      background-color: #343a40;
-      color: white;
-      cursor: pointer;
     }
   }
 }
