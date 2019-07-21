@@ -67,7 +67,9 @@ export default {
             bosses: "Upcoming world bosses",
             day: "Current day/night cycle",
             hot: "Event timer for HoT maps and Dry Top",
-            pof: "Event timer for PoF and LS4 maps"
+            pof: "Event timer for PoF and LS4 maps",
+            reminder:
+              "Make the bot automatically notify you before an event starts"
           }
         },
         gem: {
