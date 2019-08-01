@@ -94,8 +94,7 @@
   }
 
   a {
-    text-decoration: none;
-    color: #1895a8;
+    color: #000;
   }
 
   ul {
