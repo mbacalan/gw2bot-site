@@ -6,12 +6,12 @@
       <img class="header-img" src="@/assets/img/avatarwithtext.png" alt="Banner with GW2Bot Logo">
     </picture>
     <nav>
-      <ul>
+      <div class="nav-list">
         <router-link to="/" active-class="active" exact>Home</router-link>
         <router-link to="/commands" active-class="active">Commands</router-link>
         <router-link to="/faq" active-class="active">F.A.Q</router-link>
         <a href="https://discord.gg/VyQTrwP">Support</a>
-      </ul>
+      </div>
     </nav>
     <p class="apicheck">
       <span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
@@ -25,10 +25,9 @@ nav {
   top: 0;
   z-index: 1020;
 
-  ul {
+  .nav-list {
     font-size: 1.05em;
     text-align: center;
-    list-style-type: none;
     margin: 0px auto;
     padding: 1rem;
     overflow: hidden;
