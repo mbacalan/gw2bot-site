@@ -2,7 +2,7 @@
   <div class="footer">
     <footer class="footer-lg">
       <div class="container">
-        <p>©2018 - GW2Bot created by Maselkov#2365, Website created by Penemue#8514&nbsp;- &nbsp; If you want to contribute, see
+        <p>©2019 - GW2Bot created by Maselkov#2365, Website created by Penemue#8514&nbsp;- &nbsp; If you want to contribute, see
           <a target="_blank" rel="noreferrer" href="https://github.com/Maselkov/GW2Bot">here for the bot </a>
           and
           <a target="_blank" rel="noreferrer" href="https://github.com/mbacalan/gw2bot-site">here for the website.</a> Thanks to all contributors.</p>
