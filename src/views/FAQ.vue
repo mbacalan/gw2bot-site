@@ -12,7 +12,6 @@
       <code>$prefix</code>.
     </p>
     <div class="wrapper">
-      <div class="col-1">
         <div class="list-group">
           <li class="list-group-item border">
             <h3>How do I use the bot?</h3>
@@ -38,11 +37,6 @@
               sure the bot has permissions to talk in that channel.
             </p>
           </li>
-        </div>
-      </div>
-
-      <div class="col-2">
-        <div class="list-group">
           <li class="list-group-item border">
             <h3>What is guildsync?</h3>
             <p>
@@ -63,8 +57,6 @@
             </ul>
           </li>
         </div>
-      </div>
-
     </div>
   </div>
 </template>

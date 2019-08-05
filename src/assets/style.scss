@@ -75,36 +75,16 @@ hr {
   }
 
   .wrapper {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr;
-    grid-auto-rows: minmax(100px, auto);
-
-    .col-1 {
-      grid-column: 1;
-      grid-row: 1;
-
-      p {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-      }
-    }
+    columns: 1;
 
     .list-group {
       padding: 0;
-      margin-bottom: 0;
+      margin: 0;
 
       .list-group-item {
-        position: relative;
         display: block;
         padding: 0.75rem 1.25rem;
         margin-bottom: -1px;
-        background-color: #fff;
-
-        &:first-child {
-          border-top-left-radius: 0.25rem;
-          border-top-right-radius: 0.25rem;
-        }
       }
 
       .border {
@@ -129,12 +109,6 @@ hr {
 @media (min-width: 1024px) {
   .commands .wrapper,
   .faq .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .commands .col-2,
-  .faq .col-2 {
-    grid-column: 2;
-    grid-row: 1;
+    columns: 2;
   }
 }
