@@ -3,7 +3,7 @@ import Vue from "vue";
 export default {
   data() {
     return {
-      commandsMainOne: {
+      general: {
         account: {
           name: "account",
           desc: "Information about your account"
@@ -110,9 +110,7 @@ export default {
         gw2wiki: {
           name: "gw2wiki",
           desc: "Search the Guild Wars 2 wiki"
-        }
-      },
-      commandsMainTwo: {
+        },
         key: {
           name: "key",
           desc: "Commands related to API keys",
@@ -216,7 +214,7 @@ export default {
           desc: "Shows the commands menu"
         }
       },
-      commandsNotifiersOne: {
+      notifiers: {
         bossnotifier: {
           name: "bossnotifier",
           desc: "Sends the next two bosses every 15 minutes to a channel",
@@ -236,9 +234,7 @@ export default {
             categories:
               "Choose which categories to display on daily notifications"
           }
-        }
-      },
-      commandsNotifiersTwo: {
+        },
         updatenotifier: {
           name: "updatenotifier",
           desc: "For setting up notifcations whenever the game updates",
@@ -258,7 +254,7 @@ export default {
           }
         }
       },
-      commandsMetaOne: {
+      meta: {
         info: {
           name: "info",
           desc: "Display bot's info"
@@ -266,9 +262,7 @@ export default {
         ping: {
           name: "ping",
           desc: "Pong!"
-        }
-      },
-      commandsMetaTwo: {
+        },
         uptime: {
           name: "uptime",
           desc: "Display bot's uptime"
