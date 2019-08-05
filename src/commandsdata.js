@@ -67,7 +67,9 @@ export default {
             bosses: "Upcoming world bosses",
             day: "Current day/night cycle",
             hot: "Event timer for HoT maps and Dry Top",
-            pof: "Event timer for PoF and LS4 maps"
+            pof: "Event timer for PoF and LS4 maps",
+            reminder:
+              "Make the bot automatically notify you before an event starts"
           }
         },
         gem: {
@@ -104,13 +106,13 @@ export default {
               "Setup process for ingame roster to Discord member list synchronization",
             toggle: "Toggles synchronization on/off - does not wipe settings"
           }
-        }
-      },
-      commandsMainTwo: {
+        },
         gw2wiki: {
           name: "gw2wiki",
           desc: "Search the Guild Wars 2 wiki"
-        },
+        }
+      },
+      commandsMainTwo: {
         key: {
           name: "key",
           desc: "Commands related to API keys",
@@ -181,6 +183,17 @@ export default {
             maps: "Shows map-specific currencies",
             show: "Shows most important currencies in your wallet",
             tokens: "Shows instance-specific currencies"
+          }
+        },
+        worldSync: {
+          name: "worldsync",
+          desc: "Role management based on in game account world",
+          args: {
+            allyrole: "Set the role to be given to those in the linked worlds",
+            now: "Run the worldsync now",
+            toggle: "Enable automatic world roles",
+            world: "Set your home world",
+            worldrole: "Set the role to be given to those in the home world"
           }
         },
         wvw: {
