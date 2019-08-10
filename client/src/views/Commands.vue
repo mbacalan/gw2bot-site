@@ -134,5 +134,5 @@ h3.button {
 </style>
 
 
-<script src="@/commandsdata.js" scoped>
+<script src="@/commandsData.js" scoped>
 </script>

@@ -10,6 +10,7 @@
         <router-link to="/" active-class="active" exact>Home</router-link>
         <router-link to="/commands" active-class="active">Commands</router-link>
         <router-link to="/faq" active-class="active">F.A.Q</router-link>
+        <router-link to="/login" active-class="active">Login</router-link>
         <a href="https://discord.gg/VyQTrwP">Support</a>
       </div>
     </nav>
