@@ -57,11 +57,6 @@ export default {
   },
 
   auth: {
-    redirect: {
-      login: '/',
-      logout: '/',
-      callback: '/'
-    },
     strategies: {
       discord: {
         _scheme: 'oauth2',
@@ -71,7 +66,7 @@ export default {
         scope: ['identify'],
         response_type: 'token',
         token_type: 'Bearer',
-        redirect_uri: process.env.REDIRECT_URI || 'http://localhost:3000/'
+        redirect_uri: process.env.REDIRECT_URI || 'http://localhost:3000/login'
       }
     }
   },

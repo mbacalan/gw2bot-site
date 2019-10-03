@@ -32,6 +32,24 @@
         </div>
       </div>
 
+      <div class="encounter-select--mobile">
+        <select name="bosses">
+          <option selected>
+            Select a boss
+          </option>
+          <optgroup v-for="(section, key) in bosses" :key="section.id" :label="key">
+            <option
+              v-for="(boss, index) in section"
+              :key="index"
+              :data-value="boss.ids"
+              @click="toggleActive($event)"
+            >
+              {{ boss.name }}
+            </option>
+          </optgroup>
+        </select>
+      </div>
+
       <div v-if="detailedEncounters" class="encounter-wrapper">
         <div v-for="encounter in detailedEncounters" :key="encounter.id" class="encounter" :data-value="encounter.triggerID">
           <div class="details">
@@ -219,6 +237,30 @@
   &:hover {
     transition: 0.5s;
     background-color: #c82333;
+  }
+}
+
+.encounter-select--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .encounter-select {
+    display: none;
+
+    &--mobile {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .encounter-wrapper {
+    width: 100%;
+    height: 400px;
   }
 }
 </style>

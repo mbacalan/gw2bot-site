@@ -5,6 +5,7 @@
       <source media="(min-width: 1024px)" srcset="@/assets/img/banner.png">
       <img class="header-img" src="@/assets/img/avatarwithtext.png" alt="Banner with GW2Bot Logo">
     </picture>
+
     <nav>
       <div class="nav-list">
         <nuxt-link to="/" active-class="active" exact>
@@ -28,6 +29,7 @@
         <a href="https://discord.gg/VyQTrwP">Support</a>
       </div>
     </nav>
+
     <p class="apicheck">
       <span id="apistatus" title="If API is offline, the bot will not function properly">Checking API... ☐</span>
     </p>
