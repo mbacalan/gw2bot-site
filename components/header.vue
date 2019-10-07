@@ -3,7 +3,7 @@
     <picture>
       <source media="(min-width: 2550px)" srcset="@/assets/img/gw2botbanner.png">
       <source media="(min-width: 1024px)" srcset="@/assets/img/gw2botbanner.png">
-      <img class="header-img" src="@/assets/img/avatarwithtext.png" alt="Banner with GW2Bot Logo">
+      <img class="header-img" src="@/assets/img/gw2botbannerMobile.png" alt="Banner for mobile version">
     </picture>
 
     <nav>
@@ -48,7 +48,7 @@ nav {
     margin: 0px auto;
     padding: 1rem;
     overflow: hidden;
-    background-color: #343a40;
+    background-color: #a61501;
   }
 
   a {
