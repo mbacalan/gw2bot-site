@@ -1,3 +1,5 @@
+@import 'config';
+
 html {
   font-family: "Raleway", sans-serif;
   font-size: 10px;
@@ -11,7 +13,7 @@ body {
   font-size: 1.6em;
   line-height: 1.15;
   margin-bottom: 3rem;
-  background-color: #2c2f33
+  background-color: $primaryColor;
 }
 
 h1,
@@ -27,6 +29,9 @@ h6 {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
+span {
+  color:$secondaryColor;
+}
 
 .hidden {
   display: none;
@@ -40,17 +45,17 @@ h6 {
     margin-bottom: 5px;
     padding: 1.2rem 1.5rem;
     transition: 0.5s;
-    background-color: #a61501;
+    background-color: $secondaryColor;
     border: none;
     border-radius: 0.3rem;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
-    color: #fff;
+    color: $tertiaryColor;
 
     &:hover {
       transition: 0.5s;
-      background-color: #c82333;
+      background-color: $secondaryColor;
     }
   }
 
@@ -121,7 +126,7 @@ hr {
       }
 
       .border {
-        border: 1px solid #dc3545;
+        border: 1px solid $secondaryColor;
       }
     }
   }
