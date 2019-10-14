@@ -55,7 +55,7 @@ span {
 
     &:hover {
       transition: 0.5s;
-      background-color: $secondaryColor;
+      background-color: darken($secondaryColor, 10%);
     }
   }
 
