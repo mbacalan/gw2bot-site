@@ -109,6 +109,9 @@
 </template>
 
 <style lang="scss" scoped>
+
+@import '../assets/config';
+
 h3,
 h3.button {
   display: inline-block;
@@ -127,7 +130,7 @@ h3.button {
   cursor: pointer;
   border: 1px solid #343a40;
   border-radius: 0.3rem;
-  background-color: white;
+  background-color: $secondaryColor;
   transition: all 0.15s ease-in-out;
 
   &.active,
