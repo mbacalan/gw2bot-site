@@ -31,7 +31,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 3rem;
-  background-color: #343a40;
+  background-color: #2c2f33;
 
   p {
     text-align: center;
@@ -58,7 +58,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 5rem;
-    background-color: #343a40;
+    background-color: #2c2f33;
   }
 
   footer {
