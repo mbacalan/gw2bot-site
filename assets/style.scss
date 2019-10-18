@@ -28,9 +28,14 @@ h6 {
   line-height: 1.2;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
+  color: $tertiaryColor;
 }
 span {
-  color:$secondaryColor;
+  color:$tertiaryColor;
+}
+
+.headline {
+  margin-bottom: 25px;
 }
 
 .hidden {
@@ -42,7 +47,7 @@ span {
 
   .button {
     display: inline-block;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     padding: 1.2rem 1.5rem;
     transition: 0.5s;
     background-color: $secondaryColor;
@@ -63,7 +68,7 @@ span {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 25px auto 25px auto;
+    margin: 10px auto 40px auto;
     border-radius: 0.25rem;
   }
 }
@@ -104,7 +109,6 @@ hr {
 
   h1 {
     font-size: 2.5em;
-    color: $tertiaryColor;
   }
 
   h3 {
