@@ -1,9 +1,9 @@
 <template>
   <div class="commands">
-    <!-- <hr> -->
+
     <h1>The default prefix is $</h1>
     <small class="com-exp">Use commands with multiple options with a space in between: $key add</small>
-    <!-- <hr> -->
+
     <div class="wrapper">
       <ul class="list-group">
         <li v-for="command in general" :key="command.id" class="list-group-item border">

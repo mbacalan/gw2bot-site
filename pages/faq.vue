@@ -1,8 +1,6 @@
 <template>
   <div class="faq">
-    <hr>
     <h1>Frequently Asked Questions</h1>
-    <hr>
     <p>
       Type
       <code>$help</code> for list of all commands.
