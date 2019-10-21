@@ -60,6 +60,9 @@
 </template>
 
 <style lang="scss" scoped>
+
+@import '../assets/config';
+
 .faq {
   margin: auto;
   text-align: center;
@@ -97,7 +100,8 @@
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 1.5rem;
     padding: 2px;
-    background: #e3e3e3;
+    color:#000;
+    background: lighten($tertiaryColor, 5);
     border-radius: 3px;
   }
 }
