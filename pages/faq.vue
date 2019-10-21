@@ -12,7 +12,7 @@
     <div class="wrapper">
       <div class="list-group">
         <li class="list-group-item border">
-          <h3>How do I use the bot?</h3>
+          <h3 class="titles">How do I use the bot?</h3>
           <p>
             After the bot has been added to the server using
             <a href="https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=939879488">this link</a>,
@@ -20,11 +20,11 @@
           </p>
         </li>
         <li class="list-group-item border">
-          <h3>Does the bot work in DMs?</h3>
+          <h3 class="titles">Does the bot work in DMs?</h3>
           <p>Yes. API keys are cross-server too, if you're in multiple servers with the bot.</p>
         </li>
         <li class="list-group-item border">
-          <h3>How do I setup game update notifications?</h3>
+          <h3 class="titles">How do I setup game update notifications?</h3>
           <p>
             First, you must have the "manage server" permission.
             Provided you have that, first point the bot to the channel where
@@ -36,7 +36,7 @@
           </p>
         </li>
         <li class="list-group-item border">
-          <h3>What is guildsync?</h3>
+          <h3 class="titles">What is guildsync?</h3>
           <p>
             guildsync is a feature which allows you to sync your in game ranks with discord roles.
             Here is some key information about how it works;
@@ -87,7 +87,7 @@
   }
 
   a {
-    color: #000;
+    color: $tertiaryColor;
   }
 
   ul {
@@ -101,7 +101,7 @@
     font-size: 1.5rem;
     padding: 2px;
     color:#000;
-    background: lighten($tertiaryColor, 5);
+    background: rgba(lighten($tertiaryColor, 5), 0.5);
     border-radius: 3px;
   }
 }
