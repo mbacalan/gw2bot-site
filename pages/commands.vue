@@ -37,7 +37,7 @@
     </div>
     <!-- Wrapper -->
     <hr>
-    <h3>Notifiers</h3>
+    <h3 class="titles">Notifiers</h3>
     <hr>
     <div class="wrapper">
       <ul class="list-group">
@@ -72,7 +72,7 @@
     </div>
     <!-- Wrapper -->
     <hr>
-    <h3>Meta & Stats</h3>
+    <h3 class="titles">Meta & Stats</h3>
     <hr>
     <div class="wrapper">
       <ul class="list-group">
@@ -130,12 +130,12 @@ h3.button {
   cursor: pointer;
   border: 1px solid $primaryColor;
   border-radius: 0.3rem;
-  background-color: $secondaryColor;
-  transition: all 0.15s ease-in-out;
+  // background-color: $secondaryColor;
+  // transition: all 0.15s ease-in-out;
 
-h3.button::before {
+  :before {
   content: "↓";
-}
+  }
 
   &.active,
   &:hover {
