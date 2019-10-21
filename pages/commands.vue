@@ -126,20 +126,24 @@ h3 {
   font-family: "Raleway", sans-serif;
 }
 
+.titles {
+  text-decoration: underline;
+}
+
 h3.button {
   cursor: pointer;
   border: 1px solid $primaryColor;
   border-radius: 0.3rem;
-  // background-color: $secondaryColor;
-  // transition: all 0.15s ease-in-out;
+  background-color: darken($primaryColor, 5);
+  transition: all 0.15s ease-in-out;
 
-  :before {
+  &:before {
   content: "↓";
   }
 
   &.active,
   &:hover {
-    background-color: $primaryColor;
+    background-color: lighten($primaryColor, 5);
     color: $tertiaryColor;
     cursor: pointer;
   }
