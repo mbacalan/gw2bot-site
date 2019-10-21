@@ -102,10 +102,6 @@ hr {
   small {
     display: block;
     color: $tertiaryColor;;
-
-    // &.com-exp {
-    //   font-style: italic;
-    // }
   }
 
   h1 {
@@ -115,6 +111,10 @@ hr {
   h3 {
     margin-bottom: 1rem;
     font-size: 1.5em;
+  }
+
+  p{
+    color: $tertiaryColor;
   }
 
   .wrapper {
