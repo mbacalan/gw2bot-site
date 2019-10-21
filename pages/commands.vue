@@ -126,10 +126,6 @@ h3 {
   font-family: "Raleway", sans-serif;
 }
 
-.titles {
-  text-decoration: underline;
-}
-
 h3.button {
   cursor: pointer;
   border: 1px solid $primaryColor;
