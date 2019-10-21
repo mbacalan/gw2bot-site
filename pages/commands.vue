@@ -128,15 +128,19 @@ h3 {
 
 h3.button {
   cursor: pointer;
-  border: 1px solid #343a40;
+  border: 1px solid $primaryColor;
   border-radius: 0.3rem;
   background-color: $secondaryColor;
   transition: all 0.15s ease-in-out;
 
+h3.button::before {
+  content: "↓";
+}
+
   &.active,
   &:hover {
-    background-color: #343a40;
-    color: white;
+    background-color: $primaryColor;
+    color: $tertiaryColor;
     cursor: pointer;
   }
 }
