@@ -1,10 +1,17 @@
 <template>
-  <div class="header">
+  <div class="headerWrapper">
+    <img src="@/assets/img/gw2botbanner.png">
+      <!-- <div class="textWrapper"> -->
+                <h1>GW2bot</h1>
+            <!-- </div> -->
+<!-- <div class="backgroundTitle">
+ <h1>GW2bot</h1>
     <picture>
       <source media="(min-width: 2550px)" srcset="@/assets/img/gw2botbanner.png">
       <source media="(min-width: 1024px)" srcset="@/assets/img/gw2botbanner.png">
       <img class="header-img" src="@/assets/img/gw2botbannerMobile.png" alt="Banner for mobile version">
-    </picture>
+    </picture>-->
+    <!-- </div> -->
 
     <nav>
       <div class="nav-list">
@@ -37,6 +44,11 @@
 </template>
 
 <style lang="scss">
+
+// .backgroundTitle{
+//   background-image:
+// }
+
 nav {
   position: sticky;
   top: 0;
