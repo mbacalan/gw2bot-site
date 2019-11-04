@@ -82,12 +82,28 @@ hr {
   margin-bottom: 1rem;
 }
 
-.header-img {
-  display: block;
-  margin: auto;
-  max-width: 100%;
-  height: auto;
+.headerWrapper {
+  img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    height: auto;
+    position: relative;
+  }
+  h1 {
+    color: $secondaryColor;
+    font-size: 80px;
+    top: 100px;
+    position: absolute;
+  }
 }
+
+// .header-img {
+//   display: block;
+//   margin: auto;
+//   max-width: 100%;
+//   height: auto;
+// }
 
 .commands,
 .faq {
