@@ -83,18 +83,22 @@ hr {
 }
 
 .headerWrapper {
+  position: relative;
   img {
     max-width: 100%;
     display: block;
     margin: auto;
     height: auto;
-    position: relative;
+
   }
   h1 {
     color: $secondaryColor;
-    font-size: 80px;
-    top: 100px;
+    font-size: 2em;
+    top:150px;
+    left: 800px;
+    margin: 0;
     position: absolute;
+    font-family: 'Staatliches', cursive;
   }
 }
 
