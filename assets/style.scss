@@ -91,23 +91,14 @@ hr {
     height: auto;
 
   }
-  h1 {
-    color: $secondaryColor;
-    font-size: 2em;
-    top:150px;
-    left: 800px;
-    margin: 0;
-    position: absolute;
-    font-family: 'Staatliches', cursive;
-  }
 }
 
-// .header-img {
-//   display: block;
-//   margin: auto;
-//   max-width: 100%;
-//   height: auto;
-// }
+.header-img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+}
 
 .commands,
 .faq {
