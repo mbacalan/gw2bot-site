@@ -168,5 +168,11 @@ hr {
   .commands .wrapper,
   .faq .wrapper {
     columns: 2;
+
+    li {
+      &:after {
+        width: 350px;
+      }
+    }
   }
 }
