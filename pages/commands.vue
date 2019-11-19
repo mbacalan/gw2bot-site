@@ -36,7 +36,6 @@
       </ul>
     </div>
     <!-- Wrapper -->
-    <hr>
     <h3 class="titles">Notifiers</h3>
     <hr>
     <div class="wrapper">
@@ -119,6 +118,21 @@ h3.button {
   padding: 0.4rem 1rem;
   margin: auto;
   margin-bottom: 1rem;
+}
+
+li {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    width: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: darken($primaryColor, 5);
+  }
 }
 
 h3 {
