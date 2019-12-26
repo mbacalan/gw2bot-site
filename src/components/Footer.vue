@@ -20,50 +20,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-footer {
-  display: block;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 3rem;
-  background-color: #343a40;
-
-  p {
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    line-height: 0.5px;
-    margin-top: 15px;
-  }
-
-  a {
-    color: #fff;
-  }
-}
-
-.footer-lg {
-  display: none;
-}
-
-@media (min-width: 935px) {
-  .footer-lg {
-    display: block;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 5rem;
-    background-color: #343a40;
-  }
-
-  footer {
-    display: none;
-  }
-}
-</style>
-
 <script>
 export default {
   name: "Footer"

@@ -14,38 +14,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.flex-wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  .patreon {
-    margin-bottom: 5px;
-  }
-
-  .paypal form input {
-    display: block;
-  }
-}
-
-@media (min-width: 1024px) {
-  .flex-wrapper {
-    flex-direction: row;
-    justify-content: center;
-
-    .patreon {
-      margin-right: 10px;
-      margin-bottom: 0px;
-    }
-
-    .paypal form input {
-      display: inline;
-    }
-  }
-}
-</style>
-
 <script>
 export default {
   name: "Donate"
