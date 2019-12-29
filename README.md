@@ -1,26 +1,40 @@
 # gw2bot-site
 
-> The website of [GW2Bot by Maselkov](https://github.com/Maselkov/GW2Bot).
+The website of [GW2Bot](https://github.com/Maselkov/GW2Bot), live at [gw2bot.info](https://gw2bot.info/)
 
-> [gw2bot.info](https://gw2bot.info/)
+## About
 
-## Build Setup
+This website is built using [Nuxt.js](nuxtjs.org/) and takes advantage of an embedded [Express.js](https://expressjs.com/) API.
 
-This project uses [Flask](http://flask.pocoo.org/) for backend and [Vue.js](https://vuejs.org/) with [vue-cli3](https://cli.vuejs.org/) for frontend.
+It showcases some features of the bot, lists the available commands and hosts a couple of FAQ's.
+
+It also has Discord authentication for viewing encounter logs that are uploaded via the bot.
+
+## Setup
 
 ``` bash
-#Install backend dependencies, requires Python
-pip install -r requirements.txt
-
-# Install frontnend dependencies, requires Node
+# Install dependencies
 npm install
 
-# Serve with hot reload at localhost:8080
-npm run serve
+# Run locally for development
+npm run dev
 
-# Build to ./dist for production with minification
+# Build for production
 npm run build
-
-# See the production build in action at localhost:5000
-py gw2botsite.py
 ```
+
+> You'll need a Discord bot's Client ID and add it a Redirect URI to use authentication. Replace the variables in `nuxt.config.js` file.
+
+## Contribution
+
+Feel free to create an issue or directly create a PR for any improvement you'd like to add.
+
+For PR's, please explain the issue, your solution/improvement and make sure ESLint is happy.
+
+## Thanks
+
+[Maselkov](https://github.com/Maselkov/) for creating the bot!
+
+[Sugarcube](https://github.com/SugarcubeIsCoding/) for the creative styling contributions!
+
+You, for reading this!
