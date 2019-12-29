@@ -82,24 +82,6 @@ hr {
   margin-bottom: 1rem;
 }
 
-.headerWrapper {
-  position: relative;
-  img {
-    max-width: 100%;
-    display: block;
-    margin: auto;
-    height: auto;
-
-  }
-}
-
-.header-img {
-  display: block;
-  margin: auto;
-  max-width: 100%;
-  height: auto;
-}
-
 .commands,
 .faq {
   max-width: 85%;
@@ -112,7 +94,7 @@ hr {
 
   small {
     display: block;
-    color: $tertiaryColor;;
+    color: $tertiaryColor;
   }
 
   h1 {
@@ -124,21 +106,21 @@ hr {
     font-size: 1.5em;
   }
 
-  p, li{
-    color: $tertiaryColor;
-  }
+  // p, li{
+  //   color: $tertiaryColor;
+  // }
 
   .wrapper {
-    columns: 1;
-
     .list-group {
       padding: 0;
       margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
 
       .list-group-item {
         display: block;
-        padding: 0.75rem 1.25rem;
-        margin-bottom: -1px;
+        padding: 0.75rem 0;
+        grid-column: 1;
       }
     }
   }
@@ -167,11 +149,21 @@ hr {
 
   .commands .wrapper,
   .faq .wrapper {
-    columns: 2;
-
     li {
       &:after {
         width: 350px;
+      }
+    }
+
+    .list-group {
+      grid-template-columns: repeat(2, 1fr);
+
+      .list-group-item {
+        grid-column: 1;
+
+        &:nth-child(2n) {
+          grid-column: 2;
+        }
       }
     }
   }

@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 20px;
 
   .patreon {
     margin-bottom: 5px;

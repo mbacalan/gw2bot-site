@@ -1,12 +1,11 @@
 <template>
   <div class="commands">
-
     <h1>The default prefix is $</h1>
     <small class="com-exp">Use commands with multiple options with a space in between: $key add</small>
 
     <div class="wrapper">
       <ul class="list-group">
-        <li v-for="command in general" :key="command.id" class="list-group-item border">
+        <li v-for="command in general" :key="command.id" class="list-group-item">
           <div v-if="!command.args">
             <h3>{{ command.name }}</h3>
             <small>{{ command.desc }}</small>
@@ -20,27 +19,34 @@
             >
               {{ command.name }}
             </h3>
+
             <small>{{ command.desc }}</small>
-            <div
-              v-for="(argDesc, argName,) in command.args"
-              v-show="command.active"
-              :key="argName.id"
-              class="args"
-            >
-              <hr>
-              <p>{{ argName }}</p>
-              <small>{{ argDesc }}</small>
+
+            <div class="args" :class="{active: command.active}">
+              <div
+                v-for="(argDesc, argName,) in command.args"
+                v-show="command.active"
+                :key="argName.id"
+                class="args__item"
+              >
+                <h4 class="args__item--title">
+                  {{ argName }}
+                </h4>
+                <small class="args__item--desc">{{ argDesc }}</small>
+              </div>
             </div>
           </div>
         </li>
       </ul>
     </div>
     <!-- Wrapper -->
-    <h3 class="titles">Notifiers</h3>
+    <h3 class="titles">
+      Notifiers
+    </h3>
     <hr>
     <div class="wrapper">
       <ul class="list-group">
-        <li v-for="command in notifiers" :key="command.id" class="list-group-item border">
+        <li v-for="command in notifiers" :key="command.id" class="list-group-item">
           <div v-if="!command.args">
             <h3>{{ command.name }}</h3>
             <small>{{ command.desc }}</small>
@@ -54,16 +60,21 @@
             >
               {{ command.name }}
             </h3>
+
             <small>{{ command.desc }}</small>
-            <div
-              v-for="(argDesc, argName,) in command.args"
-              v-show="command.active"
-              :key="argName.id"
-              class="args"
-            >
-              <hr>
-              <p>{{ argName }}</p>
-              <small>{{ argDesc }}</small>
+
+            <div class="args" :class="{active: command.active}">
+              <div
+                v-for="(argDesc, argName,) in command.args"
+                v-show="command.active"
+                :key="argName.id"
+                class="args__item"
+              >
+                <h4 class="args__item--title">
+                  {{ argName }}
+                </h4>
+                <small class="args__item--desc">{{ argDesc }}</small>
+              </div>
             </div>
           </div>
         </li>
@@ -71,11 +82,13 @@
     </div>
     <!-- Wrapper -->
     <hr>
-    <h3 class="titles">Meta & Stats</h3>
+    <h3 class="titles">
+      Meta & Stats
+    </h3>
     <hr>
     <div class="wrapper">
       <ul class="list-group">
-        <li v-for="command in meta" :key="command.id" class="list-group-item border">
+        <li v-for="command in meta" :key="command.id" class="list-group-item">
           <div v-if="!command.args">
             <h3>{{ command.name }}</h3>
             <small>{{ command.desc }}</small>
@@ -89,16 +102,21 @@
             >
               {{ command.name }}
             </h3>
+
             <small>{{ command.desc }}</small>
-            <div
-              v-for="(argDesc, argName,) in command.args"
-              v-show="command.active"
-              :key="argName.id"
-              class="args"
-            >
-              <hr>
-              <p>{{ argName }}</p>
-              <small>{{ argDesc }}</small>
+
+            <div class="args" :class="{active: command.active}">
+              <div
+                v-for="(argDesc, argName,) in command.args"
+                v-show="command.active"
+                :key="argName.id"
+                class="args__item"
+              >
+                <h4 class="args__item--title">
+                  {{ argName }}
+                </h4>
+                <small class="args__item--desc">{{ argDesc }}</small>
+              </div>
             </div>
           </div>
         </li>
@@ -108,8 +126,59 @@
 </template>
 
 <style lang="scss" scoped>
+@import "../assets/config";
 
-@import '../assets/config';
+.args {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  opacity: 0;
+  transform: translate(-50%);
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+  z-index: 1000;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &__item {
+    position: relative;
+    padding: 10px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 1px;
+      width: 50%;
+      transform: translate(-50%);
+      background-color: darken($primaryColor, 5);
+    }
+
+    &--title,
+    &--desc {
+      color: darken($primaryColor, 5);
+    }
+
+    &--title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    &:last-child {
+      padding-bottom: 15px;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
 
 h3,
 h3.button {
@@ -148,7 +217,7 @@ h3.button {
   transition: all 0.15s ease-in-out;
 
   &:before {
-  content: "↓";
+    content: "↓";
   }
 
   &.active,
@@ -156,6 +225,12 @@ h3.button {
     background-color: lighten($primaryColor, 5);
     color: $tertiaryColor;
     cursor: pointer;
+  }
+}
+
+@media (min-width: 1024px) {
+  .args {
+    width: 50%;
   }
 }
 </style>

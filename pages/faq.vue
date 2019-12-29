@@ -2,29 +2,41 @@
   <div class="faq">
     <h1>Frequently Asked Questions</h1>
     <p>
-      Type
-      <code>$help</code> for list of all commands.
+      Typef<code>$help</code> for list of all commands.
     </p>
+
     <p>
       Server admins can change the prefix to something else using
       <code>$prefix</code>.
     </p>
+
     <div class="wrapper">
       <div class="list-group">
-        <li class="list-group-item border">
-          <h3 class="titles">How do I use the bot?</h3>
+        <li class="list-group-item">
+          <h3 class="titles">
+            How do I use the bot?
+          </h3>
+
           <p>
             After the bot has been added to the server using
             <a href="https://discordapp.com/oauth2/authorize?client_id=310050883100737536&scope=bot&permissions=939879488">this link</a>,
             you can access the commands using $ prefix.
           </p>
         </li>
-        <li class="list-group-item border">
-          <h3 class="titles">Does the bot work in DMs?</h3>
+
+        <li class="list-group-item">
+          <h3 class="titles">
+            Does the bot work in DMs?
+          </h3>
+
           <p>Yes. API keys are cross-server too, if you're in multiple servers with the bot.</p>
         </li>
-        <li class="list-group-item border">
-          <h3 class="titles">How do I setup game update notifications?</h3>
+
+        <li class="list-group-item">
+          <h3 class="titles">
+            How do I setup game update notifications?
+          </h3>
+
           <p>
             First, you must have the "manage server" permission.
             Provided you have that, first point the bot to the channel where
@@ -35,12 +47,17 @@
             sure the bot has permissions to talk in that channel.
           </p>
         </li>
-        <li class="list-group-item border">
-          <h3 class="titles">What is guildsync?</h3>
+
+        <li class="list-group-item">
+          <h3 class="titles">
+            What is guildsync?
+          </h3>
+
           <p>
             guildsync is a feature which allows you to sync your in game ranks with discord roles.
             Here is some key information about how it works;
           </p>
+
           <ul>
             <li>It requires leader permissions in game.</li>
             <li>It is tied to your account. If you remove your API key, it will break.</li>
