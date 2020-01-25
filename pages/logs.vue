@@ -8,13 +8,13 @@
 
     <div v-if="user" class="filters">
       <label for="result">Successful Only</label>
-      <input v-model="filters.success" type="checkbox" name="result" @change="applyFilters">
+      <input id="result" v-model="filters.success" type="checkbox" @change="applyFilters">
 
       <label for="date-start">Date Start:</label>
-      <input v-model="filters.dateStart" type="date" name="date-start" @change="applyFilters">
+      <input id="date-start" v-model="filters.dateStart" type="date" @change="applyFilters">
 
       <label for="date-end">Date End:</label>
-      <input v-model="filters.dateEnd" type="date" name="date-end" @change="applyFilters">
+      <input id="date-end" v-model="filters.dateEnd" type="date" @change="applyFilters">
     </div>
 
     <div v-if="user" class="container">
@@ -76,6 +76,7 @@
                   <img
                     :src="`https://api.gw2bot.info/resources/professions/${player.profession.toLowerCase()}_icon.png`"
                     :title="player.profession"
+                    :alt="player.profession"
                   >
                 </td>
                 <td>{{ player.name }}</td>
@@ -89,12 +90,18 @@
 </template>
 
 <style lang="scss" scoped>
+@import '../assets/config';
+
 .logs {
   text-align: center;
   margin: auto;
   width: 85%;
+  background-color: #F5F5F5;
+  border-radius: 15px;
+  padding: 10px 0;
 
   h1 {
+    color: $secondaryColor;
     margin-bottom: 0;
   }
 }
@@ -124,23 +131,24 @@
 
   h2 {
     font-size: 20px;
+    color: $secondaryColor;
   }
 
   & > div {
     list-style: none;
 
     > div {
-      height: 50px;
+      height: 40px;
       width: 85%;
       margin: 10px auto;
       border: 1px solid #343a40;
-      line-height: 50px;
+      border-radius: 20px;
+      line-height: 40px;
       cursor: pointer;
       transition: 0.2s ease;
 
       &:hover,
       &.active {
-        transform: scale(1.02);
         background-color: #343a40;
         color: white;
       }
@@ -160,8 +168,7 @@
 
   table {
     width: 75%;
-    margin: auto;
-    margin-bottom: 25px;
+    margin: auto auto 25px;
     border-spacing: 0;
     text-align: left;
 
@@ -192,7 +199,7 @@
     th {
       padding-left: 20px;
       vertical-align: middle;
-      border-bottom: 1px solid #f5f5f5;
+      border-bottom: 1px solid $secondaryColor;
     }
 
     td.img img {
@@ -203,6 +210,7 @@
 
   span {
     font-weight: bold;
+    color: $secondaryColor;
   }
 
   .encounter {
@@ -318,14 +326,13 @@ export default {
       if (!dateStart) { dateStart = null }
 
       try {
-        const encounters = await this.$axios.$get('api/encounters', {
+        this.encounters = await this.$axios.$get('api/encounters', {
           params: {
             success,
             dateStart,
             dateEnd
           }
         })
-        this.encounters = encounters
       } catch (err) {
         throw err
       }
