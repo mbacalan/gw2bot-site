@@ -82,7 +82,7 @@
     </div>
     <!-- Wrapper -->
     <hr>
-    <h3 class="titles">
+    <!--<h3 class="titles">
       Meta & Stats
     </h3>
     <hr>
@@ -121,7 +121,7 @@
           </div>
         </li>
       </ul>
-    </div>
+    </div>-->
   </div>
 </template>
 
