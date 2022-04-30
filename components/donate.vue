@@ -49,6 +49,6 @@
 
 <script>
 export default {
-  name: 'Donate'
+  name: 'DonateComponent'
 }
 </script>

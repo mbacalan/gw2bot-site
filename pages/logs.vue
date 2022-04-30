@@ -277,7 +277,7 @@
 import bosses from '@/static/bossesData'
 
 export default {
-  name: 'Logs',
+  name: 'LogsPage',
   middleware: 'auth',
   data () {
     return {

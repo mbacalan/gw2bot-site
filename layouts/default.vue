@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Header />
+    <HeaderComponent />
     <Nuxt />
-    <Donate />
-    <Footer />
+    <DonateComponent />
+    <FooterComponent />
   </div>
 </template>
 
@@ -11,16 +11,16 @@
 </style>
 
 <script>
-import Header from '@/components/header'
-import Donate from '@/components/donate'
-import Footer from '@/components/footer'
+import HeaderComponent from '@/components/header'
+import DonateComponent from '@/components/donate'
+import FooterComponent from '@/components/footer'
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Donate,
-    Footer
+    HeaderComponent,
+    DonateComponent,
+    FooterComponent
   },
   mounted () {
     this.getApiStatus()

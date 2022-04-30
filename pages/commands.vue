@@ -236,4 +236,7 @@ h3.button {
 </style>
 
 <script src="@/static/commandsData.js" scoped>
+export default {
+  name: 'CommandsPage'
+}
 </script>

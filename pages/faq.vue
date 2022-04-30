@@ -124,5 +124,8 @@
 }
 </style>
 
-<script scoped>
+<script>
+export default {
+  name: 'FaqPage'
+}
 </script>

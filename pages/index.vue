@@ -11,3 +11,9 @@
 
 <style lang="scss" src="@/assets/style.scss">
 </style>
+
+<script>
+export default {
+  name: 'IndexPage'
+}
+</script>
