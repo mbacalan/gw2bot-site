@@ -1,242 +1,103 @@
 <template>
-  <div class="commands">
-    <h1>The default prefix is $</h1>
-    <small class="com-exp">Use commands with multiple options with a space in between: $key add</small>
+  <main>
+    <div class="page-width page-padding">
+      <header>
+        <h1>GW2Bot Commands</h1>
+        <p><strong>Type <code>/</code> to see a full list of commands</strong></p>
+        <p>Use <code>&#11134; Tab</code> to autocomplete commands with options</p>
+      </header>
 
-    <div class="wrapper">
-      <ul class="list-group">
-        <li v-for="command in general" :key="command.id" class="list-group-item">
-          <div v-if="!command.args">
-            <h3>{{ command.name }}</h3>
-            <small>{{ command.desc }}</small>
-          </div>
-
-          <div v-else>
-            <h3
-              class="button"
-              :class="{active: command.active}"
-              @click="toggleActive($event, command)"
-            >
-              {{ command.name }}
-            </h3>
-
-            <small>{{ command.desc }}</small>
-
-            <div class="args" :class="{active: command.active}">
-              <div
-                v-for="(argDesc, argName,) in command.args"
-                v-show="command.active"
-                :key="argName.id"
-                class="args__item"
-              >
-                <h4 class="args__item--title">
-                  {{ argName }}
-                </h4>
-                <small class="args__item--desc">{{ argDesc }}</small>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div class="flexbox">
+        <div class="flexbox__item commands-column">
+          <ul class="commands-list">
+            <CommandComponent v-for="command in columnOne(commands.main)" :key="command.name" :command="command" />
+          </ul>
+        </div>
+        <div class="flexbox__item commands-column">
+          <ul class="commands-list">
+            <CommandComponent v-for="command in columnTwo(commands.main)" :key="command.name" :command="command" />
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <h2 class="h3">
+        Notifiers
+      </h2>
+      <div class="flexbox">
+        <div class="flexbox__item commands-column">
+          <ul class="commands-list">
+            <CommandComponent v-for="command in columnOne(commands.notifiers)" :key="command.name" :command="command" />
+          </ul>
+        </div>
+        <div class="flexbox__item commands-column">
+          <ul class="commands-list">
+            <CommandComponent v-for="command in columnTwo(commands.notifiers)" :key="command.name" :command="command" />
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <h2 class="h3">
+        Meta &amp; Stats
+      </h2>
+      <div class="flexbox">
+        <div class="flexbox__item commands-column">
+          <ul class="commands-list">
+            <CommandComponent v-for="command in columnOne(commands.meta)" :key="command.name" :command="command" />
+          </ul>
+        </div>
+        <div class="flexbox__item commands-column">
+          <ul class="commands-list">
+            <CommandComponent v-for="command in columnTwo(commands.meta)" :key="command.name" :command="command" />
+          </ul>
+        </div>
+      </div>
     </div>
-    <!-- Wrapper -->
-    <h3 class="titles">
-      Notifiers
-    </h3>
-    <hr>
-    <div class="wrapper">
-      <ul class="list-group">
-        <li v-for="command in notifiers" :key="command.id" class="list-group-item">
-          <div v-if="!command.args">
-            <h3>{{ command.name }}</h3>
-            <small>{{ command.desc }}</small>
-          </div>
-
-          <div v-else>
-            <h3
-              class="button"
-              :class="{active: command.active}"
-              @click="toggleActive($event, command)"
-            >
-              {{ command.name }}
-            </h3>
-
-            <small>{{ command.desc }}</small>
-
-            <div class="args" :class="{active: command.active}">
-              <div
-                v-for="(argDesc, argName,) in command.args"
-                v-show="command.active"
-                :key="argName.id"
-                class="args__item"
-              >
-                <h4 class="args__item--title">
-                  {{ argName }}
-                </h4>
-                <small class="args__item--desc">{{ argDesc }}</small>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <!-- Wrapper -->
-    <hr>
-    <!--<h3 class="titles">
-      Meta & Stats
-    </h3>
-    <hr>
-    <div class="wrapper">
-      <ul class="list-group">
-        <li v-for="command in meta" :key="command.id" class="list-group-item">
-          <div v-if="!command.args">
-            <h3>{{ command.name }}</h3>
-            <small>{{ command.desc }}</small>
-          </div>
-
-          <div v-else>
-            <h3
-              class="button"
-              :class="{active: command.active}"
-              @click="toggleActive($event, command)"
-            >
-              {{ command.name }}
-            </h3>
-
-            <small>{{ command.desc }}</small>
-
-            <div class="args" :class="{active: command.active}">
-              <div
-                v-for="(argDesc, argName,) in command.args"
-                v-show="command.active"
-                :key="argName.id"
-                class="args__item"
-              >
-                <h4 class="args__item--title">
-                  {{ argName }}
-                </h4>
-                <small class="args__item--desc">{{ argDesc }}</small>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>-->
-  </div>
+  </main>
 </template>
 
+<script scoped>
+import CommandComponent from '@/components/command'
+import commands from '@/static/commandsData'
+
+export default {
+  name: 'CommandsPage',
+  components: {
+    CommandComponent
+  },
+  data () {
+    return {
+      commands
+    }
+  },
+  methods: {
+    columnOne (commands) {
+      return commands.filter(function (command, index) {
+        return index < Math.round(commands.length / 2)
+      })
+    },
+    columnTwo (commands) {
+      return commands.filter(function (command, index) {
+        return index >= Math.round(commands.length / 2)
+      })
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
-@import "../assets/config";
+@import '~@/assets/scss/functions';
+@import '~@/assets/scss/colors';
+@import '~@/assets/scss/settings';
 
-.args {
-  position: absolute;
-  left: 50%;
-  top: 80px;
-  opacity: 0;
-  transform: translate(-50%);
+.commands-column {
   width: 100%;
-  background-color: #fff;
-  border-radius: 10px;
-  transition: opacity 0.2s;
-  z-index: 1000;
-
-  &.active {
-    opacity: 1;
-  }
-
-  &__item {
-    position: relative;
-    padding: 10px;
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      height: 1px;
-      width: 50%;
-      transform: translate(-50%);
-      background-color: darken($primaryColor, 5);
-    }
-
-    &--title,
-    &--desc {
-      color: darken($primaryColor, 5);
-    }
-
-    &--title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    &:last-child {
-      padding-bottom: 15px;
-
-      &:after {
-        content: none;
-      }
-    }
-  }
-}
-
-h3,
-h3.button {
-  display: inline-block;
-  font-size: 1.5em;
-  padding: 0.4rem 1rem;
-  margin: auto;
-  margin-bottom: 1rem;
-}
-
-li {
-  position: relative;
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    height: 2px;
-    width: 180px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: darken($primaryColor, 5);
-  }
-}
-
-h3 {
-  border: 1px solid transparent;
-  font-family: "Raleway", sans-serif;
-}
-
-h3.button {
-  cursor: pointer;
-  border: 1px solid $primaryColor;
-  border-radius: 0.3rem;
-  background-color: darken($primaryColor, 5);
-  transition: all 0.15s ease-in-out;
-
-  &:before {
-    content: "↓";
-  }
-
-  &.active,
-  &:hover {
-    background-color: lighten($primaryColor, 5);
-    color: $tertiaryColor;
-    cursor: pointer;
-  }
-}
-
-@media (min-width: 1024px) {
-  .args {
+  @include media-query('gt-tablet') {
     width: 50%;
   }
 }
-</style>
-
-<script src="@/static/commandsData.js" scoped>
-export default {
-  name: 'CommandsPage'
+.commands-list {
+  padding: 0;
+  list-style: none;
+  text-align: center;
 }
-</script>
+</style>
