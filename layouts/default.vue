@@ -1,14 +1,13 @@
 <template>
   <div>
     <HeaderComponent />
-    <Nuxt />
+    <div class="page">
+      <Nuxt />
+    </div>
     <DonateComponent />
     <FooterComponent />
   </div>
 </template>
-
-<style src="@/assets/style.scss" lang="scss">
-</style>
 
 <script>
 import HeaderComponent from '@/components/header'
@@ -21,26 +20,32 @@ export default {
     HeaderComponent,
     DonateComponent,
     FooterComponent
-  },
+  }/* ,
   mounted () {
-    this.getApiStatus()
+    this.getApiStatus()// Masel says API check is redundant now
   },
   methods: {
     async getApiStatus () {
-      const apiEl = document.getElementById('js-api-status')
+      const element = document.getElementById('api-status')
 
       try {
         const quaggans = await fetch('https://api.guildwars2.com/v2/quaggans')
 
         if (quaggans.status >= 200 && quaggans.status < 400) {
-          apiEl.textContent = 'API is Online! ☑'
+          element.innerHTML = 'API is Online!'
+          element.className = 'success'
         } else {
-          apiEl.textContent = 'Error reaching API ☒'
+          element.innerHTML = 'Error reaching API'
+          element.className = 'failure'
         }
       } catch {
-        apiEl.textContent = 'Error reaching API ☒'
+        element.innerHTML = 'Error reaching API'
+        element.className = 'failure'
       }
     }
-  }
+  } */
 }
 </script>
+
+<style src="@/assets/scss/main.scss" lang="scss">
+</style>
