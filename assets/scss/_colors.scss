@@ -1,0 +1,51 @@
+@use 'sass:color';
+/*---------------------------------------------------------------------------*\
+    Colours
+\*---------------------------------------------------------------------------*/
+$black: #000;
+$grey-100: #161616;
+$grey-200: #212121;
+$grey-250: #2B2B2B;
+$grey-300: #343434;
+$grey-350: #3A3A3A;
+$grey-400: #424242;
+$grey-500: #505050;
+$grey-600: #616161;
+$grey-700: #757575;
+$grey-800: #808080;// gray
+$grey-900: #9E9E9E;
+$grey-1000:#BDBDBD;
+$grey-1100:#E0E0E0;
+$grey-1150:#F1F1F1;
+$grey-1200:#F5F5F5;
+$white: #fff;
+
+$red-100: #8F1404;
+$red-200: #9A1201;
+$red-300: #A31400;
+$red-400: #AF1600;
+$red-500: #BD1903;
+$red-600: #C31A01;
+$red-700: #D21A03;
+$red-800: #E31D06;
+$red-900: #F01F07;
+$red-1000:#FD7367;
+$red-1100:#FCAF9A;
+$red-1200:#FFC8AD;
+
+/*$red-dark: #3e1209;
+$red-deep: #b40000;
+$red-medium: #d72d1c;*/
+
+$patreon-fiery-coral: #ff424d;// Patreon official "fiery coral" color
+
+$paypal-pal-blue: #0079c1;// PayPal official "pal" blue color
+
+$link: color.scale($red-500, $saturation: 100%);
+$link-dark: color.scale($red-700, $saturation: 100%, $lightness: 40%);
+
+$focus: #0060DF;
+$focus-hover: #0250BB;
+$focus-active: #054096;
+
+$focus-dark: color.scale($focus, $lightness: 33%);

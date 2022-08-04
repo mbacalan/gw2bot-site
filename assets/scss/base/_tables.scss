@@ -1,0 +1,49 @@
+/*---------------------------------------------------------------------------*\
+    Table (Default)
+\*---------------------------------------------------------------------------*/
+table {
+  @extend %body-font-family;
+  border: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin: $baseline-rem 0 0 0;
+  font-size: $p-font-rem;
+  line-height: $p-line-rem;
+  text-align: left;
+  /*color: $grey-200;
+  .dark-mode & {
+    color: $white;
+  }*/
+  th {
+    @extend %header-font-family;
+  }
+  th, td {
+    padding: 4px 8px;
+    border: 1px solid $grey-1000;
+    .dark-mode & {
+      border-color: $grey-200;
+    }
+  }
+  /*tr {
+    th~th, th~td, td~td {
+      text-align: center;
+    }
+  }*/
+  thead {
+    th, td {
+      font-weight: 700;
+    }
+  }
+  tbody, tfoot {
+    th {
+      font-weight: 700;
+    }
+  }
+  /*caption {
+    margin: ($baseline-rem * .5) 0 0 0;
+    font-size: $small-font-rem;
+    line-height: $small-line-rem;
+    text-align: left;
+    caption-side: bottom;
+  }*/
+}

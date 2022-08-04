@@ -1,0 +1,46 @@
+/*---------------------------------------------------------------------------*\
+    API Check
+\*---------------------------------------------------------------------------*/
+.api-status-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#api-status {
+  display: block;
+  margin: $h5-margin-rem 0 0 0;
+  padding: 2px 3px 2px 7px;
+  float: right;
+  color: $white;
+  font-size: $nav-font-px;
+  line-height: $p-line-px;
+  font-weight: 700;
+  background: rgba($black,.7);
+  border: 1px solid currentColor;
+  border-radius: ($p-line-px + 6px) * .5;
+  box-shadow: 0 1px 2px 1px rgba($black,.4),
+              0 2px 4px 1px rgba($black,.2),
+              0 4px 8px 1px rgba($black,.1);
+  &:after {
+    @extend %psuedo-element;
+    display: inline-block;
+    margin-left: 5px;
+    width: $p-line-px;
+    height: $p-line-px;
+    vertical-align: top;
+    background: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><style>@keyframes spin{0%{transform:rotate(270deg);stroke-dashoffset:188.5}40%{transform:rotate(270deg);stroke-dashoffset:0}80%{transform:rotate(630deg);stroke-dashoffset:188.5}}circle{transform:rotate(270deg);transform-origin:50% 50%;fill:none;stroke:#fff;stroke-width:15;stroke-dasharray:188.5;stroke-dashoffset:188.5;animation:spin 2s ease-in-out infinite}</style></defs><circle cx='50' cy='50' r='30'/></svg>") no-repeat 50% 50%/100% 100%;
+  }
+  &.success {
+    color: #96FF96;
+    &:after {
+      background-image: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><style>@keyframes dash{to{stroke-dashoffset:0}}circle,path{fill:none;stroke:#96FF96;stroke-linecap:round;stroke-linejoin:round}circle{stroke-width:5;stroke-dasharray:251.33;stroke-dashoffset:251.33;animation:dash .5s ease-in-out forwards}path{stroke-width:12;stroke-dasharray:62.25;stroke-dashoffset:62.25;animation:dash .5s ease-in-out .5s forwards}</style></defs><circle transform='rotate(270 50 50)' cx='50' cy='50' r='40'/><path d='M29,54l15,14l29-30'/></svg>");
+    }
+  }
+  &.failure {
+    color: #FFAAAA;
+    &:after {
+      background-image: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><style>@keyframes dash{to{stroke-dashoffset:0}}circle,line{fill:none;stroke:#FFAAAA;stroke-linecap:round;stroke-linejoin:round}circle{stroke-width:5;stroke-dasharray:251.33;stroke-dashoffset:251.33;animation:dash .5s ease-in-out forwards}line{stroke-width:12;stroke-dasharray:52.33;stroke-dashoffset:52.33;animation:dash .5s ease-in-out .5s forwards}</style></defs><circle transform='rotate(270 50 50)' cx='50' cy='50' r='40'/><line x1='31.5' y1='31.5' x2='68.5' y2='68.5'/><line x1='68.5' y1='31.5' x2='31.5' y2='68.5'/></svg>");
+    }
+  }
+}

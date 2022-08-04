@@ -1,0 +1,93 @@
+/*---------------------------------------------------------------------------*\
+    Tooltips
+\*---------------------------------------------------------------------------*/
+.tooltip {
+  position: absolute;
+  bottom: calc(100% - 8px);
+  padding: 3px 8px;
+  border-top: 1px solid $grey-1000;
+  border-radius: 12px;
+  background: $white;
+  box-shadow: $tooltip-shadow;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: bottom .15s ease-in, opacity .15s ease-in, visibility 0s linear .15s;
+  &.active {
+    bottom: calc(100% - 2px);
+    opacity: 1;
+    visibility: visible;
+    transition: bottom .15s ease-out, opacity .15s ease-out;
+  }
+  &:before, &:after {
+    @extend %psuedo-element;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-bottom: 0;
+    width: 0;
+    height: 0;
+  }
+  &:before {
+    margin-left: (-10px);
+    border-top: 10px solid $grey-900;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+  &:after {
+    margin-left: (-8px);
+    border-top: 8px solid $white;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
+  .dark-mode & {
+    border-color: $grey-200;
+    background: $grey-350;
+    box-shadow: $tooltip-shadow--dark;
+    &:before {
+      border-top-color: $grey-200;
+    }
+    &:after {
+      border-top-color: $grey-350;
+    }
+  }
+}
+.tooltip__close {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  padding: 0;
+  width: $p-line-rem;
+  height: $p-line-rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: $grey-400;
+  &:before, &:after {
+    @extend %psuedo-element;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 16px;
+    height: 3px;
+    border-radius: 2px;
+    background: currentColor;
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+  &:after {
+    transform: translate(-50%,-50%) rotate(135deg);
+  }
+  &:active {
+    background: $grey-1200;
+    &:before, &:after {
+      top: calc(50% + 1px);
+    }
+  }
+  .dark-mode & {
+    color: $grey-1200;
+    &:active {
+      background: $grey-300;
+    }
+  }
+}

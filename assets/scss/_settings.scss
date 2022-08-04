@@ -1,0 +1,151 @@
+/*---------------------------------------------------------------------------*\
+    Units & Measurements
+\*---------------------------------------------------------------------------*/
+$oneThirdMultiplier: 1.333;
+$twoThirdMultiplier: 1.666;
+
+$gutter-rem:         2rem;
+$gutter-px:          32px;
+
+$baseline-rem:       1.5rem;
+$baseline-px:        24px;
+
+/*---------------------------------------------------------------------------*\
+    Type Scale  http://type-scale.com/
+\*---------------------------------------------------------------------------*/
+//  Font Sizes
+$button-font-rem:   0.9375rem;      $button-font-px:  15px;
+$nav-font-rem:      1.125rem;       $nav-font-px:     18px;
+$p-font-rem:        1rem;           $p-font-px:       16px;
+$h5-font-rem:       1.25rem;        $h5-font-px:      20px;
+$h4-font-rem:       1.5625rem;      $h4-font-px:      25px;
+$h3-font-rem:       1.9375rem;      $h3-font-px:      31px;
+$h2-font-rem:       2.4375rem;      $h2-font-px:      39px;
+$h1-font-rem:       3.0625rem;      $h1-font-px:      49px;
+$xl-font-rem:       3.8125rem;      $xl-font-px:      61px;
+$small-font-rem:    0.875rem;       $small-font-px:   14px;
+$x-small-font-rem:  0.8125rem;      $x-small-font-px: 13px;
+
+//  Line Heights
+$p-line-rem:        $baseline-rem;  $p-line-px:       $baseline-px;
+$h5-line-rem:       1.5625rem;      $h5-line-px:      25px;
+$h4-line-rem:       1.9375rem;      $h4-line-px:      31px;
+$h3-line-rem:       2.4375rem;      $h3-line-px:      39px;
+$h2-line-rem:       3.0625rem;      $h2-line-px:      49px;
+$h1-line-rem:       3.8125rem;      $h1-line-px:      61px;
+$xl-line-rem:       4.75rem;        $xl-line-px:      76px;
+$small-line-rem:    1.3125rem;      $small-line-px:   21px;
+
+//  Margins
+$p-margin-rem:      ($baseline-rem * 2) - $p-line-rem;
+$p-margin-px:       ($baseline-px * 2) - $p-line-px;
+
+$h5-margin-rem:     ($baseline-rem * 2) - $h5-line-rem;
+$h5-margin-px:      ($baseline-px * 2) - $h5-line-px;
+
+$h4-margin-rem:     ($baseline-rem * 3) - $h4-line-rem;
+$h4-margin-px:      ($baseline-px * 3) - $h4-line-px;
+
+$h3-margin-rem:     ($baseline-rem * 3) - $h3-line-rem;
+$h3-margin-px:      ($baseline-px * 3) - $h3-line-px;
+
+$h2-margin-rem:     ($baseline-rem * 4) - $h2-line-rem;
+$h2-margin-px:      ($baseline-px * 4) - $h2-line-px;
+
+$h1-margin-rem:     ($baseline-rem * 4) - $h1-line-rem;
+$h1-margin-px:      ($baseline-px * 4) - $h1-line-px;
+
+/*---------------------------------------------------------------------------*\
+    Component Sizes
+\*---------------------------------------------------------------------------*/
+$header-height:       312px;
+//$header-logo-height:  $header-height - ($full-px * 2);        // 96px
+
+$nav-height:          84px;
+$nav-mobile-width:    200px;
+$nav-item-padding:    ($nav-height - $baseline-px) * .5;
+$nav-logo-height:     60px;
+$nav-logo-padding:    ($nav-height - $nav-logo-height) *.5;
+
+$page-width:          980px;
+
+/*---------------------------------------------------------------------------*\
+    Breakpoints
+\*---------------------------------------------------------------------------*/
+$breakpoints: (
+  'lt-mobile'  '(max-width: 600px)',
+  'gt-mobile'  '(min-width: 601px)',
+  'lt-tablet'  '(max-width: 800px)',
+  'gt-tablet'  '(min-width: 801px)',
+  'lt-desktop' '(max-width: 1044px',
+  'gt-desktop' '(min-width: 1045px)'
+);
+
+/*---------------------------------------------------------------------------*\
+    Material Shadows
+\*---------------------------------------------------------------------------*/
+$top-bar-shadow:
+  0 (-7px) 4px 10px rgba($black,.04),
+  0 (-6px) 6px 10px rgba($black,.08),
+  0 (-5px) 10px 10px rgba($black,.16)
+;
+$top-bar-shadow--dark:
+  0 (-7px) 4px 10px rgba($black,.06),
+  0 (-6px) 6px 10px rgba($black,.12),
+  0 (-5px) 10px 10px rgba($black,.24)
+;
+
+$navigation-drawer-shadow:
+  6px 0 4px 8px rgba($black,.04),
+  5px 0 6px 8px rgba($black,.08),
+  4px 0 8px 8px rgba($black,.16)
+;
+$navigation-drawer-shadow--dark:
+  6px 0 4px 8px rgba($black,.06),
+  5px 0 6px 8px rgba($black,.12),
+  4px 0 8px 8px rgba($black,.24)
+;
+
+$navigation-submenu-shadow:
+  0 1px 4px rgba($black,.08),
+  0 2px 6px rgba($black,.16),
+  0 4px 12px rgba($black,.32)
+;
+$navigation-submenu-shadow--dark:
+  0 1px 4px rgba($black,.11),
+  0 2px 6px rgba($black,.22),
+  0 4px 12px rgba($black,.44)
+;
+
+$tooltip-shadow:
+  0 2px 4px rgba($black,.32),
+  0 1px 4px 1px rgba($black,.16),
+  0 0 5px rgba($black,.08)
+;
+$tooltip-shadow--dark:
+  0 2px 4px rgba($black,.44),
+  0 1px 4px 1px rgba($black,.22),
+  0 0 5px rgba($black,.11)
+;
+
+$button-shadow:
+  0 1px 3px rgba($black,.16),
+  0 1px 4px rgba($black,.08),
+  0 0 5px rgba($black,.04)
+;
+$button-shadow--dark:
+  0 1px 3px rgba($black,.24),
+  0 1px 4px rgba($black,.12),
+  0 0 5px rgba($black,.06)
+;
+
+$card-shadow:
+  0 1px 3px (-1px) rgba($black,.16),
+  0 1px 3px rgba($black,.08),
+  0 0 4px 1px rgba($black,.04)
+;
+$card-shadow--dark:
+  0 1px 3px (-1px) rgba($black,.36),
+  0 1px 3px rgba($black,.18),
+  0 0 4px 1px rgba($black,.09)
+;

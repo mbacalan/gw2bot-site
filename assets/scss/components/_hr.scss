@@ -1,0 +1,13 @@
+/*---------------------------------------------------------------------------*\
+    Horizontal Rules
+\*---------------------------------------------------------------------------*/
+hr {
+  position: relative;
+  margin: ($baseline-px - 1px) 0 0 0;
+  border: 0;
+  height: 1px;
+  background: $grey-1000;
+  .dark-mode & {
+    background: $grey-200;
+  }
+}

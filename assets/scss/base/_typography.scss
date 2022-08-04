@@ -1,0 +1,142 @@
+@use 'sass:math';
+/*---------------------------------------------------------------------------*\
+    Typography
+\*---------------------------------------------------------------------------*/
+a {
+  // Remove the gray background on active links in IE 10.
+  background-color: transparent;
+  color: $link;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+  .dark-mode & {
+    color: $link-dark;
+  }
+  &.external:after {
+    @extend %psuedo-element;
+    display: inline-block;
+    width: math.div($p-line-rem, 1.5);
+    height: $p-line-rem;
+    vertical-align: top;
+    background: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='#{$link}'><path d='M385,415H185V215h95l-30-30h-65c-16.57,0-30,13.43-30,30v200c0,16.57,13.43,30,30,30h200c16.57,0,30-13.43,30-30v-65l-30-30v95Z'/><polygon points='300 150 335 185 390 185 240 335 265 360 415 210 415 270 445 300 445 150 300 150'/></svg>") 50% 50%/cover;
+    .dark-mode & {
+      background-image: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='#{$link-dark}'><path d='M385,415H185V215h95l-30-30h-65c-16.57,0-30,13.43-30,30v200c0,16.57,13.43,30,30,30h200c16.57,0,30-13.43,30-30v-65l-30-30v95Z'/><polygon points='300 150 335 185 390 185 240 335 265 360 415 210 415 270 445 300 445 150 300 150'/></svg>")
+    }
+  }
+}
+.inline-svg {
+  display: inline-block;
+  width: $p-line-rem;
+  height: $p-line-rem;
+  vertical-align: top;
+}
+dfn {
+  font-style: normal;
+}
+abbr[title] {
+  cursor: help;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+  &:hover {
+    border: 0;
+  }
+}
+code {
+  @extend %code-font-family;
+  padding: 1px 3px;
+  background: $grey-1100;
+  border-radius: 3px;
+  font-size: 80%;
+  .dark-mode & {
+    background: $grey-500;
+  }
+}
+/*q {
+  font-style: italic;
+  &:before, &:after {// No quotes
+    display: none;
+  }
+}*/
+h1, h2, .h2, h3, .h3, h4, .h4,/* h5, h6*/ {
+  @extend %header-font-family;
+  position: relative;
+  display: block;
+  font-weight: 600;
+  color: $grey-250;
+  .dark-mode & {
+    color: $grey-1150;
+  }
+}
+h1 {
+  margin: $h1-margin-rem 0 0 0;
+  font-size: $h1-font-rem;
+  line-height: $h1-line-rem;
+}
+h2, .h2 {
+  margin: $h2-margin-rem 0 0 0;
+  font-size: $h2-font-rem;
+  line-height: $h2-line-rem;
+}
+h3, .h3 {
+  margin: $h3-margin-rem 0 0 0;
+  font-size: $h3-font-rem;
+  line-height: $h3-line-rem;
+}
+h4, .h4 {
+  margin: $h4-margin-rem 0 0 0;
+  font-size: $h4-font-rem;
+  line-height: $h4-line-rem;
+}
+/*h5 {
+  margin: $h5-margin-rem 0 0 0;
+  font-size: $h5-font-rem;
+  line-height: $h5-line-rem;
+}
+h6 {
+  margin: $p-margin-rem 0 0 0;
+  font-size: $p-font-rem;
+  line-height: $p-line-rem;
+}*/
+p, .paragraph, li/*, figcaption, dl*/ {
+  @extend %body-font-family;
+  margin: $p-margin-rem 0 0 0;
+  font-size: $p-font-rem;
+  line-height: $p-line-rem;
+}
+small, .small-text {
+  font-size: $small-font-rem;
+  line-height: $small-line-rem;
+  vertical-align: top;
+  a.external:after {
+    width: math.div($small-line-rem, 1.5);
+    height: $small-line-rem;
+  }
+}
+.smaller {
+  font-size: $x-small-font-rem;
+}
+ul, ol {
+  margin: 0;
+  padding: 0 0 0 $gutter-px;
+  text-align: left;
+  list-style-position: outside;
+  li {
+    counter-increment: listCounter;
+    & ~ li {
+      margin: ($baseline-rem * .5) 0 0 0;
+    }
+  }
+  /*ul li, ol li {
+    counter-increment: listCounter2;
+  }*/
+}
+li {
+  width: 100%;
+}
+/*table ul, table ol {
+  margin: (-$baseline-rem) 0 $baseline-rem 0;
+}*/
+.bold-text {
+  font-weight: 700;
+}

@@ -1,0 +1,92 @@
+/*---------------------------------------------------------------------------*\
+    Functions
+\*---------------------------------------------------------------------------*/
+// STR REPLACE FUNCTION
+// https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+// URL ENCODER FOR INLINE SVGS
+// Encodes dangerous characters for maximum compatability (down to IE9)
+@function url-encode($string) {
+  $map: (
+    "%": "%25",
+    "<": "%3C",
+    ">": "%3E",
+    "!": "%21",
+    "*": "%2A",
+    "'": "%27",
+    '"': "%22",
+    "(": "%28",
+    ")": "%29",
+    "{": "%7B",
+    "}": "%7D",
+    "[": "%5B",
+    "]": "%5D",
+    ";": "%3B",
+    ":": "%3A",
+    "@": "%40",
+    "&": "%26",
+    "=": "%3D",
+    "+": "%2B",
+    "$": "%24",
+    ",": "%2C",
+    "/": "%2F",
+    "?": "%3F",
+    "#": "%23"
+  );
+  @each $search, $replace in $map {
+    $string: str-replace($string, $search, $replace);
+  }
+  @return url('data:image/svg+xml;charset=utf-8,' + $string);
+}
+
+// MEDIA QUERY FUNCTION
+// To write named media queries
+@mixin media-query($media-query) {
+  $breakpoint-found: false;
+
+  @each $breakpoint in $breakpoints {
+    $suffix: nth($breakpoint, 1);
+    $declaration: nth($breakpoint, 2);
+
+    @if $media-query == $suffix and $declaration {
+      $breakpoint-found: true;
+
+      @media only screen and #{$declaration} {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpoint-found == false{
+    @warn "Breakpoint ‘#{$media-query}’ does not exist";
+  }
+}
+
+// TEXT STROKE
+// Puts '.5px' thick text shadow in all directions to look like outline
+@mixin text-stroke($color,$opacity:1) {
+  text-shadow:
+    (-.5px) (-.5px) .5px rgba($color,$opacity),
+       0    (-.5px) .5px rgba($color,$opacity),
+      .5px  (-.5px) .5px rgba($color,$opacity),
+      .5px     0    .5px rgba($color,$opacity),
+      .5px    .5px  .5px rgba($color,$opacity),
+       0      .5px  .5px rgba($color,$opacity),
+    (-.5px)   .5px  .5px rgba($color,$opacity),
+       0    (-.5px) .5px rgba($color,$opacity);
+}
+
+// CSS PLACEHOLDER TEXT FOR <INPUT>S
+@mixin placeholder($placeholder-color) {
+  &::-webkit-input-placeholder {color: $placeholder-color;}/* Opera & Google Chrome */
+  &:-moz-placeholder {          color: $placeholder-color;}/* FF 4-18 */
+  &::-moz-placeholder{opacity:1;color: $placeholder-color;}/* FF 19+ */
+  // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  &:-ms-input-placeholder {     color: $placeholder-color;}/* IE 10+ */
+}

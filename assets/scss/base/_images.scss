@@ -1,0 +1,19 @@
+img {
+  display: block;
+  border-style: none;// Remove the border on images inside links in IE 10.
+  width: 100%;
+  max-width: 100%;
+}
+/* path, polygon, rect, circle, text {
+  fill: currentColor;
+} */
+.lazyload, .lazyloading {
+  filter: blur(5px);
+}
+.lazyloaded {
+  filter: none;
+  transition: filter .2s ease-in;
+}
+/*svg {
+  display: block;
+}*/

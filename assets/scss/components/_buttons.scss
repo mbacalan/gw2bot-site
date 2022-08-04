@@ -1,0 +1,130 @@
+@use 'sass:color';
+/*---------------------------------------------------------------------------*\
+    Buttons Global
+\*---------------------------------------------------------------------------*/
+button {// Taken from Normalise.css
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  color: inherit;
+  overflow: visible;
+  text-transform: none;
+  letter-spacing: inherit;
+  -webkit-appearance: button;
+  &::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  &::-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+}
+.button {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 6px 18px;
+  width: auto;
+  background: $red-400;
+  border: 0;
+  border-radius: ($p-line-px + 12px) * .5;
+  box-shadow: $button-shadow;
+  text-decoration: none;
+  vertical-align: top;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  &, .dark-mode & {color: $white;}
+  cursor: pointer;
+  font-size: $p-font-rem;
+  line-height: $p-line-px;
+  outline: 0;
+  &:hover {
+    background: $red-700;
+    //color: $white;
+  }
+  &:active {
+    padding: 7px 18px 5px 18px;
+    background: $red-100;
+    &, .dark-mode & {color: $grey-1150;}
+  }
+  img, &:before {
+    display: inline-block;
+    margin: 0 4px 0 (-8px);
+    width: $p-font-px;
+    height: $p-font-px;
+    vertical-align: top;
+    pointer-events: none;
+  }
+  .dark-mode & {
+    box-shadow: $button-shadow--dark;
+  }
+}
+
+/*---------------------------------------------------------------------------*\
+    Button Sizes
+\*---------------------------------------------------------------------------*/
+// Tiny Button
+/*.button--tiny {  padding: 2px 5px;
+  &:active {         padding: 3px 5px 1px 5px;}
+}*/
+// Small Button
+/*.button--small { padding: 4px 10px;
+  &:active {         padding: 5px 10px 3px 10px;}
+}*/
+// Large Button
+.button--large { padding: 9px 24px;
+  &:active {     padding: 10px 24px 8px 24px;}
+  border-radius: ($h5-line-px + 18px) * .5;
+  font-size: $h5-font-rem;
+  line-height: $h5-line-px;
+  img, &:before {
+    width: $h5-line-px;
+    height: $h5-line-px;
+  }
+}
+// Giant Button
+.button--giant { padding: 11px 32px;
+  &:active {     padding: 12px 32px 10px 32px;}
+  border-radius: ($h4-line-px + 22px) * .5;
+  font-size: $h4-font-rem;
+  line-height: $h4-line-px;
+  img, &:before {
+    width: $h4-line-px;
+    height: $h4-line-px;
+  }
+}
+
+/*---------------------------------------------------------------------------*\
+    Button Styles
+\*---------------------------------------------------------------------------*/
+// Patreon Button
+.button--patreon {
+  background: color.scale($patreon-fiery-coral, $saturation: (-4%), $lightness: (-8%));
+  &:hover {
+    background: $patreon-fiery-coral;
+  }
+  &:active {
+    background: color.scale($patreon-fiery-coral, $saturation: (-25%), $lightness: (-20%));
+  }
+  &:before {
+    @extend %psuedo-element;
+    background: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'><g fill='#{$white}'><circle cx='366.87' cy='249.94' r='149.94'/><rect x='100' y='100' width='73.25' height='400'/></g></svg>") no-repeat 50% 50%/100% 100%;
+  }
+}
+
+// PayPal Button
+.button--paypal {
+  background: $paypal-pal-blue;
+  &:hover {
+    background: color.scale($paypal-pal-blue, $lightness: 12%);
+  }
+  &:active {
+    background: color.scale($paypal-pal-blue, $lightness: (-20%));
+  }
+  &:before {
+    @extend %psuedo-element;
+    background: url-encode("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'><g fill='#{$white}'><path d='M442.94,207.38c-12.74,76.24-63.94,123.45-134.28,123.45h-55.7c-2.43,0-6.49,0-9.07,13.02l-22.12,140.03h0c-1.74,11.03,.63,16.12,7.28,16.12h61.64c4.38-.39,7.29-3.65,8.13-9.19l12.92-85.28c2.22-14.69,7.73-20.09,15.9-20.09h30.12c59.65,0,104.63-41.13,110.44-115.52,2.14-27.39-5.44-49.44-25.26-62.55Z'/><path d='M427.38,186.56c-3.17,39.42-16.29,71.94-37.96,94.03-20.67,21.09-48.6,32.23-80.76,32.23h-55.7c-14.91,0-24.11,10.4-27.33,30.9l-15.76,100.28c-1.01,6.42-3.79,10.2-8.87,10.65h-60.46c-7.72,0-10.46-5.9-8.44-18.7L182.19,118.76c2.01-12.71,8.96-18.76,22.78-18.76h103.92c31.81,0,69.54,1.03,94.78,23.29,16.7,14.73,25.54,38.11,23.72,63.27Z'/></g></svg>") no-repeat 50% 50%/100% 100%;
+  }
+}
