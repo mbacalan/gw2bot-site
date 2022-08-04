@@ -1,74 +1,34 @@
 <template>
-  <div class="footer">
-    <footer class="footer-lg">
-      <div class="container">
-        <p>
-          ©2019 - GW2Bot created by Maselkov#2365, Website created by Penemue#8514&nbsp;- &nbsp; If you want to contribute, see
-          <a target="_blank" rel="noreferrer" href="https://github.com/Maselkov/GW2Bot">here for the bot </a>
-          and
-          <a target="_blank" rel="noreferrer" href="https://github.com/mbacalan/gw2bot-site">here for the website.</a> Thanks to all contributors.
-        </p>
-        <p>Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT Corporation.</p>
-      </div>
-    </footer>
+  <footer>
+    <div class="page-width page-padding">
+      <p><small>&copy;2022&nbsp;-&nbsp;GW2Bot created by&nbsp;Maselkov#2365, Website created by&nbsp;Penemue#8514 and design updated by&nbsp;Mattt#7551<br>If you want to contribute, see <a class="external" href="https://github.com/Maselkov/GW2Bot" target="_blank">here for the bot</a> and <a class="external" href="https://github.com/mbacalan/gw2bot-site" target="_blank">here for the website</a>. Thanks to all contributors.</small></p>
 
-    <footer>
-      <div class="container">
-        <p>
-          <a target="_blank" rel="noreferrer" href="https://github.com/Maselkov/GW2Bot">GW2Bot</a> by Maselkov#2365,
-          <a target="_blank" rel="noreferrer" href="https://github.com/mbacalan/gw2bot-site">Website</a> by Penemue#8514.
-        </p>
-      </div>
-    </footer>
-  </div>
+      <p><small>Please read the <nuxt-link to="/privacy-policy">Privacy Policy</nuxt-link> if you have any privacy conerns about&nbsp;GW2Bot.<br>Join the <a class="external" :href="$supportServerLink" target="_blank">GW2Bot Discord Server</a> for further&nbsp;support.</small></p>
+
+      <p><small>Guild Wars 2 Logo and all associated logos and designs are trademarks or registered trademarks of NCSOFT&nbsp;Corporation.</small></p>
+    </div>
+  </footer>
 </template>
-
-<style lang="scss" scoped>
-footer {
-  display: block;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 3rem;
-  background-color: #2c2f33;
-
-  p {
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    line-height: 0.5px;
-    margin-top: 15px;
-  }
-
-  a {
-    color: #fff;
-  }
-}
-
-.footer-lg {
-  display: none;
-}
-
-@media (min-width: 935px) {
-  .footer-lg {
-    display: block;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 5rem;
-    background-color: #2c2f33;
-  }
-
-  footer {
-    display: none;
-  }
-}
-</style>
 
 <script>
 export default {
   name: 'FooterComponent'
 }
 </script>
+
+<style lang="scss" scoped>
+@import '~@/assets/scss/colors';
+@import '~@/assets/scss/settings';
+
+footer {
+  position: relative;
+  margin: ($baseline-rem * 2) 0 0 0;
+  padding: $baseline-rem 0 ($baseline-rem * 2) 0;
+  text-align: center;
+  width: 100%;
+  background: $grey-1100;
+  .dark-mode & {
+    background: $grey-250;
+  }
+}
+</style>
