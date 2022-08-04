@@ -1,290 +1,191 @@
 <template>
-  <div class="logs">
-    <h1>Encounter Browser</h1>
-    <div class="user">
-      <div />
-      <small v-if="user">( {{ user }} )</small>
-    </div>
+  <main>
+    <div class="page-width page-padding">
+      <header>
+        <h1>Encounter Browser</h1>
+        <p v-if="user">
+          Currently viewing encounters of <strong>{{ user }}</strong>
+        </p>
+        <p v-else>
+          Loading User... <LoadingInlineSVG />
+        </p>
+      </header>
 
-    <div v-if="user" class="filters">
-      <label for="result">Successful Only</label>
-      <input id="result" v-model="filters.success" type="checkbox" @change="applyFilters">
+      <template v-if="state===0">
+        <p class="h3">
+          No Encounter Logs Found for&nbsp;{{ user }}
+        </p>
+        <p>
+          Add your encounter logs to GW2Bot by using the <code>/evtc</code> command in Discord.
+        </p>
+      </template>
+      <template v-else>
+        <!-- ENCOUNTER SELECT -->
+        <div class="form form--inline">
+          <div class="encounter-select">
+            <div class="flexbox">
+              <div class="flexbox__item">
+                <div class="form__group">
+                  <label for="encounter-instances" class="form__label">Instance:</label>
+                  <select id="encounter-instances" class="form__control">
+                    <option selected @click="selectInstance($event)" />
+                    <optgroup v-for="(category, key) in bosses" :key="key" :label="key">
+                      <option
+                        v-for="(instance, index) in category"
+                        :key="index"
+                        :data-index="index"
+                        @click="selectInstance($event)"
+                      >
+                        {{ instance.name }}
+                      </option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
 
-      <label for="date-start">Date Start:</label>
-      <input id="date-start" v-model="filters.dateStart" type="date" @change="applyFilters">
+              <div v-if="selectedInstance" class="flexbox__item">
+                <div class="form__group">
+                  <label for="encounter-bosses" class="form__label">Boss:</label>
+                  <select id="encounter-bosses" class="form__control">
+                    <option selected @click="selectBoss($event)" />
+                    <option
+                      v-for="(boss, index) in selectedInstance.encounters"
+                      :key="index"
+                      :data-value="boss.ids"
+                      @click="selectBoss($event)"
+                    >
+                      {{ boss.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <label for="date-end">Date End:</label>
-      <input id="date-end" v-model="filters.dateEnd" type="date" @change="applyFilters">
-    </div>
+          <hr>
 
-    <div v-if="user" class="container">
-      <div class="encounter-select">
-        <div v-for="(section, key) in bosses" :key="section.id">
-          <h2>{{ key }}</h2>
-          <div
-            v-for="(boss, index) in section"
-            :key="index"
-            :data-value="boss.ids"
-            @click="toggleActive($event)"
-          >
-            {{ boss.name }}
+          <!-- ENCOUNTER FILTERS -->
+          <div class="encounter-filters">
+            <div class="flexbox">
+              <div class="flexbox__item">
+                <div class="form__checkbox">
+                  <label for="result" class="form__label">Successful Only?</label>
+                  <input id="result" v-model="filters.success" type="checkbox" @change="applyFilters">
+                </div>
+              </div>
+
+              <div class="flexbox__item">
+                <div class="form__group">
+                  <label for="date-start" class="form__label">Date Start:</label>
+                  <input id="date-start" v-model="filters.dateStart" class="form__control" type="date" @change="applyFilters">
+                </div>
+              </div>
+
+              <div class="flexbox__item">
+                <div class="form__group">
+                  <label for="date-end" class="form__label">Date End:</label>
+                  <input id="date-end" v-model="filters.dateEnd" class="form__control" type="date" @change="applyFilters">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="encounter-select--mobile">
-        <select name="bosses">
-          <option selected>
-            Select a boss
-          </option>
-          <optgroup v-for="(section, key) in bosses" :key="section.id" :label="key">
-            <option
-              v-for="(boss, index) in section"
-              :key="index"
-              :data-value="boss.ids"
-              @click="toggleActive($event)"
-            >
-              {{ boss.name }}
-            </option>
-          </optgroup>
-        </select>
-      </div>
+        <!-- ENCOUNTER DISPLAY -->
+        <div v-if="user" class="encounter-display">
+          <p v-if="state==='loading'" class="h4">
+            Loading Encounters... <LoadingInlineSVG />
+          </p>
+          <template v-else-if="state==='ready'">
+            <template v-if="selectedBoss">
+              <p class="h3">
+                <img :src="selectedBoss.icon" alt="">{{ selectedBoss.name | twoOrphans }}
+              </p>
 
-      <div v-if="detailedEncounters" class="encounter-wrapper">
-        <div v-for="encounter in detailedEncounters" :key="encounter.id" class="encounter" :data-value="encounter.triggerID">
-          <div class="details">
-            <p><span>Date: </span> {{ encounter.timeEnd }}</p>
-            <p><span>Duration: </span>{{ encounter.duration }}</p>
-            <p v-if="encounter.success === true">
-              <span>Result: </span> Success
-            </p>
-            <p v-else>
-              <span>Result: </span> Failure
-            </p>
-          </div>
+              <p v-if="(activeLogs<1)&&(encounters.length>0)&&(encounters.length==detailedEncounters.length)">
+                Cannot find any <strong>{{ selectedBoss.name | twoOrphans }}</strong> encounter logs associated with&nbsp;<strong>{{ user }}</strong>
+              </p>
+            </template>
+            <template v-else-if="!selectedBoss">
+              <p>Start browsing your encounter logs by selecting an instance, then selecting a boss from the dropdown menus&nbsp;above.</p>
+            </template>
+            <ol v-if="detailedEncounters.length" class="encounter-list">
+              <li v-for="encounter in detailedEncounters" :key="encounter.id" :data-value="encounter.triggerID" class="encounter" :class="{ active: selectedBoss.ids==encounter.triggerID }">
+                <div class="encounter__info small-text">
+                  <span><strong>Date:</strong> {{ encounter.time }}</span>
+                  <span><strong>Duration:</strong> {{ encounter.duration }}</span>
+                  <span>
+                    <strong>Result:</strong> {{ encounter.success?'Success':'Failure' }}
+                  </span>
+                </div>
 
-          <table>
-            <tbody>
-              <tr class="legend">
-                <th>Account</th>
-                <th class="legend__icons" />
-                <th>Character</th>
-              </tr>
-              <tr v-for="player in encounter.players" :key="player.id">
-                <td>{{ player.account }}</td>
-                <td class="img">
-                  <img
-                    :src="`https://api.gw2bot.info/resources/professions/${player.profession.toLowerCase()}_icon.png`"
-                    :title="player.profession"
-                    :alt="player.profession"
-                  >
-                </td>
-                <td>{{ player.name }}</td>
-              </tr>
-            </tbody>
-          </table>
+                <table class="encounter__table">
+                  <tr>
+                    <th>Account</th>
+                    <th>Character</th>
+                    <th>DPS</th>
+                  </tr>
+                  <tr v-for="player in encounter.players" :key="player.id" :class="{ me: encounter.recordedBy==player.name }">
+                    <td>{{ player.account }}</td>
+                    <td>
+                      <picture>
+                        <source :srcset="require(`@/assets/img/professions/${player.profession.toLowerCase()}_icon.webp`)" type="image/webp">
+                        <img
+                          class="profession-icon"
+                          :src="require(`@/assets/img/professions/${player.profession.toLowerCase()}_icon.png`)"
+                          :title="player.profession"
+                          :alt="player.profession"
+                        >
+                      </picture>{{ player.name }}
+                    </td>
+                    <td>
+                      {{ player.dpsTargets[0][0].dps }}
+                    </td>
+                  </tr>
+                </table>
+                <p>
+                  <a class="external" :href="encounter.permalink" target="_blank">View full encounter details</a>
+                </p>
+              </li>
+            </ol>
+            <template v-if="encounters.length > detailedEncounters.length">
+              <p class="h4">
+                Loading Encounters... <LoadingInlineSVG />
+              </p>
+
+              <div class="progressbar">
+                <div :style="{'width': `${detailedEncounters.length / encounters.length * 100}%`}" />
+              </div>
+            </template>
+          </template>
         </div>
-      </div>
+      </template>
     </div>
-  </div>
+  </main>
 </template>
-
-<style lang="scss" scoped>
-@import '../assets/config';
-
-.logs {
-  text-align: center;
-  margin: auto;
-  width: 85%;
-  background-color: #F5F5F5;
-  border-radius: 15px;
-  padding: 10px 0;
-
-  h1 {
-    color: $secondaryColor;
-    margin-bottom: 0;
-  }
-}
-
-.container {
-  display: flex;
-}
-
-.filters {
-  margin: 20px 0;
-  background-color: #f5f5f5;
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  input,
-  label {
-    margin: 0 5px 0 0;
-  }
-}
-
-.encounter-select {
-  width: 25%;
-  height: 675px;
-  overflow-y: scroll;
-
-  h2 {
-    font-size: 20px;
-    color: $secondaryColor;
-  }
-
-  & > div {
-    list-style: none;
-
-    > div {
-      height: 40px;
-      width: 85%;
-      margin: 10px auto;
-      border: 1px solid #343a40;
-      border-radius: 20px;
-      line-height: 40px;
-      cursor: pointer;
-      transition: 0.2s ease;
-
-      &:hover,
-      &.active {
-        background-color: #343a40;
-        color: white;
-      }
-    }
-  }
-}
-
-.encounter-wrapper {
-  width: 75%;
-  height: 675px;
-  overflow-y: scroll;
-
-  small {
-    display: block;
-    font-size: 14px;
-  }
-
-  table {
-    width: 75%;
-    margin: auto auto 25px;
-    border-spacing: 0;
-    text-align: left;
-
-    tr {
-      height: 40px;
-
-      > th {
-        color: #1d1d1d;
-      }
-    }
-
-    tr.legend {
-      margin-top: 25px;
-      background-color: #f5f5f5;
-      color: #646464;
-
-      :first-child,
-      :last-child {
-        width: 50%;
-      }
-
-      &__icons {
-        width: 7%;
-      }
-    }
-
-    td,
-    th {
-      padding-left: 20px;
-      vertical-align: middle;
-      border-bottom: 1px solid $secondaryColor;
-    }
-
-    td.img img {
-      width: 25px;
-      height: 25px;
-    }
-  }
-
-  span {
-    font-weight: bold;
-    color: $secondaryColor;
-  }
-
-  .encounter {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-
-    .details {
-      display: flex;
-      justify-content: space-evenly;
-      width: 75%;
-      margin: auto;
-    }
-  }
-}
-
-.button {
-  display: inline-block;
-  margin: 10px 0 5px;
-  padding: 1.2rem 1.5rem;
-  transition: 0.5s;
-  background-color: #dc3545;
-  border: none;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  color: #fff;
-
-  &:hover {
-    transition: 0.5s;
-    background-color: #c82333;
-  }
-}
-
-.encounter-select--mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-wrap: wrap;
-  }
-
-  .encounter-select {
-    display: none;
-
-    &--mobile {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-
-  .encounter-wrapper {
-    width: 100%;
-    height: 400px;
-  }
-}
-</style>
 
 <script>
 import bosses from '@/static/bossesData'
+import LoadingInlineSVG from '@/components/inline-svgs/loading'
 
 export default {
   name: 'LogsPage',
+  components: {
+    LoadingInlineSVG
+  },
   middleware: 'auth',
   data () {
     return {
       user: null,
       bosses,
+      updateDebounce: null,
+      filterDebounce: null,
+      state: 'loading',
+      selectedInstance: '',
+      selectedBoss: '',
       encounters: [],
       detailedEncounters: [],
+      activeLogs: 0,
       filters: {
         success: null,
         dateStart: null,
@@ -293,23 +194,18 @@ export default {
     }
   },
   async mounted () {
+    document.getElementById('encounter-instances').selectedIndex = 0
     await this.fetchAccountName(this.$auth.user.id)
-    await this.applyFilters()
+    await this.fetchEncounters(null, null, null)
+    await this.fetchEncountersDetail()
+    this.encounters.length ? (this.state = 'ready') : (this.state = 0)
   },
   updated () {
-    const activeBoss = document.querySelector('div.encounter-select .active')
+    clearTimeout(this.updateDebounce)
 
-    if (!activeBoss) { return }
-
-    const activeResults = document.querySelectorAll(
-      `div.encounter-wrapper [data-value="${activeBoss.getAttribute(
-        'data-value'
-      )}"]`
-    )
-
-    activeResults.forEach((element) => {
-      element.classList.add('active')
-    })
+    this.updateDebounce = setTimeout((instance) => {
+      instance.activeLogs = document.querySelectorAll('.encounter.active').length
+    }, 500, this)
   },
   methods: {
     async fetchAccountName () {
@@ -340,38 +236,194 @@ export default {
     fetchEncountersDetail () {
       try {
         this.detailedEncounters = []
+
         this.encounters.forEach(async (element) => {
-          const encounter = await fetch(
+          const encounterJson = await fetch(
             `https://dps.report/getJson?permalink=${element.permalink}`
-          )
-          const encounterJson = await encounter.json()
+          ).then(response => response.json())
+          encounterJson.permalink = element.permalink
+          const encounterTime = encounterJson.timeEnd.split(' ')
+          encounterJson.time = new Date(`${encounterTime[0]}T${encounterTime[1]}`).toLocaleString()
           this.detailedEncounters.push(encounterJson)
         })
       } catch (err) {
         throw err
       }
     },
-    async applyFilters () {
-      await this.fetchEncounters(this.filters.success, this.filters.dateEnd, this.filters.dateStart)
-      await this.fetchEncountersDetail()
+    applyFilters () {
+      clearTimeout(this.filterDebounce)
+
+      this.filterDebounce = setTimeout(async (instance) => {
+        if (instance.state === 'ready') { instance.state = 'loading' }
+        await instance.fetchEncounters(instance.filters.success, instance.filters.dateEnd, instance.filters.dateStart)
+        await instance.fetchEncountersDetail()
+        if (instance.state === 'loading') { instance.state = 'ready' }
+      }, 500, this)
     },
-    toggleActive (event) {
-      const elements = document.querySelectorAll(`[data-value]`)
+    selectInstance (event) {
+      if (event.target.index > 0) {
+        const category = event.target.parentElement.label
+        const instance = event.target.dataset.index
+        this.selectedInstance = this.bosses[category][instance]
+      } else {
+        this.selectedInstance = ''
+      }
 
-      event.target.classList.toggle('active')
+      const bossSelect = document.getElementById('encounter-bosses')
 
-      elements.forEach((element) => {
+      if (bossSelect) {
+        bossSelect.selectedIndex = 0
+        /* this.selectBoss({
+          target: bossSelect.options[0]
+        }) */
+      }
+    },
+    selectBoss (event) {
+      const encounters = document.querySelectorAll('.encounter')
+
+      if (event.target.index > 0) {
+        const boss = event.target.index - 1
+        this.selectedBoss = this.selectedInstance.encounters[boss]
+        this.activeLogs = 0
+      } else {
+        this.selectedBoss = ''
+      }
+
+      encounters.forEach((encounter) => {
         if (
-          event.target
-            .getAttribute('data-value')
-            .includes(element.getAttribute('data-value'))
+          encounter.dataset.value.includes(
+            event.target.getAttribute('data-value')
+          )
         ) {
-          element.classList.add('active')
+          encounter.classList.add('active')
+          ++this.activeLogs
         } else {
-          element.classList.remove('active')
+          encounter.classList.remove('active')
         }
       })
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '~@/assets/scss/functions';
+@import '~@/assets/scss/colors';
+@import '~@/assets/scss/settings';
+
+@import '~@/assets/scss/situational/forms';
+
+.encounter-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.encounter-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.encounter-display {
+  margin-top: $baseline-rem;
+  padding-bottom: ($baseline-rem * .5);
+  height: 675px;
+  overflow-y: scroll;
+}
+.h3 {
+  margin: 0;
+  line-height: 64px;
+  img {
+    display: inline-block;
+    margin-right: ($baseline-px * .5);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    vertical-align: top;
+  }
+}
+.encounter-list {
+  padding: 0 6px;
+  width: 100%;
+  min-width: 460px;
+  list-style: none;
+  text-align: center;
+}
+.encounter {
+  display: none;
+  margin: $baseline-rem 0 0 0;
+  padding: ($baseline-px * .5);
+  border-radius: 6px;
+  background: $white;
+  box-shadow: $card-shadow;
+  &.active {
+    display: block;
+  }
+  .dark-mode & {
+    background: $grey-350;
+    box-shadow: $card-shadow--dark;
+  }
+}
+.encounter__info {
+  display: flex;
+  justify-content: space-evenly;
+}
+.encounter__table {
+  margin-top: ($baseline-rem * .5);
+  th, td {
+    padding: 2px 6px;
+    width: 40%;
+    border-width: 0;
+    &:last-child {
+      width: 20%;
+    }
+  }
+  td {
+    font-size: $small-font-rem;
+  }
+  th~th, th~td, td~td {
+    border-left-width: 1px;
+  }
+  tr ~ tr {
+    th, td {
+      border-top-width: 1px;
+    }
+  }
+  .me {
+    font-weight: 700;
+  }
+}
+.profession-icon {
+  display: inline-block;
+  margin-right: 2px;
+  width: $p-line-rem;
+  height: $p-line-rem;
+  vertical-align: top;
+}
+.h4 .inline-svg {
+  width: $h4-line-rem;
+  height: $h4-line-rem;
+}
+.progressbar {
+  margin: $baseline-rem auto 0 auto;
+  width: 100%;
+  height: ($baseline-rem * .5);
+  max-width: 460px;
+  border-radius: ($baseline-rem * .25);
+  background: $white;
+  box-shadow: $button-shadow;
+  overflow: hidden;
+  div {
+    height: 100%;
+    background: $red-700;
+  }
+  .dark-mode & {
+    background: $grey-350;
+    box-shadow: $button-shadow--dark;
+    div {
+      background: $red-400;
+    }
+  }
+}
+</style>
