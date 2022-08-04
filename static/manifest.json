@@ -1,0 +1,20 @@
+{
+    "name": "GW2Bot - A Discord Bot for Guild Wars 2",
+    "short_name": "GW2Bot",
+    "start_url": "https://gw2bot.info",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
