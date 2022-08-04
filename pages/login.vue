@@ -1,18 +1,21 @@
 <template>
-  <div class="login">
-    Redirecting...
-  </div>
+  <main>
+    <div class="page-width page-padding">
+      <header>
+        <h1>Redirecting... <LoadingInlineSVG /></h1>
+      </header>
+    </div>
+  </main>
 </template>
 
-<style lang="scss">
-.login {
-  text-align: center;
-}
-</style>
-
 <script>
+import LoadingInlineSVG from '@/components/inline-svgs/loading'
+
 export default {
   name: 'LoginPage',
+  components: {
+    LoadingInlineSVG
+  },
   middleware: 'auth'
 }
 </script>
