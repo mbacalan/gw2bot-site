@@ -4,6 +4,7 @@ const mongodb = require('mongodb')
 const cors = require('cors')
 const { check, validationResult } = require('express-validator')
 const fetch = require('node-fetch')
+const { Long } = require('bson')
 
 const server = express()
 
@@ -65,7 +66,7 @@ function getToken (req, res) {
 }
 
 async function fetchDiscordUser (token) {
-  const user = await fetch('https://discordapp.com/api/users/@me', {
+  const user = await fetch('https://discord.com/api/users/@me', {
     headers: {
       authorization: `${token[0]} ${token[1]}`
     }
@@ -78,7 +79,7 @@ async function fetchDiscordUser (token) {
 
 async function fetchDbUser (user) {
   const users = await getCollection('users')
-  return users.findOne({ '_id': parseInt(user.id) })
+  return users.findOne({ '_id': new Long.fromString(user.id, 10) })
 }
 
 async function authorizeUserId (res, token) {
@@ -103,7 +104,7 @@ async function getCollection (collection) {
     }
   )
 
-  return client.db(process.env.MONGO_DB || 'local').collection(collection)
+  return client.db(process.env.MONGO_DB || 'toothy').collection(collection)
 };
 
 export default {
